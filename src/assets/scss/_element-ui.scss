@@ -1,0 +1,46 @@
+// tooltip
+.tooltip--shadow {
+  box-shadow: 3px 3px 3px rgba($is_color_black, 0.2);
+}
+
+// dialog
+.el-dialog {
+  padding: 30px;
+  border: 1px solid $is_color_gray500;
+  border-radius: $border_radius;
+  background-color: $is_color_white;
+  color: $is_text_color;
+}
+
+.el-dialog__header,
+.el-dialog__footer {
+  padding: 0;
+}
+
+.dialog--no-header .el-dialog__title {
+  display: inline;
+}
+
+.el-dialog__title {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: inherit;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.el-dialog__body {
+  padding: 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: 1.5;
+}
+
+.el-dialog__footer {
+  color: inherit;
+  font-size: inherit;
+}
+
+.el-dialog--center .el-dialog__body {
+  padding: 0;
+}
