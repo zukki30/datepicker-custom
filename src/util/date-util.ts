@@ -1,6 +1,6 @@
 import { i18n } from "@/i18n";
 import { AvailableLanguages } from "@/i18n";
-import SelectOption from "@/components/form/SelectOption";
+import SelectOption from "@/components/SelectOption";
 
 // 秒とどの単位の秒を使っているかわかりやすくするため
 export type Msec = number;

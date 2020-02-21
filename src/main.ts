@@ -9,7 +9,7 @@ Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
 
-require("@/assets/scss/style.scss");
+require("@/assets/scss/index.scss");
 
 new Vue({
   router,

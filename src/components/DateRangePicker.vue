@@ -21,7 +21,7 @@ import {
   DisabledDateChecker,
   Shortcut
 } from "element-ui/types/date-picker";
-import { DateRange } from "@/components/form/DateRange";
+import { DateRange } from "@/components/DateRange";
 import { WidthProperty } from "csstype";
 
 @Component({
