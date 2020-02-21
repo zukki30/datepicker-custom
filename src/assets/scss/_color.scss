@@ -1,0 +1,59 @@
+$colorBase1000: #231815;
+$colorBase900: #323442;
+$colorBase800: #56596b;
+$colorBase700: #818599;
+$colorBase600: #a3acbf;
+$colorBase500: #cad1e0;
+$colorBase400: #e1e5ee;
+$colorBase300: #f5f5f7;
+
+$colorBlue900: #51a5e0;
+$colorBlue800: #7ebae6;
+$colorBlue750: #a0d1f5;
+$colorBlue730: #abd6fe;
+$colorBlue700: #d9edff;
+$colorBlue600: #e6f3ff;
+$colorBlue500: #f3f9fe;
+
+$colorWhite: #fff;
+$colorGray100: #f7f7f7;
+$colorGray200: #eeeeee;
+
+$colorChartColoredPeriodPast: #fee1ab;
+
+$colorClear: rgba(0, 0, 0, 0);
+$colorOverlay: rgba(50, 52, 66, 0.3);
+$colorScrollbar: rgba($colorBase1000, 0.5);
+$colorShadow100: rgba(0, 0, 0, 0.1);
+
+$colorOnboarding: #23afaf;
+
+$colorRedForAi: #e67e7e;
+$colorRedForNote: #c93636;
+
+$colorError: $colorRedForAi;
+
+$colorFilter: $colorBase900;
+
+$colorDark: $colorBase900;
+$colorLight: $colorBase300;
+
+$bgColorDisabled: $colorBase600;
+$colorDisabled: #1d1c1dbf;
+
+// Text
+$colorText: $colorBase900;
+$colorTextMid: $colorBase800;
+$colorTextLight: $colorBase700;
+$colorPlaceholder: $colorBase700;
+$colorTextLink: $colorBase700;
+
+// Line
+$colorLine: $colorBase500;
+$colorLineDark: $colorBase700;
+$colorLineInput: $colorBase600;
+
+// Hover
+$colorHoverLightForWhite: $colorBlue600;
+$colorHoverBlueForGray: $colorBlue600;
+$colorHoverDarkForDark: $colorBase1000;

@@ -1,15 +1,56 @@
-// tooltip
-.tooltip--shadow {
-  box-shadow: 3px 3px 3px rgba($is_color_black, 0.2);
+.el-picker-panel__icon-btn {
+  &.el-icon-arrow-left {
+    margin-left: 20px;
+  }
+  &.el-icon-arrow-right {
+    margin-right: 20px;
+  }
 }
 
-// dialog
+.el-tooltip__popper.is-light {
+  border: 1px solid $colorBase600;
+  border-radius: $sizeRadius;
+  box-shadow: 5px 5px 5px $colorShadow100;
+}
+
+.el-tooltip__popper.is-light[x-placement^="top"] .popper__arrow {
+  border-top-color: $colorBase600;
+}
+
+.el-tooltip__popper.is-light[x-placement^="bottom"] .popper__arrow {
+  border-bottom-color: $colorBase600;
+}
+
+.el-pagination--small .el-pager li,
+.el-pagination--small .el-pager li:first-child,
+.el-pagination--small .el-pager li:last-child {
+  background: $colorClear;
+  color: $colorBase700;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.el-pagination--small .el-pager li:first-child.active,
+.el-pagination--small .el-pager li:last-child.active,
+.el-pagination--small .el-pager li.active {
+  color: $colorBase900;
+  font-weight: bold;
+}
+
+// .el-dialog
+.v-modal {
+  background-color: $colorOverlay;
+  opacity: 1;
+}
+
 .el-dialog {
   padding: 30px;
-  border: 1px solid $is_color_gray500;
-  border-radius: $border_radius;
-  background-color: $is_color_white;
-  color: $is_text_color;
+  border: 1px solid $colorBase600;
+  border-radius: $sizeRadius;
+  background: $colorWhite;
+  box-shadow: 5px 5px 5px $colorShadow100;
+  color: $colorText;
+  font-size: 14px;
 }
 
 .el-dialog__header,
@@ -17,7 +58,7 @@
   padding: 0;
 }
 
-.dialog--no-header .el-dialog__title {
+.dialog--noHeader .el-dialog__title {
   display: inline;
 }
 
@@ -43,4 +84,11 @@
 
 .el-dialog--center .el-dialog__body {
   padding: 0;
+}
+
+.el-range-editor.is-disabled,
+.el-range-editor.is-disabled input,
+.el-input.is-disabled .el-input__icon,
+.el-input.is-disabled .el-input__inner {
+  cursor: default;
 }

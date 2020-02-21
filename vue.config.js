@@ -7,8 +7,8 @@ module.exports = {
         .loader("sass-resources-loader")
         .options({
           resources: [
-            "./src/assets/scss/_vars.scss",
-            "./src/assets/scss/_functions.scss"
+            "./src/assets/scss/_color.scss",
+            "./src/assets/scss/_size.scss"
           ]
         })
         .end();

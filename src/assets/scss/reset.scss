@@ -1,0 +1,167 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	font: inherit;
+  font-size: 100%;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+// ========== For Reset ===========
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input:hover,
+select:hover,
+label:hover {
+  cursor: pointer;
+}
+
+div:focus {
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+}
+
+input[type="text"],
+input[type="password"] {
+  cursor: text;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+}
+
+input:required {
+  box-shadow: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  background-color: $colorClear;
+}
+
+*:placeholder-shown {
+  color: $colorPlaceholder;
+}
+
+::-webkit-input-placeholder {
+  color: $colorPlaceholder;
+}
+
+:-moz-placeholder {
+  color: $colorPlaceholder;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  color: $colorPlaceholder;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: $colorPlaceholder;
+}
+
+html,
+body {
+	height: 100%;
+  background: $colorWhite;
+  color: $colorText;
+	font-family: "Arial", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+#ug-app-root,
+#app {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+button {
+  padding: 0;
+  outline: 0;
+  border: none;
+  background: 0 0;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+
+  appearance: none;
+}
+
+.stop-scroll {
+  overflow: hidden;
+}
