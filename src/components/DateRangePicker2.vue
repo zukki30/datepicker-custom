@@ -27,7 +27,7 @@ import { WidthProperty } from "csstype";
 @Component({
   components: { ElDatePicker }
 })
-export default class DateRangePicker extends Vue {
+export default class DateRangePicker2 extends Vue {
   @Prop({ type: Object })
   value!: DateRange | null;
 

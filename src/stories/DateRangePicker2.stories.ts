@@ -1,17 +1,17 @@
 import { storiesOf } from "@storybook/vue";
 import { action } from "@storybook/addon-actions";
 import { text, boolean } from "@storybook/addon-knobs";
-import DateRangePicker from "@/components/DateRangePicker.vue";
+import DateRangePicker2 from "@/components/DateRangePicker2.vue";
 import {
   disabledDateForDatePicker,
   dateRangePickerShortcuts
 } from "@/util/date-range-picker-util";
 
-storiesOf("DateRangePicker", module)
+storiesOf("DateRangePicker2", module)
   .add(
     "default",
     () => ({
-      components: { DateRangePicker },
+      components: { DateRangePicker2 },
       data() {
         return { value: { min: new Date(), max: new Date() } };
       },
@@ -24,7 +24,7 @@ storiesOf("DateRangePicker", module)
         }
       },
       template:
-        '<DateRangePicker v-model="value" :disabled="disabled" :width="width" @input="dateHandler"/>',
+        '<DateRangePicker2 v-model="value" :disabled="disabled" :width="width" @input="dateHandler"/>',
       methods: { dateHandler: action("pick") }
     }),
     {
@@ -36,7 +36,7 @@ storiesOf("DateRangePicker", module)
   .add(
     "Disable date",
     () => ({
-      components: { DateRangePicker },
+      components: { DateRangePicker2 },
       data() {
         return { value: { min: new Date(), max: new Date() } };
       },
@@ -66,7 +66,7 @@ storiesOf("DateRangePicker", module)
   .add(
     "Shortcuts",
     () => ({
-      components: { DateRangePicker },
+      components: { DateRangePicker2 },
       data() {
         return { value: { min: new Date(), max: new Date() } };
       },
@@ -96,7 +96,7 @@ storiesOf("DateRangePicker", module)
   .add(
     "Shortcuts + Disable date",
     () => ({
-      components: { DateRangePicker },
+      components: { DateRangePicker2 },
       data() {
         return { value: { min: new Date(), max: new Date() } };
       },
