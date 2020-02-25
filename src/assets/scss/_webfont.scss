@@ -1,0 +1,26 @@
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: "icon";
+  src: url(~@/assets/fonts/icon.ttf) format("truetype"),
+    url(~@/assets/fonts/icon.woff) format("woff");
+}
+
+i {
+  text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icon" !important;
+  line-height: 1;
+  // speak: none;
+  /* Better Font Rendering =========== */
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-calendar:before {
+  content: "\e939";
+}

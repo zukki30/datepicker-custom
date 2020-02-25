@@ -6,10 +6,7 @@ module.exports = {
         .use("sass-resources-loader")
         .loader("sass-resources-loader")
         .options({
-          resources: [
-            "./src/assets/scss/_color.scss",
-            "./src/assets/scss/_size.scss"
-          ]
+          resources: ["./src/assets/scss/index.scss"]
         })
         .end();
     });
