@@ -92,3 +92,8 @@
 .el-input.is-disabled .el-input__inner {
   cursor: default;
 }
+
+// el data-picker table
+.el-date-table .is-selectedStartDate span {
+  background-color: $colorBlue700;
+}
