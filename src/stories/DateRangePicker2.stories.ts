@@ -49,7 +49,7 @@ storiesOf("DateRangePicker2", module)
         }
       },
       template:
-        '<DateRangePicker v-model="value" :disabled="disabled" :disabledDate="disabledDate" @input="dateHandler"/>',
+        '<DateRangePicker2 v-model="value" :disabled="disabled" :disabledDate="disabledDate" @input="dateHandler"/>',
       methods: { dateHandler: action("pick") },
       computed: {
         disabledDate() {
@@ -79,7 +79,7 @@ storiesOf("DateRangePicker2", module)
         }
       },
       template:
-        '<DateRangePicker v-model="value" :disabled="disabled" :shortcuts="shortcuts" @input="dateHandler"/>',
+        '<DateRangePicker2 v-model="value" :disabled="disabled" :shortcuts="shortcuts" @input="dateHandler"/>',
       methods: { dateHandler: action("pick") },
       computed: {
         shortcuts() {
@@ -109,7 +109,7 @@ storiesOf("DateRangePicker2", module)
         }
       },
       template:
-        '<DateRangePicker v-model="value" :disabled="disabled" :shortcuts="shortcuts" :disabledDate="disabledDate" @input="dateHandler"/>',
+        '<DateRangePicker2 v-model="value" :disabled="disabled" :shortcuts="shortcuts" :disabledDate="disabledDate" @input="dateHandler"/>',
       methods: { dateHandler: action("pick") },
       computed: {
         shortcuts() {

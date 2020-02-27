@@ -4,6 +4,7 @@
       class="date-range-picker_wrapper"
       :value="value === null ? null : [value.min, value.max]"
       type="daterange"
+      :unlink-panels="false"
       :disabled="disabled"
       :picker-options="pickerOptions"
       :clearable="false"
