@@ -58,7 +58,7 @@ export class Calendar {
     );
   }
 
-  get createTabeDates(): Date[] {
+  get calendarDates(): Date[] {
     // 月の初め日を取得
     const startDate = new Date(this.year, this.date.getMonth(), 1);
     // 初めの日の曜日を取得
@@ -89,6 +89,10 @@ export class Calendar {
 
     const result: Date[] = dates.concat(nextMonthDates);
     return result;
+  }
+
+  get table(): Table {
+    return splitDatas(this.calendarDates, weeks.length);
   }
 }
 
@@ -176,4 +180,15 @@ function getEmptyCellsWithNextMonth(
   }
 
   return dates;
+}
+
+/**
+ * Date配列を指定の数で分割する
+ */
+function splitDatas(dates: Date[], splitNumber: number): Table {
+  return dates.reduce(
+    (acc, value, i) =>
+      i % splitNumber ? acc : [...acc, dates.slice(i, i + splitNumber)],
+    [] as Table
+  );
 }

@@ -14,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(row, index) in tableDatas" :key="index">
+        <tr v-for="(row, index) in table" :key="index">
           <td
             v-for="date in row"
             :key="date.getDate()"
@@ -57,20 +57,8 @@ export default class CalendarTable extends Vue {
     return this.calendar.weekTexts;
   }
 
-  get tableDatas(): Table {
-    return this.splitTtableDatas(
-      this.calendar.createTabeDates,
-      this.weeks.length
-    );
-  }
-
-  // 配列を指定の数で分割する
-  splitTtableDatas(dates: Date[], splitNumber: number): Table {
-    return dates.reduce(
-      (acc, value, i) =>
-        i % splitNumber ? acc : [...acc, dates.slice(i, i + splitNumber)],
-      [] as Table
-    );
+  get table(): Table {
+    return this.calendar.table;
   }
 }
 </script>
