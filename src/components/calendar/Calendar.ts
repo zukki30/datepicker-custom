@@ -14,6 +14,8 @@ const MAX_MONTH = 12;
 const MAX_TABLE_ROW = 6;
 const MAX_TABLE_CELL = MAX_TABLE_ROW * weeks.length;
 
+export type Table = Date[][];
+
 export class Calendar {
   constructor(
     // 対象日
