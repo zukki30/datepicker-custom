@@ -12,6 +12,8 @@ export const weeks: string[] = [
 const MAX_MONTH = 12;
 const MAX_WEEK = 7;
 
+const TABLE_ROW_LENGHT = 6;
+
 export class Calendar {
   constructor(
     // 対象日
@@ -20,12 +22,16 @@ export class Calendar {
     public readonly weekStart: number = 0
   ) {}
 
-  get showMonth(): number {
+  get year(): number {
+    return this.date.getFullYear();
+  }
+
+  get month(): number {
     return this.date.getMonth() + 1;
   }
 
   get title(): string {
-    return this.date.getFullYear() + "年" + this.showMonth + "月";
+    return this.year + "年" + this.month + "月";
   }
 
   get orderWeeks(): string[] {
@@ -54,43 +60,47 @@ export class Calendar {
 export class PrevCalendar {
   constructor(
     public readonly year: number,
-    public readonly month: number,
-    public readonly showMonth: number
+    public readonly monthData: number,
+    public readonly month: number
   ) {}
 
   public static build(
     year: number,
-    month: number,
-    showMonth: number
+    monthData: number,
+    month: number
   ): PrevCalendar {
     if (0 > month) {
       return new PrevCalendar(
         year - 1,
-        MAX_MONTH + month,
-        MAX_MONTH + showMonth
+        MAX_MONTH + monthData,
+        MAX_MONTH + month
       );
     }
 
-    return new PrevCalendar(year, month, showMonth);
+    return new PrevCalendar(year, monthData, month);
   }
 }
 
 export class NextCalendar {
   constructor(
     public readonly year: number,
-    public readonly month: number,
-    public readonly showMonth: number
+    public readonly monthData: number,
+    public readonly month: number
   ) {}
 
   public static build(
     year: number,
-    month: number,
-    showMonth: number
+    monthData: number,
+    month: number
   ): NextCalendar {
-    if (month >= MAX_MONTH) {
+    if (monthData >= MAX_MONTH) {
       return new NextCalendar(year + 1, 0, 1);
     }
 
-    return new NextCalendar(year, month, showMonth);
+    return new NextCalendar(year, monthData, month);
   }
+}
+
+export class Day {
+  constructor(public readonly date: Date, public readonly number: number) {}
 }
