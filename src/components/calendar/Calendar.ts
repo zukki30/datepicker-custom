@@ -1,12 +1,21 @@
-export const weeks = ["sun", "mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+import { i18n } from "@/i18n";
+
+export const weeks: string[] = [
+  "Sun",
+  "Mon",
+  "Tue",
+  "Wed",
+  "Thu",
+  "Fri",
+  "Sat"
+];
 const MAX_MONTH = 12;
+const MAX_WEEK = 7;
 
 export class Calendar {
   constructor(
     // 対象日
     public readonly date: Date,
-    // 表示する前の月
-    public readonly monthsAgo: number = 2,
     // 週の始まり
     public readonly weekStart: number = 0
   ) {}
@@ -19,20 +28,25 @@ export class Calendar {
     return this.date.getFullYear() + "年" + this.showMonth + "月";
   }
 
-  get prevCalendar(): PrevCalendar {
-    const prevMonthsAgo = this.monthsAgo + 1;
-    return PrevCalendar.build(
-      this.date.getFullYear(),
-      this.date.getMonth() - prevMonthsAgo,
-      this.showMonth - prevMonthsAgo
-    );
+  get orderWeeks(): string[] {
+    if (this.weekStart === 0) {
+      return weeks;
+    }
+
+    const weekMap: string[] = [];
+    weeks.forEach((week: string, i: number) => {
+      let order: number = i - this.weekStart;
+      order = 0 > order ? MAX_WEEK + order : order;
+
+      weekMap.splice(order, 0, week);
+    });
+
+    return weekMap;
   }
 
-  get nextCalendar(): NextCalendar {
-    return NextCalendar.build(
-      this.date.getFullYear(),
-      this.date.getMonth() + 1,
-      this.showMonth + 1
+  get weekTexts(): string[] {
+    return this.orderWeeks.map(
+      week => i18n.t("util.dateUtil." + week) as string
     );
   }
 }
