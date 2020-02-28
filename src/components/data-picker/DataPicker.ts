@@ -1,6 +1,6 @@
 import {
   Calendar,
-  PrevCalendar,
+  PreviousCalendar,
   NextCalendar
 } from "@/components/calendar/Calendar";
 
@@ -12,10 +12,10 @@ export class DataPicker {
     public readonly monthsAgo: number = 2
   ) {}
 
-  get prevCalendar(): PrevCalendar {
+  get prevCalendar(): PreviousCalendar {
     const showMonth = this.date.getMonth() + 1;
     const prevMonthsAgo = this.monthsAgo + 1;
-    return PrevCalendar.build(
+    return PreviousCalendar.build(
       this.date.getFullYear(),
       this.date.getMonth() - prevMonthsAgo,
       showMonth - prevMonthsAgo
