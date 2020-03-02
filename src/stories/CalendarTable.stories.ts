@@ -23,8 +23,6 @@ storiesOf("CalendarTable", module)
         }
       },
       methods: {
-        onMouseEnter: action("mouse-enter"),
-        onMouseLeave: action("mouse-leave"),
         onClick: action("click")
       },
       computed: {
@@ -34,12 +32,11 @@ storiesOf("CalendarTable", module)
           return Calendar.build(date);
         }
       },
-      template: `<CalendarTable
-     :calendar="calendar"
-     :dates="dates"
-     @click="onClick"
-     @mouse-enter="onMouseEnter"
-     @mouse-leave="onMouseLeave" />`
+      template: `
+      <CalendarTable
+       v-model="dates"
+       :calendar="calendar"
+       @click="onClick" />`
     }),
     {
       info: {
@@ -60,8 +57,6 @@ storiesOf("CalendarTable", module)
         }
       },
       methods: {
-        onMouseEnter: action("mouse-enter"),
-        onMouseLeave: action("mouse-leave"),
         onClick: action("click")
       },
       computed: {
@@ -75,9 +70,7 @@ storiesOf("CalendarTable", module)
      :calendar="calendar"
      :dates="dates"
      :range-mode="true"
-     @click="onClick"
-     @mouse-enter="onMouseEnter"
-     @mouse-leave="onMouseLeave" />`
+     @click="onClick" />`
     }),
     {
       info: {

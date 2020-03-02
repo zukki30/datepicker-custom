@@ -20,8 +20,6 @@
             v-for="date in row"
             :key="date.getDate()"
             class="calendar-table__cell"
-            @mouseenter="onMouseEnter(date)"
-            @mouseleave="onMouseLeave(date)"
             @click="onDateClick(date)"
           >
             <div class="calendar-table__inner" :class="addRangeClass(date)">
@@ -47,20 +45,14 @@ import {
 
 @Component
 export default class CalendarTable extends Vue {
+  @Model("input", { type: [Object, Date], default: null })
+  dates!: DateRange | Date | null;
+
   @Prop({ type: Calendar, required: true })
   calendar!: Calendar;
 
-  @Prop({ type: [Object, Date], default: null })
-  dates!: DateRange | Date | null;
-
   @Prop({ type: Boolean, default: false })
   rangeMode!: boolean;
-
-  @Emit("mouse-enter")
-  onMouseEnter(date: Date) {}
-
-  @Emit("mouse-leave")
-  onMouseLeave(date: Date) {}
 
   @Emit("click")
   onClick(dates: DateRange | Date) {}
