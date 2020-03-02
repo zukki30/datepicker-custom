@@ -23,9 +23,7 @@ export class Calendar {
     // 対象月の数字
     public readonly monthIndex: number,
     // 対象月
-    public readonly month: number,
-    // 週の始まり
-    public readonly startWeek: number = 0
+    public readonly month: number
   ) {}
 
   public static build(date: Date): Calendar {
@@ -40,26 +38,8 @@ export class Calendar {
     return this.year + "年" + this.month + "月";
   }
 
-  get orderWeeks(): string[] {
-    if (this.startWeek === 0) {
-      return weeks;
-    }
-
-    const weekMap: string[] = [];
-    weeks.forEach((week: string, i: number) => {
-      let order: number = i - this.startWeek;
-      order = 0 > order ? weeks.length + order : order;
-
-      weekMap.splice(order, 0, week);
-    });
-
-    return weekMap;
-  }
-
   get weekTexts(): string[] {
-    return this.orderWeeks.map(
-      week => i18n.t("util.dateUtil." + week) as string
-    );
+    return weeks.map(week => i18n.t("util.dateUtil." + week) as string);
   }
 
   get calendarDates(): Date[] {
