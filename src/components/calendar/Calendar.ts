@@ -18,18 +18,22 @@ export type Table = Date[][];
 
 export class Calendar {
   constructor(
-    // 対象日
-    public readonly date: Date,
+    // 対象年
+    public readonly year: number,
+    // 対象月の数字
+    public readonly monthIndex: number,
+    // 対象月
+    public readonly month: number,
     // 週の始まり
     public readonly startWeek: number = 0
   ) {}
 
-  get year(): number {
-    return this.date.getFullYear();
-  }
-
-  get month(): number {
-    return this.date.getMonth() + 1;
+  public static build(date: Date): Calendar {
+    return new Calendar(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getMonth() + 1
+    );
   }
 
   get title(): string {
@@ -60,7 +64,7 @@ export class Calendar {
 
   get calendarDates(): Date[] {
     // 月の初め日を取得
-    const startDate = new Date(this.year, this.date.getMonth(), 1);
+    const startDate = new Date(this.year, this.monthIndex, 1);
     // 初めの日の曜日を取得
     const startDayOfTheWeek = startDate.getDay();
     // 月の最後の日を取得
@@ -70,20 +74,20 @@ export class Calendar {
     // 1日より前の日付を埋める日を取得
     const previousMonthDates = getEmptyCellsWithPreviousMonth(
       this.year,
-      this.date.getMonth(),
+      this.monthIndex,
       startDayOfTheWeek
     );
     const dates: Date[] = previousMonthDates;
 
     for (let i = 0; i < endDay; i++) {
-      const date = new Date(this.year, this.month - 1, i + 1);
+      const date = new Date(this.year, this.monthIndex, i + 1);
       dates.push(date);
     }
 
     // 末日より後の空セルを埋める日を取得
     const nextMonthDates = getEmptyCellsWithNextMonth(
       this.year,
-      this.date.getMonth(),
+      this.monthIndex,
       MAX_TABLE_CELL - dates.length
     );
 
@@ -103,11 +107,11 @@ export class PreviousCalendar {
     public readonly month: number
   ) {}
 
-  public static build(
-    year: number,
-    monthIndex: number,
-    month: number
-  ): PreviousCalendar {
+  public static build(date: Date, previous: number): PreviousCalendar {
+    const year = date.getFullYear();
+    const monthIndex = date.getMonth() - previous;
+    const month = monthIndex + 1;
+
     if (0 > month) {
       return new PreviousCalendar(
         year - 1,
@@ -127,11 +131,11 @@ export class NextCalendar {
     public readonly month: number
   ) {}
 
-  public static build(
-    year: number,
-    monthIndex: number,
-    month: number
-  ): NextCalendar {
+  public static build(date: Date, next: number): NextCalendar {
+    const year = date.getFullYear();
+    const monthIndex = date.getMonth() + next;
+    const month = monthIndex + 1;
+
     if (monthIndex >= MAX_MONTH) {
       return new NextCalendar(year + 1, 0, 1);
     }

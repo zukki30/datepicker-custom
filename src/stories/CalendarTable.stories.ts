@@ -22,7 +22,7 @@ storiesOf("CalendarTable", module).add(
       calendar() {
         const props: any = this.$props;
         const date: Date = props.date;
-        return new Calendar(date);
+        return Calendar.build(date);
       }
     },
     template: `<CalendarTable
