@@ -21,6 +21,11 @@ export interface Week {
   text: string;
 }
 
+export interface DateRange {
+  min: Date;
+  max: Date;
+}
+
 export class Calendar {
   constructor(
     // 対象年
