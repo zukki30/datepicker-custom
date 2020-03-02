@@ -4,12 +4,8 @@
     <table class="calendar-table__body">
       <thead>
         <tr>
-          <th
-            v-for="(week, index) in weeks"
-            :key="index"
-            class="calendar-table__cell"
-          >
-            {{ week }}
+          <th v-for="week in weeks" :key="week.id" class="calendar-table__cell">
+            {{ week.text }}
           </th>
         </tr>
       </thead>
@@ -33,7 +29,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Model, Emit } from "vue-property-decorator";
-import { Calendar, Table } from "@/components/calendar/Calendar";
+import { Calendar, Table, Week } from "@/components/calendar/Calendar";
 
 @Component
 export default class CalendarTable extends Vue {
@@ -53,7 +49,7 @@ export default class CalendarTable extends Vue {
     return this.calendar.title;
   }
 
-  get weeks(): string[] {
+  get weeks(): Week[] {
     return this.calendar.weekTexts;
   }
 
@@ -64,13 +60,17 @@ export default class CalendarTable extends Vue {
 </script>
 
 <style scoped lang="scss">
+$cellHeight: 35px;
+
 .calendar-table {
   &__title {
-    padding: 10px;
-    border-bottom: 1px solid $colorBase500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $cellHeight;
+    border-bottom: 1px solid $colorBase300;
     text-align: center;
     font-weight: bold;
-    font-size: 16px;
   }
 
   &__body {
@@ -79,7 +79,8 @@ export default class CalendarTable extends Vue {
   }
 
   &__cell {
-    padding: 10px;
+    padding: 5px;
+    height: $cellHeight;
     vertical-align: middle;
     text-align: center;
     font-size: 12px;

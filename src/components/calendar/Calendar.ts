@@ -16,6 +16,11 @@ const MAX_TABLE_CELL = MAX_TABLE_ROW * weeks.length;
 
 export type Table = Date[][];
 
+export interface Week {
+  id: string;
+  text: string;
+}
+
 export class Calendar {
   constructor(
     // 対象年
@@ -38,8 +43,13 @@ export class Calendar {
     return this.year + "年" + this.month + "月";
   }
 
-  get weekTexts(): string[] {
-    return weeks.map(week => i18n.t("util.dateUtil." + week) as string);
+  get weekTexts(): Week[] {
+    return weeks.map(week => {
+      return {
+        id: week,
+        text: i18n.t("util.dateUtil." + week) as string
+      };
+    });
   }
 
   get calendarDates(): Date[] {
