@@ -3,9 +3,12 @@
     v-slot:default="{ date }"
     class="calendar-date-table"
     :calendar="calendar"
-    @click="onClick"
+    @click="onDateClick"
   >
-    <div class="calendar-date-table__inner">
+    <div
+      class="calendar-date-table__inner"
+      :class="{ 'calendar-date-table__inner--desable': isDisabled(date) }"
+    >
       <div class="calendar-date-table__date" :class="addDateClass(date)">
         {{ date.getDate() }}
       </div>
@@ -15,7 +18,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Emit } from "vue-property-decorator";
-import { Calendar } from "@/components/calendar/Calendar";
+import { Calendar, DateRange } from "@/components/calendar/Calendar";
 import CalendarBase from "@/components/calendar/CalendarBase.vue";
 
 @Component({
@@ -28,13 +31,21 @@ export default class CalendarDateTable extends Vue {
   @Prop({ type: Date, default: null })
   selectedDate!: Date;
 
+  @Prop({ type: Object, default: null })
+  disabledDates!: DateRange;
+
   @Emit("click")
-  onClick(date: Date) {
-    this.selectDate = date;
-  }
+  onClick(date: Date) {}
 
   selectDate: Date | null =
     this.selectedDate !== null ? this.selectedDate : null;
+
+  onDateClick(date: Date) {
+    if (!this.isDisabled(date)) {
+      this.selectDate = date;
+      this.onClick(date);
+    }
+  }
 
   addDateClass(date: Date): string[] {
     const addClass: string[] = [];
@@ -63,6 +74,16 @@ export default class CalendarDateTable extends Vue {
 
     return false;
   }
+
+  isDisabled(date: Date): boolean {
+    if (this.disabledDates !== null) {
+      return (
+        date.getTime() < this.disabledDates.min.getTime() ||
+        date.getTime() > this.disabledDates.max.getTime()
+      );
+    }
+    return false;
+  }
 }
 </script>
 
@@ -74,6 +95,17 @@ export default class CalendarDateTable extends Vue {
     align-items: center;
     justify-content: center;
     height: 35px;
+
+    &:not(.calendar-base__cell--another-month):hover {
+      color: #7a9aeb;
+      cursor: pointer;
+    }
+
+    &--desable {
+      background-color: #fafafa;
+      cursor: text;
+      pointer-events: none;
+    }
   }
 
   &__date {
