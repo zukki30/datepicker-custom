@@ -99,10 +99,6 @@ $cellHeight: 35px;
     vertical-align: middle;
     text-align: center;
     font-size: 12px;
-    &:hover {
-      color: #7a9aeb;
-      cursor: pointer;
-    }
 
     &--sun {
       color: #eb4034;
