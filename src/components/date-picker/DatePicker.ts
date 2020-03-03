@@ -1,6 +1,6 @@
 import { Calendar } from "@/components/calendar/Calendar";
 
-export class DataPicker {
+export class DatePicker {
   constructor(
     // 対象日
     public readonly date: Date,
