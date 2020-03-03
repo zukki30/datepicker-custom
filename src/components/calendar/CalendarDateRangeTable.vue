@@ -3,7 +3,7 @@
     v-slot:default="{ date }"
     class="calendar-date-table"
     :calendar="calendar"
-    @click="onDateClick"
+    @click="onClick"
   >
     <div
       class="calendar-date-range-table__inner"
@@ -21,7 +21,11 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Emit } from "vue-property-decorator";
-import { Calendar, DateRange } from "@/components/calendar/Calendar";
+import {
+  Calendar,
+  DateRange,
+  changeDateRange
+} from "@/components/calendar/Calendar";
 import CalendarBase from "@/components/calendar/CalendarBase.vue";
 
 @Component({
@@ -38,7 +42,7 @@ export default class CalendarDateRangeTable extends Vue {
   disabledDates!: DateRange;
 
   @Emit("click")
-  onClick(dates: DateRange) {}
+  onClick(date: Date) {}
 
   selectDates: Date[] = this.currentDates;
 
@@ -46,21 +50,6 @@ export default class CalendarDateRangeTable extends Vue {
     return this.selectedDates !== null
       ? [this.selectedDates.min, this.selectedDates.max]
       : [];
-  }
-
-  onDateClick(date: Date) {
-    if (this.isDisabled(date)) {
-      return;
-    }
-
-    if (this.selectDates.length === 2) {
-      this.selectDates = [];
-    }
-
-    this.selectDates.push(date);
-
-    const dateRange = this.changeDateRange(this.selectDates);
-    this.onClick(dateRange);
   }
 
   addDateClass(date: Date): string[] {
@@ -92,10 +81,7 @@ export default class CalendarDateRangeTable extends Vue {
           : this.currentDates[0];
       selectedMaxDate.setHours(0, 0, 0, 0);
 
-      const dateRange = this.changeDateRange([
-        selectedMinDate,
-        selectedMaxDate
-      ]);
+      const dateRange = changeDateRange([selectedMinDate, selectedMaxDate]);
 
       // 選択済みの日付に付与
       return (
@@ -121,7 +107,7 @@ export default class CalendarDateRangeTable extends Vue {
         : this.currentDates[0];
     selectedMaxDate.setHours(0, 0, 0, 0);
 
-    const dateRange = this.changeDateRange([selectedMinDate, selectedMaxDate]);
+    const dateRange = changeDateRange([selectedMinDate, selectedMaxDate]);
 
     if (dateRange.min.getTime() === date.getTime()) {
       return "calendar-date-range-table__inner--range-start";
@@ -139,14 +125,6 @@ export default class CalendarDateRangeTable extends Vue {
     }
 
     return "";
-  }
-
-  changeDateRange(dates: Date[]): DateRange {
-    const dateRange: DateRange = {
-      min: dates[1] > dates[0] ? dates[0] : dates[1],
-      max: dates[1] > dates[0] ? dates[1] : dates[0]
-    };
-    return dateRange;
   }
 
   isDisabled(date: Date): boolean {

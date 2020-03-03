@@ -171,3 +171,20 @@ function splitDatas(dates: Date[], splitNumber: number): Table {
     [] as Table
   );
 }
+
+/**
+ * Date配列をDateRangeで返す
+ */
+export function changeDateRange(dates: Date[]): DateRange {
+  if (dates.length === 1) {
+    return {
+      min: dates[0],
+      max: dates[0]
+    };
+  }
+
+  return {
+    min: dates[1] > dates[0] ? dates[0] : dates[1],
+    max: dates[1] > dates[0] ? dates[1] : dates[0]
+  };
+}
