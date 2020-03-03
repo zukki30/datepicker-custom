@@ -107,6 +107,10 @@ export default class CalendarDateRangeTable extends Vue {
   }
 
   addRangeClass(date: Date): string {
+    if (this.selectDates.length === 0) {
+      return "";
+    }
+
     const selectedMinDate = this.selectDates[0];
     selectedMinDate.setHours(0, 0, 0, 0);
 
