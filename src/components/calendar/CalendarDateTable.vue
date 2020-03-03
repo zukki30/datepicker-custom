@@ -96,7 +96,7 @@ export default class CalendarDateTable extends Vue {
     justify-content: center;
     height: 35px;
 
-    &:not(.calendar-base__cell--another-month):hover {
+    &:not(.calendar-date-table__inner--desable):hover {
       color: #7a9aeb;
       cursor: pointer;
     }

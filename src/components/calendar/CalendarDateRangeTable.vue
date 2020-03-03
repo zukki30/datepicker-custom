@@ -5,7 +5,13 @@
     :calendar="calendar"
     @click="onDateClick"
   >
-    <div class="calendar-date-range-table__inner" :class="addRangeClass(date)">
+    <div
+      class="calendar-date-range-table__inner"
+      :class="[
+        addRangeClass(date),
+        { 'calendar-date-range-table__inner--desable': isDisabled(date) }
+      ]"
+    >
       <div class="calendar-date-range-table__date" :class="addDateClass(date)">
         {{ date.getDate() }}
       </div>
@@ -28,6 +34,9 @@ export default class CalendarDateRangeTable extends Vue {
   @Prop({ type: Object, default: null })
   selectedDates!: DateRange;
 
+  @Prop({ type: Object, default: null })
+  disabledDates!: DateRange;
+
   @Emit("click")
   onClick(dates: DateRange) {}
 
@@ -37,8 +46,11 @@ export default class CalendarDateRangeTable extends Vue {
       : [];
 
   onDateClick(date: Date) {
+    if (this.isDisabled(date)) {
+      return;
+    }
+
     if (this.selectDates.length === 2) {
-      console.log(this.selectDates);
       this.selectDates = [];
     }
 
@@ -129,6 +141,16 @@ export default class CalendarDateRangeTable extends Vue {
     };
     return dateRange;
   }
+
+  isDisabled(date: Date): boolean {
+    if (this.disabledDates !== null) {
+      return (
+        date.getTime() < this.disabledDates.min.getTime() ||
+        date.getTime() > this.disabledDates.max.getTime()
+      );
+    }
+    return false;
+  }
 }
 </script>
 
@@ -142,6 +164,18 @@ $cellHeight: 35px;
     align-items: center;
     justify-content: center;
     height: $cellHeight;
+
+    &:not(.calendar-date-range-table__inner--desable):hover {
+      color: #7a9aeb;
+      cursor: pointer;
+    }
+
+    &--desable {
+      background-color: #fafafa;
+      cursor: text;
+      pointer-events: none;
+    }
+
     &:before {
       position: absolute;
       top: 50%;
