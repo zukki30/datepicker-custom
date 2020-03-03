@@ -12,13 +12,13 @@ export class DatePicker {
     const calendars: Calendar[] = [];
 
     for (let i = 0; i < this.monthsAgo; i++) {
-      calendars.push(Calendar.previousCalendarBuild(this.date, i));
+      calendars.unshift(Calendar.previousCalendarBuild(this.date, i));
     }
 
     return calendars;
   }
 
-  get prevCalendar(): Calendar {
+  get previousCalendar(): Calendar {
     return Calendar.previousCalendarBuild(this.date, this.monthsAgo);
   }
 

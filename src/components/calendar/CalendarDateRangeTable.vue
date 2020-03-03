@@ -40,10 +40,13 @@ export default class CalendarDateRangeTable extends Vue {
   @Emit("click")
   onClick(dates: DateRange) {}
 
-  selectDates: Date[] =
-    this.selectedDates !== null
+  selectDates: Date[] = this.currentDates;
+
+  get currentDates(): Date[] {
+    return this.selectedDates !== null
       ? [this.selectedDates.min, this.selectedDates.max]
       : [];
+  }
 
   onDateClick(date: Date) {
     if (this.isDisabled(date)) {
@@ -56,10 +59,8 @@ export default class CalendarDateRangeTable extends Vue {
 
     this.selectDates.push(date);
 
-    if (this.selectDates.length === 2) {
-      const dateRange = this.changeDateRange(this.selectDates);
-      this.onClick(dateRange);
-    }
+    const dateRange = this.changeDateRange(this.selectDates);
+    this.onClick(dateRange);
   }
 
   addDateClass(date: Date): string[] {
@@ -81,14 +82,14 @@ export default class CalendarDateRangeTable extends Vue {
   }
 
   isSelectedDate(date: Date): boolean {
-    if (this.selectDates.length > 0) {
-      const selectedMinDate = this.selectDates[0];
+    if (this.currentDates.length > 0) {
+      const selectedMinDate = this.currentDates[0];
       selectedMinDate.setHours(0, 0, 0, 0);
 
       const selectedMaxDate =
-        this.selectDates.length === 2
-          ? this.selectDates[1]
-          : this.selectDates[0];
+        this.currentDates.length === 2
+          ? this.currentDates[1]
+          : this.currentDates[0];
       selectedMaxDate.setHours(0, 0, 0, 0);
 
       const dateRange = this.changeDateRange([
@@ -107,15 +108,17 @@ export default class CalendarDateRangeTable extends Vue {
   }
 
   addRangeClass(date: Date): string {
-    if (this.selectDates.length === 0) {
+    if (this.currentDates.length === 0) {
       return "";
     }
 
-    const selectedMinDate = this.selectDates[0];
+    const selectedMinDate = this.currentDates[0];
     selectedMinDate.setHours(0, 0, 0, 0);
 
     const selectedMaxDate =
-      this.selectDates.length === 2 ? this.selectDates[1] : this.selectDates[0];
+      this.currentDates.length === 2
+        ? this.currentDates[1]
+        : this.currentDates[0];
     selectedMaxDate.setHours(0, 0, 0, 0);
 
     const dateRange = this.changeDateRange([selectedMinDate, selectedMaxDate]);
