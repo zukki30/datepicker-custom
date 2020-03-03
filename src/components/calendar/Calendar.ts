@@ -9,7 +9,7 @@ export const weeks: string[] = [
   "Fri",
   "Sat"
 ];
-const MAX_MONTH = 12;
+export const MAX_MONTH = 12;
 
 const MAX_TABLE_ROW = 6;
 const MAX_TABLE_CELL = MAX_TABLE_ROW * weeks.length;
@@ -35,14 +35,6 @@ export class Calendar {
     // 対象月
     public readonly month: number
   ) {}
-
-  public static build(date: Date): Calendar {
-    return new Calendar(
-      date.getFullYear(),
-      date.getMonth(),
-      date.getMonth() + 1
-    );
-  }
 
   get title(): string {
     return this.year + "年" + this.month + "月";
@@ -93,49 +85,37 @@ export class Calendar {
   get table(): Table {
     return splitDatas(this.calendarDates, weeks.length);
   }
-}
 
-export class PreviousCalendar {
-  constructor(
-    public readonly year: number,
-    public readonly monthIndex: number,
-    public readonly month: number
-  ) {}
+  public static build(date: Date): Calendar {
+    return new Calendar(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getMonth() + 1
+    );
+  }
 
-  public static build(date: Date, previous: number): PreviousCalendar {
+  public static previousCalendarBuild(date: Date, previous: number): Calendar {
     const year = date.getFullYear();
     const monthIndex = date.getMonth() - previous;
     const month = monthIndex + 1;
 
-    if (0 > month) {
-      return new PreviousCalendar(
-        year - 1,
-        MAX_MONTH + monthIndex,
-        MAX_MONTH + month
-      );
+    if (0 > monthIndex) {
+      return new Calendar(year - 1, MAX_MONTH + monthIndex, MAX_MONTH + month);
     }
 
-    return new PreviousCalendar(year, monthIndex, month);
+    return new Calendar(year, monthIndex, month);
   }
-}
 
-export class NextCalendar {
-  constructor(
-    public readonly year: number,
-    public readonly monthIndex: number,
-    public readonly month: number
-  ) {}
-
-  public static build(date: Date, next: number): NextCalendar {
+  public static nextCalendarBuild(date: Date, next: number): Calendar {
     const year = date.getFullYear();
     const monthIndex = date.getMonth() + next;
     const month = monthIndex + 1;
 
     if (monthIndex >= MAX_MONTH) {
-      return new NextCalendar(year + 1, 0, 1);
+      return new Calendar(year + 1, 0, 1);
     }
 
-    return new NextCalendar(year, monthIndex, month);
+    return new Calendar(year, monthIndex, month);
   }
 }
 
