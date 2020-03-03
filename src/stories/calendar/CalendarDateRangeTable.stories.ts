@@ -2,24 +2,31 @@ import { storiesOf } from "@storybook/vue";
 import { date } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import { Calendar, DateRange } from "@/components/calendar/Calendar";
-import CalendarDateTable from "@/components/calendar/CalendarDateTable.vue";
+import CalendarDateRangeTable from "@/components/calendar/CalendarDateRangeTable.vue";
+
+const selectedDates: DateRange = {
+  min: new Date("2020-03-15"),
+  max: new Date("2020-03-25")
+};
 
 const disabledDates: DateRange = {
   min: new Date("2020-03-03"),
   max: new Date("2020-03-29")
 };
 
-storiesOf("CalendarDateTable", module)
+storiesOf("caledar/CalendarDateRangeTable", module)
   .add(
     "default",
     () => ({
-      components: { CalendarDateTable },
+      components: { CalendarDateRangeTable },
+      data() {
+        return {
+          selectedDates
+        };
+      },
       props: {
         date: {
           default: myDateKnob("Calendar", new Date())
-        },
-        selectedDate: {
-          default: myDateKnob("Selected date", new Date("2020-03-20"))
         }
       },
       methods: {
@@ -33,32 +40,30 @@ storiesOf("CalendarDateTable", module)
         }
       },
       template: `
-      <CalendarDateTable
+      <CalendarDateRangeTable
        :calendar="calendar"
-       :selected-date="selectedDate"
+       :selected-dates="selectedDates"
        @click="onClick" />`
     }),
     {
       info: {
-        summary: "Simple CalendarDateTable component"
+        summary: "Simple CalendarDateRangeTable component"
       }
     }
   )
   .add(
     "disabled date",
     () => ({
-      components: { CalendarDateTable },
+      components: { CalendarDateRangeTable },
       data() {
         return {
-          disabledDates: disabledDates
+          selectedDates,
+          disabledDates
         };
       },
       props: {
         date: {
           default: myDateKnob("Calendar", new Date())
-        },
-        selectedDate: {
-          default: myDateKnob("Selected date", new Date("2020-03-20"))
         }
       },
       methods: {
@@ -72,15 +77,15 @@ storiesOf("CalendarDateTable", module)
         }
       },
       template: `
-      <CalendarDateTable
+      <CalendarDateRangeTable
        :calendar="calendar"
-       :selected-date="selectedDate"
+       :selected-dates="selectedDates"
        :disabled-dates="disabledDates"
        @click="onClick" />`
     }),
     {
       info: {
-        summary: "Simple CalendarDateTable component"
+        summary: "Simple CalendarDateRangeTable component"
       }
     }
   );

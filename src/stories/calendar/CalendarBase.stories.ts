@@ -4,7 +4,7 @@ import { action } from "@storybook/addon-actions";
 import { Calendar, DateRange } from "@/components/calendar/Calendar";
 import CalendarBase from "@/components/calendar/CalendarBase.vue";
 
-storiesOf("CalendarBase", module).add(
+storiesOf("caledar/CalendarBase", module).add(
   "default",
   () => ({
     components: { CalendarBase },
