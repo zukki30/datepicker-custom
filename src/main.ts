@@ -9,6 +9,9 @@ Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
 
+import vClickOutside from "v-click-outside";
+Vue.use(vClickOutside);
+
 require("@/assets/scss/index.scss");
 
 new Vue({

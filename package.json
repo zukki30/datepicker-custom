@@ -15,6 +15,7 @@
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "element-ui": "^2.13.0",
+    "v-click-outside": "^3.0.1",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-i18n": "^8.15.3",
