@@ -1,5 +1,10 @@
 import { Calendar } from "@/components/calendar/Calendar";
 
+export enum DateRangeInput {
+  Start = "startDatePicker",
+  End = "endDatePicker"
+}
+
 export class DatePicker {
   constructor(
     // 対象日
