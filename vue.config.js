@@ -16,6 +16,5 @@ module.exports = {
     sourceMap: true
   },
   outputDir: "docs",
-  assetsDir: "./",
   publicPath: "./"
 };
