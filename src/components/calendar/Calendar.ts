@@ -129,7 +129,7 @@ function getEmptyCellsWithPreviousMonth(
 ): Date[] {
   const previousMonthIndex = monthIndex - 1;
   // 前月の最後の日の情報
-  const prevMonthEndDate = new Date(year, previousMonthIndex, 0);
+  const prevMonthEndDate = new Date(year, monthIndex, 0);
   // 前月の末日
   const prevMonthendDay = prevMonthEndDate.getDate();
 
