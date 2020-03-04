@@ -17,7 +17,8 @@ export class DatePicker {
     const calendars: Calendar[] = [];
 
     for (let i = 0; i < this.monthsAgo; i++) {
-      calendars.unshift(Calendar.previousCalendarBuild(this.date, i));
+      const index = this.monthsAgo - 1 - i;
+      calendars.push(Calendar.previousCalendarBuild(this.date, index));
     }
 
     return calendars;
@@ -29,5 +30,10 @@ export class DatePicker {
 
   get nextCalendar(): Calendar {
     return Calendar.nextCalendarBuild(this.date, 1);
+  }
+
+  public static rebuild(calendar: Calendar): DatePicker {
+    const date = new Date(calendar.year, calendar.monthIndex);
+    return new DatePicker(date);
   }
 }
