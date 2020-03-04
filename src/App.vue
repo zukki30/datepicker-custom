@@ -1,14 +1,56 @@
 <template>
   <div id="app" class="app">
-    <router-view />
+    <h2>DatePicker - 1</h2>
+    <DateRangePicker
+      v-model="value"
+      :shortcuts="shortcuts"
+      :disabled-date="disabledDate"
+    />
+
+    <h2>DatePicker - 2</h2>
+    <PeriodSpecification />
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Model, Prop } from "vue-property-decorator";
+import {
+  disabledDateForDatePicker,
+  dateRangePickerShortcuts
+} from "@/util/date-range-picker-util";
+import DateRangePicker from "@/components/DateRangePicker.vue";
+import PeriodSpecification from "@/components/PeriodSpecification.vue";
 
-@Component
-export default class App extends Vue {}
+@Component({
+  components: { DateRangePicker, PeriodSpecification }
+})
+export default class App extends Vue {
+  value = null;
+
+  get disabledDate() {
+    return disabledDateForDatePicker();
+  }
+
+  get shortcuts() {
+    return dateRangePickerShortcuts(new Date());
+  }
+}
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.app {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 100px;
+  max-width: 1000px;
+
+  h2 {
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 36px;
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+  }
+}
+</style>
