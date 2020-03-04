@@ -3,7 +3,7 @@
     <div class="date-range-picker-popup__switch">
       <button
         class="date-range-picker-popup__button date-range-picker-popup__previous"
-        @click="onMoveCalendar(previousCalendar)"
+        @click="onMoveCalendar(calendars[1])"
       >
         {{ previousCalendar.title }}
       </button>
@@ -48,7 +48,7 @@ export default class DateRangePickerPopup extends Vue {
   disabledDates!: DateRange;
 
   @Emit("click")
-  onClick(dates: DateRange) {}
+  onClick(date: Date) {}
 
   @Emit("move")
   onMoveCalendar(calender: Calendar) {}

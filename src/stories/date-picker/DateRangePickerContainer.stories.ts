@@ -28,14 +28,14 @@ storiesOf("date-picker/DateRangePickerContainer", module).add(
       }
     },
     methods: {
-      onClick: action("click"),
-      onMoveCalendar: action("click-switch")
+      onInput: action("input")
     },
     template: `
       <DateRangePickerContainer
-       v-model="dates"
+       :dates="dates"
        :disabled="disabled"
-       :focus="focus" />`
+       :focus="focus"
+       @input="onInput" />`
   }),
   {
     info: {

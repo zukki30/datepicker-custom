@@ -3,6 +3,7 @@ import { action } from "@storybook/addon-actions";
 import { text, boolean } from "@storybook/addon-knobs";
 import DatePicker from "@/components/DatePicker.vue";
 import { disabledDateForDatePicker } from "@/util/date-range-picker-util";
+import { Calendar } from "@/components/calendar/Calendar";
 
 storiesOf("DatePicker", module)
   .add(

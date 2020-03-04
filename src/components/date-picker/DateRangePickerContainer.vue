@@ -2,7 +2,7 @@
   <div
     class="date-range-picker-container"
     :class="{ 'date-range-picker-container--disabled': disabled }"
-    @click="onClick"
+    @click="onInput(dates)"
   >
     <input
       ref="startDatePicker"
@@ -44,23 +44,28 @@ import { Calendar, DateRange } from "@/components/calendar/Calendar";
 
 @Component
 export default class DateRangePickerContainer extends Vue {
-  @Model("input", { type: Object, required: true })
-  dates!: DateRange;
+  @Prop({ type: Object })
+  dates!: DateRange | null;
 
   @Prop({ type: Boolean, default: false })
   disabled!: boolean;
 
-  @Prop({ type: String, default: DateRangeInput.Start })
+  @Prop({ type: String, default: "" })
   focus!: string;
+
+  @Emit("input")
+  onInput(dates: DateRange | null) {}
 
   dateRangeInput = DateRangeInput;
 
-  get startInputValue(): string {
-    return this.dateFormat(this.dates.min);
+  get startInputValue(): string | null {
+    return this.dates !== null ? this.dateFormat(this.dates.min) : null;
   }
 
-  get endInputValue(): string {
-    return this.dateFormat(this.dates.max);
+  get endInputValue(): string | null {
+    return this.dates !== null && this.focus !== this.dateRangeInput.End
+      ? this.dateFormat(this.dates.max)
+      : null;
   }
 
   dateFormat(date: Date): string {
@@ -69,10 +74,6 @@ export default class DateRangePickerContainer extends Vue {
     const dateCount = date.getDate();
 
     return year + "年" + month + "月" + dateCount + "日";
-  }
-
-  onClick() {
-    (this.$refs[this.focus] as HTMLElement).focus();
   }
 }
 </script>
@@ -103,9 +104,7 @@ export default class DateRangePickerContainer extends Vue {
     }
 
     &--focus {
-      &:focus {
-        border-color: #3468eb;
-      }
+      border-color: #3468eb;
     }
   }
 
