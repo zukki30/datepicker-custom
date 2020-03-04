@@ -5,7 +5,7 @@
     :style="{ width }"
   >
     <div class="dateRangePicker__icon">
-      <Icon :icon="Icons.Calendar" :color="Colors.Base600" :size="16" />
+      <Icon icon="icon-calendar" color="#999" :size="16" />
     </div>
     <ElDatePicker
       ref="startDatePicker"
@@ -44,11 +44,7 @@ import {
 import { DateRange } from "@/components/DateRange";
 import { WidthProperty } from "csstype";
 
-import { Icons } from "@/const/Icons";
-import { Colors } from "@/const/Colors";
-
 import Icon from "@/components/Icon.vue";
-import { array } from "@storybook/addon-knobs";
 
 export interface CellClassName {
   (time: Date): void;
@@ -81,9 +77,6 @@ export default class DateRangePicker extends Vue {
 
   @Emit("input")
   emitInputEvent(value: DateRange | null) {}
-
-  Icons = Icons;
-  Colors = Colors;
 
   startDate: Date | null = this.value !== null ? this.value.min : null;
   endDate: Date | null = this.value !== null ? this.value.max : null;
@@ -165,22 +158,22 @@ export default class DateRangePicker extends Vue {
   align-items: center;
   padding: 0 10px;
   border: 1px solid;
-  border-radius: $sizeRadius;
+  border-radius: 5px;
 
   &:not(.dateRangePicker__disabled) {
-    border-color: $colorBase600;
-    color: $colorText;
+    border-color: #ddd;
+    color: #333;
   }
 
   &:not(.dateRangePicker__disabled):hover {
-    border-color: $colorBase700;
+    border-color: #ccc;
   }
 }
 
 .dateRangePicker__disabled {
-  border-color: $colorBase500;
-  background-color: $colorBase300;
-  color: $colorBase600;
+  border-color: #d6d6d6;
+  background-color: #eee;
+  color: #ccc;
 }
 
 .dateRangePicker__icon {
@@ -200,22 +193,22 @@ export default class DateRangePicker extends Vue {
   /deep/ .el-input__inner {
     padding: 0;
     border: none;
-    color: $colorText;
+    color: #333;
     text-align: center;
     cursor: pointer;
 
     &::placeholder {
-      color: $colorBase700;
+      color: #999;
     }
 
     &:disabled {
-      background-color: $colorBase300;
-      color: $colorBase600;
+      background-color: #eee;
+      color: #ccc;
       cursor: default;
     }
 
     &:focus {
-      background-color: $colorBlue500;
+      background-color: #f2f5fc;
     }
   }
 }

@@ -1,6 +1,11 @@
 import { i18n } from "@/i18n";
 import { AvailableLanguages } from "@/i18n";
-import SelectOption from "@/components/SelectOption";
+
+interface SelectOption {
+  label: string;
+  value: string | number;
+  disabled: boolean;
+}
 
 // 秒とどの単位の秒を使っているかわかりやすくするため
 export type Msec = number;

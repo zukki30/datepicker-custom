@@ -1,16 +1,11 @@
 @charset "utf-8";
 
-@import "_color";
-@import "_size";
 @import "_webfont";
 @import "_element-ui";
 
 /*
  Layout
 */
-body {
-  min-width: $browserMinWidth;
-}
 
 #app {
   position: relative;
@@ -19,8 +14,8 @@ body {
 #root,
 #app,
 .modal-wrapper {
-  color: $colorBase900;
-  font-size: $basicFontSize;
+  color: #333;
+  font-size: 14px;
 }
 
 [draggable="true"] {

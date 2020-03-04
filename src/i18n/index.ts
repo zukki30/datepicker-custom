@@ -11,6 +11,8 @@ export enum AvailableLanguages {
 Vue.use(VueI18n);
 
 import Element from "element-ui";
+import enLocale from "element-ui/lib/locale/lang/en";
+import jaLocale from "element-ui/lib/locale/lang/ja";
 
 const locale = getInitalLanguage();
 
@@ -18,12 +20,14 @@ const messages = {
   en: {
     util: {
       dateUtil: { ...u_dateUtil.en }
-    }
+    },
+    ...enLocale
   },
   ja: {
     util: {
       dateUtil: { ...u_dateUtil.ja }
-    }
+    },
+    ...jaLocale
   }
 };
 

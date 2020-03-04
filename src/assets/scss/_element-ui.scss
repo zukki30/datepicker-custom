@@ -7,85 +7,6 @@
   }
 }
 
-.el-tooltip__popper.is-light {
-  border: 1px solid $colorBase600;
-  border-radius: $sizeRadius;
-  box-shadow: 5px 5px 5px $colorShadow100;
-}
-
-.el-tooltip__popper.is-light[x-placement^="top"] .popper__arrow {
-  border-top-color: $colorBase600;
-}
-
-.el-tooltip__popper.is-light[x-placement^="bottom"] .popper__arrow {
-  border-bottom-color: $colorBase600;
-}
-
-.el-pagination--small .el-pager li,
-.el-pagination--small .el-pager li:first-child,
-.el-pagination--small .el-pager li:last-child {
-  background: $colorClear;
-  color: $colorBase700;
-  font-weight: normal;
-  font-size: 14px;
-}
-
-.el-pagination--small .el-pager li:first-child.active,
-.el-pagination--small .el-pager li:last-child.active,
-.el-pagination--small .el-pager li.active {
-  color: $colorBase900;
-  font-weight: bold;
-}
-
-// .el-dialog
-.v-modal {
-  background-color: $colorOverlay;
-  opacity: 1;
-}
-
-.el-dialog {
-  padding: 30px;
-  border: 1px solid $colorBase600;
-  border-radius: $sizeRadius;
-  background: $colorWhite;
-  box-shadow: 5px 5px 5px $colorShadow100;
-  color: $colorText;
-  font-size: 14px;
-}
-
-.el-dialog__header,
-.el-dialog__footer {
-  padding: 0;
-}
-
-.dialog--noHeader .el-dialog__title {
-  display: inline;
-}
-
-.el-dialog__title {
-  display: inline-block;
-  margin-bottom: 30px;
-  color: inherit;
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.el-dialog__body {
-  padding: 0;
-  color: inherit;
-  font-size: inherit;
-  line-height: 1.5;
-}
-
-.el-dialog__footer {
-  color: inherit;
-  font-size: inherit;
-}
-
-.el-dialog--center .el-dialog__body {
-  padding: 0;
-}
-
 .el-range-editor.is-disabled,
 .el-range-editor.is-disabled input,
 .el-input.is-disabled .el-input__icon,
@@ -95,5 +16,5 @@
 
 // el data-picker table
 .el-date-table .is-selectedStartDate span {
-  background-color: $colorBlue700;
+  background-color: #3468eb;
 }

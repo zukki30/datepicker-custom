@@ -5,16 +5,14 @@
 
 <script lang="ts">
 import { Component, Prop, Emit, Vue } from "vue-property-decorator";
-import { Colors } from "@/const/Colors";
-import { Icons } from "@/const/Icons";
 
 @Component
 export default class Icon extends Vue {
   @Prop({ type: String, required: true })
-  icon!: Icons;
+  icon!: string;
 
-  @Prop({ type: String, default: Colors.Base900 })
-  color!: Colors;
+  @Prop({ type: String, default: "#333" })
+  color!: string;
 
   // inheritを指定するためにStringを指定
   @Prop({ type: [Number, String], default: 14 })
