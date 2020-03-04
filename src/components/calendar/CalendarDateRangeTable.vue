@@ -3,7 +3,7 @@
     v-slot:default="{ date }"
     class="calendar-date-table"
     :calendar="calendar"
-    @click="onClick"
+    @click="onDateClick"
   >
     <div
       class="calendar-date-range-table__inner"
@@ -50,6 +50,12 @@ export default class CalendarDateRangeTable extends Vue {
     return this.selectedDates !== null
       ? [this.selectedDates.min, this.selectedDates.max]
       : [];
+  }
+
+  onDateClick(date: Date) {
+    if (!this.isDisabled(date)) {
+      this.onClick(date);
+    }
   }
 
   addDateClass(date: Date): string[] {
