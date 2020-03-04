@@ -15,5 +15,7 @@ module.exports = {
   css: {
     sourceMap: true
   },
-  outputDir: "docs"
+  publicPath: "/datepicker-custom",
+  outputDir: "docs",
+  filenameHashing: false
 };
