@@ -45,7 +45,7 @@ export default class DateRangePicker extends Vue {
   @Prop({ type: Boolean, default: false })
   disabled!: boolean;
 
-  @Prop({ type: String, default: "200px" })
+  @Prop({ type: String, default: "350px" })
   width!: WidthProperty<0>;
 
   @Prop({ type: Object, default: null })
