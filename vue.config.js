@@ -14,5 +14,6 @@ module.exports = {
   productionSourceMap: true,
   css: {
     sourceMap: true
-  }
+  },
+  outputDir: "docs"
 };
