@@ -59,10 +59,22 @@ export default class DateRangePicker extends Vue {
 
   focus: string = "";
   selectDates: Date[] = [];
-  dates: DateRange | null = this.selectedDates;
   datePicker: DatePicker | null = null;
   showDateRangePickerPopup: boolean = false;
   dateRangeInput = DateRangeInput;
+
+  get dateRange(): DateRange {
+    return this.selectDates.length > 0
+      ? changeDateRange(this.selectDates)
+      : this.selectedDates;
+  }
+
+  get dates(): DateRange | null {
+    if (this.selectDates.length === 1) {
+      return this.dateRange;
+    }
+    return this.selectedDates === null ? null : this.dateRange;
+  }
 
   created() {
     const date: Date = this.dates !== null ? this.dates.max : new Date();
@@ -70,19 +82,13 @@ export default class DateRangePicker extends Vue {
   }
 
   onClick(date: Date) {
-    if (this.selectDates.length === 2) {
-      this.selectDates = [];
-    }
     this.selectDates.push(date);
     this.focus = this.dateRangeInput.End;
 
-    const dateRange = changeDateRange(this.selectDates);
-
-    this.dates = dateRange;
-
     if (this.selectDates.length === 2) {
-      this.onInput(dateRange);
+      this.onInput(this.dateRange);
       this.onClose();
+      this.selectDates = [];
     }
   }
 
@@ -98,10 +104,6 @@ export default class DateRangePicker extends Vue {
   onClose() {
     this.showDateRangePickerPopup = false;
     this.focus = "";
-
-    if (this.selectDates.length === 1) {
-      this.dates = this.selectedDates;
-    }
   }
 }
 </script>
