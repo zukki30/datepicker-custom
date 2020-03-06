@@ -49,7 +49,7 @@ export default class Home extends Vue {
     font-weight: bold;
     font-size: 36px;
     &:not(:first-child) {
-      margin-top: 40px;
+      margin-top: 45px;
     }
   }
 }
