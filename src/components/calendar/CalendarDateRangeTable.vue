@@ -61,6 +61,10 @@ export default class CalendarDateRangeTable extends Vue {
   addDateClass(date: Date): string[] {
     const addClass: string[] = [];
 
+    if (date.getMonth() !== this.calendar.monthIndex) {
+      return [];
+    }
+
     // 今日の日付に付与
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -100,7 +104,10 @@ export default class CalendarDateRangeTable extends Vue {
   }
 
   addRangeClass(date: Date): string {
-    if (this.currentDates.length === 0) {
+    if (
+      this.currentDates.length === 0 ||
+      date.getMonth() !== this.calendar.monthIndex
+    ) {
       return "";
     }
 
