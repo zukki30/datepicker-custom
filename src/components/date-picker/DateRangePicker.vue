@@ -18,6 +18,7 @@
         :disabled-dates="disabledDates"
         @click="onClick"
         @move="onMoveCalendar"
+        @mouse-enter="onMouseEnter"
       />
     </div>
   </div>
@@ -62,8 +63,13 @@ export default class DateRangePicker extends Vue {
   datePicker: DatePicker | null = null;
   showDateRangePickerPopup: boolean = false;
   dateRangeInput = DateRangeInput;
+  onMouseEnterDate: Date | null = null;
 
   get dateRange(): DateRange {
+    if (this.onMouseEnterDate !== null) {
+      return changeDateRange([this.selectDates[0], this.onMouseEnterDate]);
+    }
+
     return this.selectDates.length > 0
       ? changeDateRange(this.selectDates)
       : this.selectedDates;
@@ -89,11 +95,19 @@ export default class DateRangePicker extends Vue {
       this.onInput(this.dateRange);
       this.onClose();
       this.selectDates = [];
+      this.onMouseEnterDate = null;
     }
   }
 
   onMoveCalendar(calendar: Calendar) {
     this.datePicker = DatePicker.rebuild(calendar);
+  }
+
+  onMouseEnter(date: Date) {
+    if (this.selectDates.length === 1) {
+      this.onMouseEnterDate = date;
+      console.log(this.onMouseEnterDate);
+    }
   }
 
   onOopen() {

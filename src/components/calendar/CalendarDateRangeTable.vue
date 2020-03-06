@@ -11,6 +11,7 @@
         addRangeClass(date),
         { 'calendar-date-range-table__inner--desable': isDisabled(date) }
       ]"
+      @mouseenter="onMouseEnter(date)"
     >
       <div class="calendar-date-range-table__date" :class="addDateClass(date)">
         {{ date.getDate() }}
@@ -44,7 +45,8 @@ export default class CalendarDateRangeTable extends Vue {
   @Emit("click")
   onClick(date: Date) {}
 
-  selectDates: Date[] = this.currentDates;
+  @Emit("mouse-enter")
+  onMouseEnter(date: Date) {}
 
   get currentDates(): Date[] {
     return this.selectedDates !== null

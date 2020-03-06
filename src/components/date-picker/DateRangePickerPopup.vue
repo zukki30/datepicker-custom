@@ -23,6 +23,7 @@
         :selected-dates="selectedDates"
         :disabled-dates="disabledDates"
         @click="onClick"
+        @mouse-enter="onMouseEnter"
       />
     </div>
   </div>
@@ -49,6 +50,9 @@ export default class DateRangePickerPopup extends Vue {
 
   @Emit("click")
   onClick(date: Date) {}
+
+  @Emit("mouse-enter")
+  onMouseEnter(event: MouseEvent): void {}
 
   @Emit("move")
   onMoveCalendar(calender: Calendar) {}
