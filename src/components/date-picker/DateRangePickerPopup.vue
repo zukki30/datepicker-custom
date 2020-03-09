@@ -3,16 +3,14 @@
     <div class="date-range-picker-popup__switch">
       <button
         class="date-range-picker-popup__button date-range-picker-popup__previous"
+        :title="previousCalendar.title"
         @click="onMoveCalendar(calendars[1])"
-      >
-        {{ previousCalendar.title }}
-      </button>
+      ></button>
       <button
         class="date-range-picker-popup__button date-range-picker-popup__next"
+        :title="nextCalendar.title"
         @click="onMoveCalendar(nextCalendar)"
-      >
-        {{ nextCalendar.title }}
-      </button>
+      ></button>
     </div>
     <div class="date-range-picker-popup__body">
       <CalendarDateRangeTable
@@ -77,15 +75,27 @@ export default class DateRangePickerPopup extends Vue {
   background-color: #fff;
 
   &__button {
+    width: 25px;
+    height: 25px;
     position: absolute;
     top: 0;
     padding: 5px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 50%;
     background-color: #fff;
     font-size: 12px;
     line-height: 1;
     cursor: pointer;
+
+    &::before {
+      width: 7px;
+      height: 7px;
+      border-top: 2px solid #ccc;
+      position: absolute;
+      top: 50%;
+      content: "";
+    }
+
     &:hover {
       background-color: #f2f5fc;
     }
@@ -93,10 +103,24 @@ export default class DateRangePickerPopup extends Vue {
 
   &__previous {
     left: 0;
+
+    &::before {
+      left: 50%;
+      border-left: 2px solid #ccc;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      margin-left: 1px;
+    }
   }
 
   &__next {
     right: 0;
+
+    &::before {
+      right: 50%;
+      border-right: 2px solid #ccc;
+      transform: translate(50%, -50%) rotate(45deg);
+      margin-right: 2px;
+    }
   }
 
   &__body {
