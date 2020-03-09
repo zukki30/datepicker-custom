@@ -37,3 +37,14 @@ export class DatePicker {
     return new DatePicker(date);
   }
 }
+
+/**
+ * Date配列をフォーマットし返す
+ */
+export function dateFormat(date: Date): string {
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const dateCount = date.getDate();
+
+  return year + "年" + month + "月" + dateCount + "日";
+}

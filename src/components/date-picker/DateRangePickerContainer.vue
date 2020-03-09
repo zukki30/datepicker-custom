@@ -38,7 +38,8 @@
 import { Component, Vue, Prop, Model, Emit } from "vue-property-decorator";
 import {
   DatePicker,
-  DateRangeInput
+  DateRangeInput,
+  dateFormat
 } from "@/components/date-picker/DatePicker";
 import { Calendar, DateRange } from "@/components/calendar/Calendar";
 
@@ -59,21 +60,13 @@ export default class DateRangePickerContainer extends Vue {
   dateRangeInput = DateRangeInput;
 
   get startInputValue(): string | null {
-    return this.dates !== null ? this.dateFormat(this.dates.min) : null;
+    return this.dates !== null ? dateFormat(this.dates.min) : null;
   }
 
   get endInputValue(): string | null {
     return this.dates !== null && this.focus !== this.dateRangeInput.End
-      ? this.dateFormat(this.dates.max)
+      ? dateFormat(this.dates.max)
       : null;
-  }
-
-  dateFormat(date: Date): string {
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-    const dateCount = date.getDate();
-
-    return year + "年" + month + "月" + dateCount + "日";
   }
 }
 </script>
