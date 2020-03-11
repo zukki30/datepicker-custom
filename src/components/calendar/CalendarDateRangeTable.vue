@@ -166,12 +166,14 @@ $cellHeight: 35px;
     height: $cellHeight;
 
     &:not(.calendar-date-range-table__inner--desable):hover {
-      color: #7a9aeb;
-      cursor: pointer;
+      .calendar-date-range-table__date:not(.calendar-date-range-table__date--selected) {
+        background-color: #cfdcff;
+        cursor: pointer;
+      }
     }
 
     &--desable {
-      background-color: #fafafa;
+      background-color: #fbfbfb;
       cursor: text;
       pointer-events: none;
     }
@@ -182,7 +184,7 @@ $cellHeight: 35px;
       z-index: 0;
       margin-top: -12px;
       height: 24px;
-      background-color: #f2f5fc;
+      background-color: #f0f5ff;
       content: "";
     }
 
@@ -218,6 +220,7 @@ $cellHeight: 35px;
     height: 24px;
     border: 2px solid rgba(0, 0, 0, 0);
     border-radius: 50%;
+    transition: background-color 0.3s ease;
 
     &--today {
       border-color: #7a9aeb;

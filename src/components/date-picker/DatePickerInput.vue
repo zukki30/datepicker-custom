@@ -131,7 +131,7 @@ export default class DatePickerInput extends Vue {
     }
 
     &--focus {
-      border-color: #3468eb;
+      border-color: #cfdcff;
       box-shadow: 0 0 3px rgba(#3468eb, 0.7);
     }
   }

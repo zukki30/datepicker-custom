@@ -86,6 +86,7 @@ export default class DateRangePickerPopup extends Vue {
     font-size: 12px;
     line-height: 1;
     cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
 
     &::before {
       width: 7px;
@@ -94,10 +95,16 @@ export default class DateRangePickerPopup extends Vue {
       position: absolute;
       top: 50%;
       content: "";
+      transition: border-color 0.3s ease;
     }
 
     &:hover {
-      background-color: #f2f5fc;
+      background-color: #cfdcff;
+      border-color: #cfdcff;
+
+      &::before {
+        border-color: #fff;
+      }
     }
   }
 
@@ -108,7 +115,7 @@ export default class DateRangePickerPopup extends Vue {
       left: 50%;
       border-left: 2px solid #ccc;
       transform: translate(-50%, -50%) rotate(-45deg);
-      margin-left: 1px;
+      margin-left: 5%;
     }
   }
 
@@ -119,7 +126,7 @@ export default class DateRangePickerPopup extends Vue {
       right: 50%;
       border-right: 2px solid #ccc;
       transform: translate(50%, -50%) rotate(45deg);
-      margin-right: 2px;
+      margin-right: 3%;
     }
   }
 
