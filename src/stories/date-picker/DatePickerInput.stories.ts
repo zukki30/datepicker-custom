@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/vue";
-import { date, boolean, text } from "@storybook/addon-knobs";
+import { boolean, text } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import { DateRange } from "@/components/calendar/Calendar";
 import DatePickerInput from "@/components/date-picker/DatePickerInput.vue";
@@ -12,6 +12,13 @@ const selectedDates: DateRange = {
 const disabledDates: DateRange = {
   min: new Date("2020-01-15"),
   max: new Date("2020-03-20")
+};
+
+const actions = {
+  onInput: action("input"),
+  onMouseEnter: action("mouse-enter"),
+  onOpen: action("open"),
+  onClose: action("close")
 };
 
 storiesOf("date-picker/DatePickerInput", module)
@@ -35,16 +42,17 @@ storiesOf("date-picker/DatePickerInput", module)
           default: text("Placeholder", "対象の期間")
         }
       },
-      methods: {
-        onInput: action("input")
-      },
+      methods: actions,
       template: `
       <DatePickerInput
        :width="width"
        :placeholder="placeholder"
        :disabled="disabled"
        :disabled-dates="disabledDates"
-       @input="onInput" />`
+       @input="onInput"
+       @mouse-enter="onMouseEnter"
+       @open="onOpen"
+       @close="onClose" />`
     }),
     {
       info: {
@@ -73,9 +81,7 @@ storiesOf("date-picker/DatePickerInput", module)
           default: text("Placeholder", "対象の期間")
         }
       },
-      methods: {
-        onInput: action("input")
-      },
+      methods: actions,
       template: `
       <DatePickerInput
        :value="value"
@@ -83,7 +89,10 @@ storiesOf("date-picker/DatePickerInput", module)
        :placeholder="placeholder"
        :disabled="disabled"
        :disabled-dates="disabledDates"
-       @input="onInput" />`
+       @input="onInput"
+       @mouse-enter="onMouseEnter"
+       @open="onOpen"
+       @close="onClose" />`
     }),
     {
       info: {
@@ -113,9 +122,7 @@ storiesOf("date-picker/DatePickerInput", module)
           default: text("Placeholder", "対象の期間")
         }
       },
-      methods: {
-        onInput: action("input")
-      },
+      methods: actions,
       template: `
       <DatePickerInput
        :value="value"
@@ -124,7 +131,10 @@ storiesOf("date-picker/DatePickerInput", module)
        :disabled="disabled"
        :disabled-dates="disabledDates"
        :selected-dates="selectedDates"
-       @input="onInput" />`
+       @input="onInput"
+       @mouse-enter="onMouseEnter"
+       @open="onOpen"
+       @close="onClose" />`
     }),
     {
       info: {
