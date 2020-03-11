@@ -137,13 +137,23 @@ export default class DatePickerInput extends Vue {
   }
   &__popup {
     position: absolute;
-    top: 40px;
+    top: 45px;
     left: 50%;
     padding: 10px;
     width: 100%;
     min-width: 600px;
     box-shadow: 2px 2px 5px rgba(#000, 0.1);
     transform: translateX(-50%);
+
+    &::before {
+      margin-left: -5px;
+      border: 5px solid rgba(#fff, 0);
+      border-bottom-color: #fff;
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      content: "";
+    }
   }
 }
 
