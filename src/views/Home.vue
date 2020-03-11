@@ -8,7 +8,9 @@
     />
 
     <h2>DatePicker - 2</h2>
-    <PeriodSpecification />
+    <div class="datepicker2">
+      <PeriodSpecification />
+    </div>
 
     <h2>DatePicker - 3</h2>
     <DatePickerRangeInput />
@@ -56,5 +58,10 @@ export default class Home extends Vue {
       margin-top: 45px;
     }
   }
+}
+
+.datepicker2 {
+  position: relative;
+  z-index: 100;
 }
 </style>
