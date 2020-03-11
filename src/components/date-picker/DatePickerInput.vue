@@ -11,11 +11,13 @@
       @click="onOpen"
     />
 
-    <Transition name="datePickerPopup">
+    <Transition name="datePickerPopup" @enter="onChangePosition">
       <div
         v-if="showDatePickerPopup"
+        ref="datePickerPopup"
         v-click-outside="onClose"
         class="date-picker-input__popup"
+        :style="{ 'margin-left': popupX + 'px' }"
       >
         <DateRangePickerPopup
           :date-picker="datePicker"
@@ -83,12 +85,14 @@ export default class DatePickerInput extends Vue {
   onClose() {
     this.showDatePickerPopup = false;
     this.focus = false;
+    this.popupX = 0;
   }
 
   currentDate: Date | null = null;
   focus: boolean = false;
   showDatePickerPopup: boolean = false;
   datePicker: DatePicker | null = null;
+  popupX: number = 0;
 
   get formatValue(): string {
     return this.value !== null ? dateFormat(this.value) : "";
@@ -104,10 +108,6 @@ export default class DatePickerInput extends Vue {
       : changeDateRange([this.value, this.value]);
   }
 
-  created() {
-    this.onBuild();
-  }
-
   onBuild() {
     let date: Date = this.value !== null ? this.value : new Date();
 
@@ -116,6 +116,15 @@ export default class DatePickerInput extends Vue {
     }
 
     this.datePicker = new DatePicker(date);
+  }
+
+  onChangePosition(el: HTMLElement) {
+    // Using to `Left` value because work in IE11 browser.
+    const x = el.getBoundingClientRect().left;
+
+    if (0 > x) {
+      this.popupX = -x;
+    }
   }
 
   onMoveCalendar(calendar: Calendar) {
@@ -149,23 +158,13 @@ export default class DatePickerInput extends Vue {
   }
   &__popup {
     position: absolute;
-    top: 45px;
+    top: 40px;
     left: 50%;
     padding: 10px;
     width: 100%;
     min-width: 700px;
     box-shadow: 2px 2px 5px rgba(#000, 0.1);
     transform: translateX(-50%);
-
-    &::before {
-      margin-left: -5px;
-      border: 5px solid rgba(#fff, 0);
-      border-bottom-color: #fff;
-      position: absolute;
-      top: -10px;
-      left: 50%;
-      content: "";
-    }
   }
 }
 
