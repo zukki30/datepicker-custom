@@ -106,7 +106,6 @@ export default class DateRangePicker extends Vue {
   onMouseEnter(date: Date) {
     if (this.selectDates.length === 1) {
       this.onMouseEnterDate = date;
-      console.log(this.onMouseEnterDate);
     }
   }
 
