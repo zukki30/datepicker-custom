@@ -72,6 +72,19 @@ export default class DatePickerInput extends Vue {
   @Emit("mouse-enter")
   onMouseEnter(date: Date) {}
 
+  @Emit("open")
+  onOpen() {
+    this.showDatePickerPopup = true;
+    this.focus = true;
+    this.onBuild();
+  }
+
+  @Emit("close")
+  onClose() {
+    this.showDatePickerPopup = false;
+    this.focus = false;
+  }
+
   currentDate: Date | null = null;
   focus: boolean = false;
   showDatePickerPopup: boolean = false;
@@ -92,22 +105,21 @@ export default class DatePickerInput extends Vue {
   }
 
   created() {
-    const date: Date = this.value !== null ? this.value : new Date();
+    this.onBuild();
+  }
+
+  onBuild() {
+    let date: Date = this.value !== null ? this.value : new Date();
+
+    if (this.dates !== null) {
+      date = this.dates.max;
+    }
+
     this.datePicker = new DatePicker(date);
   }
 
   onMoveCalendar(calendar: Calendar) {
     this.datePicker = DatePicker.rebuild(calendar);
-  }
-
-  onOpen() {
-    this.showDatePickerPopup = true;
-    this.focus = true;
-  }
-
-  onClose() {
-    this.showDatePickerPopup = false;
-    this.focus = false;
   }
 }
 </script>
@@ -141,7 +153,7 @@ export default class DatePickerInput extends Vue {
     left: 50%;
     padding: 10px;
     width: 100%;
-    min-width: 600px;
+    min-width: 700px;
     box-shadow: 2px 2px 5px rgba(#000, 0.1);
     transform: translateX(-50%);
 
