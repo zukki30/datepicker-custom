@@ -52,10 +52,14 @@ export default class DateRangePickerContainer extends Vue {
   disabled!: boolean;
 
   @Prop({ type: String, default: "" })
-  focus!: string;
+  focus!: DateRangeInput;
 
   @Emit("input")
-  onInput(dates: DateRange | null) {}
+  onInput(dates: DateRange | null) {
+    if (this.focus.length !== 0) {
+      (this.$refs[this.focus] as HTMLElement).focus();
+    }
+  }
 
   dateRangeInput = DateRangeInput;
 
