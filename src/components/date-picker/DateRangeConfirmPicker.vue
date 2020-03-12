@@ -167,6 +167,10 @@ export default class DateRangeConfirmPicker extends Vue {
 .date-range-confirm-picker {
   position: relative;
 
+  &__header {
+    border-bottom: 1px solid #eee;
+  }
+
   &__body {
     padding: 0 10px 10px;
   }
