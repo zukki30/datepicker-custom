@@ -14,6 +14,9 @@
 
     <h2>DatePicker - 3</h2>
     <DatePickerRangeInput />
+
+    <h2>DatePicker - 4</h2>
+    <DateRangeConfirmPicker />
   </div>
 </template>
 
@@ -26,9 +29,15 @@ import {
 import DateRangePicker from "@/components/DateRangePicker.vue";
 import PeriodSpecification from "@/components/PeriodSpecification.vue";
 import DatePickerRangeInput from "@/components/date-picker/DatePickerRangeInput.vue";
+import DateRangeConfirmPicker from "@/components/date-picker/DateRangeConfirmPicker.vue";
 
 @Component({
-  components: { DateRangePicker, PeriodSpecification, DatePickerRangeInput }
+  components: {
+    DateRangePicker,
+    PeriodSpecification,
+    DatePickerRangeInput,
+    DateRangeConfirmPicker
+  }
 })
 export default class Home extends Vue {
   value = null;
@@ -47,7 +56,7 @@ export default class Home extends Vue {
 .home {
   margin-right: auto;
   margin-left: auto;
-  padding-top: 100px;
+  padding: 100px 0 500px;
   max-width: 800px;
 
   h2 {
