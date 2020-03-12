@@ -13,10 +13,7 @@
         v-click-outside="onClose"
         class="date-range-confirm-picker__popup"
       >
-        <div
-          v-if="showDatePickerHeader"
-          class="date-range-confirm-picker__header"
-        >
+        <div class="date-range-confirm-picker__header">
           <div
             v-for="directSelect in directSelects"
             :key="directSelect.dateRange.min.getDate()"
@@ -123,10 +120,6 @@ export default class DateRangeConfirmPicker extends Vue {
       return this.dateRange;
     }
     return this.selectedDates === null ? null : this.dateRange;
-  }
-
-  get showDatePickerHeader(): boolean {
-    return this.$slots.default !== undefined && this.$slots.default.length > 0;
   }
 
   get directSelects(): DirectSelect[] {
