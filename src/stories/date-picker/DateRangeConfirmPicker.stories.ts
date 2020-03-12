@@ -42,9 +42,7 @@ storiesOf("date-picker/DateRangeConfirmPicker", module)
        :disabled="disabled"
        :disabled-dates="disabledDates"
        @input="onInput"
-      >
-        <template>head</template>
-      </DateRangeConfirmPicker>`
+      />`
     }),
     {
       info: {
@@ -80,9 +78,7 @@ storiesOf("date-picker/DateRangeConfirmPicker", module)
        :disabled-dates="disabledDates"
        :selected-dates="selectedDates"
        @input="onInput"
-      >
-        <template>head</template>
-      </DateRangeConfirmPicker>`
+      />`
     }),
     {
       info: {

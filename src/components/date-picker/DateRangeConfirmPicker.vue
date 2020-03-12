@@ -17,7 +17,18 @@
           v-if="showDatePickerHeader"
           class="date-range-confirm-picker__header"
         >
-          <slot />
+          <div
+            v-for="directSelect in directSelects"
+            :key="directSelect.dateRange.min.getDate()"
+            class="date-range-confirm-picker__direct"
+            :class="{
+              'date-range-confirm-picker__direct--current':
+                currentButton === directSelect.name
+            }"
+            @click="onDirectClick(directSelect)"
+          >
+            {{ directSelect.name }}
+          </div>
         </div>
 
         <div class="date-range-confirm-picker__body">
@@ -65,6 +76,11 @@ import { WidthProperty } from "csstype";
 import DateRangePickerPopup from "@/components/date-picker/DateRangePickerPopup.vue";
 import DateRangePickerContainer from "@/components/date-picker/DateRangePickerContainer.vue";
 
+interface DirectSelect {
+  name: string;
+  dateRange: DateRange;
+}
+
 @Component({
   components: { DateRangePickerPopup, DateRangePickerContainer }
 })
@@ -89,6 +105,7 @@ export default class DateRangeConfirmPicker extends Vue {
   datePicker: DatePicker | null = null;
   showDateRangePickerPopup: boolean = false;
   dateRangeInput = DateRangeInput;
+  currentButton: string = "";
   onMouseEnterDate: Date | null = null;
 
   get dateRange(): DateRange {
@@ -112,17 +129,59 @@ export default class DateRangeConfirmPicker extends Vue {
     return this.$slots.default !== undefined && this.$slots.default.length > 0;
   }
 
+  get directSelects(): DirectSelect[] {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const yesterday = new Date(today.getTime());
+    yesterday.setDate(yesterday.getDate() - 1);
+
+    const monday = new Date(today.getTime());
+    monday.setDate(monday.getDate() - ((monday.getDay() + 6) % 7));
+
+    const lastMonday = new Date(monday.getTime());
+    lastMonday.setDate(lastMonday.getDate() - 7);
+
+    const lastSunday = new Date(lastMonday.getTime());
+    lastSunday.setDate(lastSunday.getDate() + 6);
+
+    const lastMonthStart = new Date(
+      today.getFullYear(),
+      today.getMonth() - 1,
+      1
+    );
+    const lastMonthEnd = new Date(today.getFullYear(), today.getMonth(), 0);
+
+    return [
+      { name: "昨日", dateRange: { min: yesterday, max: yesterday } },
+      { name: "今日", dateRange: { min: today, max: today } },
+      { name: "先週", dateRange: { min: lastMonday, max: lastSunday } },
+      { name: "先月", dateRange: { min: lastMonthStart, max: lastMonthEnd } }
+    ];
+  }
+
   onClick(date: Date) {
     if (this.selectDates.length === 2) {
       this.selectDates = [];
     }
 
+    this.currentButton = "";
     this.selectDates.push(date);
     this.focus = this.dateRangeInput.End;
 
     if (this.selectDates.length === 2) {
       this.focus = this.dateRangeInput.Start;
       this.onMouseEnterDate = null;
+    }
+  }
+
+  onDirectClick(directSelect: DirectSelect) {
+    if (this.currentButton !== directSelect.name) {
+      this.selectDates = [
+        directSelect.dateRange.min,
+        directSelect.dateRange.max
+      ];
+      this.currentButton = directSelect.name;
     }
   }
 
@@ -135,6 +194,7 @@ export default class DateRangeConfirmPicker extends Vue {
     this.focus = this.dateRangeInput.Start;
     this.onMouseEnterDate = null;
     this.selectDates = [];
+    this.currentButton = "";
     this.onClose();
   }
 
@@ -169,6 +229,8 @@ export default class DateRangeConfirmPicker extends Vue {
 
   &__header {
     border-bottom: 1px solid #eee;
+    padding: 10px;
+    display: flex;
   }
 
   &__body {
@@ -189,6 +251,31 @@ export default class DateRangeConfirmPicker extends Vue {
     width: 750px;
     box-shadow: 2px 2px 5px rgba(#000, 0.1);
     transform: translateX(-50%);
+  }
+
+  &__direct {
+    padding: 5px;
+    min-width: 85px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #f2f5fc;
+    }
+
+    &:not(:first-child) {
+      margin-left: 5px;
+    }
+
+    &--current {
+      background-color: #f2f5fc;
+      font-weight: bold;
+      cursor: text;
+    }
   }
 
   &__button {
