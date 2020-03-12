@@ -54,8 +54,12 @@ export default class CalendarDateRangeTable extends Vue {
       : [];
   }
 
+  get currentMonthIndex(): number {
+    return this.calendar.monthIndex;
+  }
+
   onDateClick(date: Date) {
-    if (!this.isDisabled(date)) {
+    if (!this.isDisabled(date) && date.getMonth() === this.currentMonthIndex) {
       this.onClick(date);
     }
   }
@@ -63,8 +67,8 @@ export default class CalendarDateRangeTable extends Vue {
   addDateClass(date: Date): string[] {
     const addClass: string[] = [];
 
-    if (date.getMonth() !== this.calendar.monthIndex) {
-      return [];
+    if (date.getMonth() !== this.currentMonthIndex) {
+      return ["calendar-date-range-table__date--another-month"];
     }
 
     // 今日の日付に付与
@@ -149,6 +153,7 @@ export default class CalendarDateRangeTable extends Vue {
         date.getTime() > this.disabledDates.max.getTime()
       );
     }
+
     return false;
   }
 }
@@ -164,13 +169,6 @@ $cellHeight: 35px;
     align-items: center;
     justify-content: center;
     height: $cellHeight;
-
-    &:not(.calendar-date-range-table__inner--desable):hover {
-      .calendar-date-range-table__date:not(.calendar-date-range-table__date--selected) {
-        background-color: #cfdcff;
-        cursor: pointer;
-      }
-    }
 
     &--desable {
       background-color: #fbfbfb;
@@ -216,11 +214,18 @@ $cellHeight: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     border: 2px solid rgba(0, 0, 0, 0);
     border-radius: 50%;
     transition: background-color 0.3s ease;
+
+    &:hover {
+      &:not(.calendar-date-range-table__date--selected) {
+        background-color: #cfdcff;
+        cursor: pointer;
+      }
+    }
 
     &--today {
       border-color: #7a9aeb;
@@ -230,6 +235,10 @@ $cellHeight: 35px;
     &--selected {
       background-color: #3468eb;
       color: #fff;
+    }
+
+    &--another-month {
+      color: #ccc;
     }
   }
 }

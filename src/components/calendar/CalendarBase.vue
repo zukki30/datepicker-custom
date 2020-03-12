@@ -20,10 +20,6 @@
             v-for="date in row"
             :key="date.getDate()"
             class="calendar-base__cell"
-            :class="{
-              'calendar-base__cell--another-month':
-                date.getMonth() !== currentMonthIndex
-            }"
             @click="onClick(date)"
           >
             <slot :date="date" />
@@ -48,10 +44,6 @@ export default class CalendarBase extends Vue {
 
   get title(): string {
     return this.calendar.title;
-  }
-
-  get currentMonthIndex(): number {
-    return this.calendar.monthIndex;
   }
 
   get weeks(): Week[] {
@@ -106,10 +98,6 @@ $cellHeight: 35px;
 
     &--sat {
       color: #3468eb;
-    }
-
-    &--another-month {
-      color: #ccc;
     }
   }
 }
