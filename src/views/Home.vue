@@ -13,7 +13,9 @@
     </div>
 
     <h2>DatePicker - 3</h2>
-    <DatePickerRangeInput />
+    <div class="datepicker3">
+      <DatePickerRangeInput />
+    </div>
 
     <h2>DatePicker - 4</h2>
     <DateRangeConfirmPicker />
@@ -72,5 +74,10 @@ export default class Home extends Vue {
 .datepicker2 {
   position: relative;
   z-index: 100;
+}
+
+.datepicker3 {
+  position: relative;
+  z-index: 50;
 }
 </style>
