@@ -16,9 +16,6 @@ const disabledDates: DateRange = {
 
 function props() {
   return {
-    show: {
-      default: boolean("Show", false)
-    },
     disabled: {
       default: boolean("Disabled", false)
     },
@@ -54,7 +51,6 @@ storiesOf("date-picker/DatePickerInput", module)
       <DatePickerInput
        :width="width"
        :placeholder="placeholder"
-       :show="show"
        :disabled="disabled"
        :disabled-dates="disabledDates"
        @input="onInput"
@@ -84,7 +80,6 @@ storiesOf("date-picker/DatePickerInput", module)
       <DatePickerInput
        :value="value"
        :width="width"
-       :show="show"
        :placeholder="placeholder"
        :disabled="disabled"
        :disabled-dates="disabledDates"
@@ -116,7 +111,6 @@ storiesOf("date-picker/DatePickerInput", module)
       <DatePickerInput
        :value="value"
        :width="width"
-       :show="show"
        :placeholder="placeholder"
        :disabled="disabled"
        :disabled-dates="disabledDates"
