@@ -14,6 +14,23 @@ const disabledDates: DateRange = {
   max: new Date("2020-03-20")
 };
 
+function props() {
+  return {
+    show: {
+      default: boolean("Show", false)
+    },
+    disabled: {
+      default: boolean("Disabled", false)
+    },
+    width: {
+      default: text("Width", "100%")
+    },
+    placeholder: {
+      default: text("Placeholder", "対象の期間")
+    }
+  };
+}
+
 const actions = {
   onInput: action("input"),
   onMouseEnter: action("mouse-enter"),
@@ -31,22 +48,13 @@ storiesOf("date-picker/DatePickerInput", module)
           disabledDates
         };
       },
-      props: {
-        disabled: {
-          default: boolean("Disabled", false)
-        },
-        width: {
-          default: text("Width", "100%")
-        },
-        placeholder: {
-          default: text("Placeholder", "対象の期間")
-        }
-      },
+      props: props(),
       methods: actions,
       template: `
       <DatePickerInput
        :width="width"
        :placeholder="placeholder"
+       :show="show"
        :disabled="disabled"
        :disabled-dates="disabledDates"
        @input="onInput"
@@ -70,22 +78,13 @@ storiesOf("date-picker/DatePickerInput", module)
           disabledDates
         };
       },
-      props: {
-        disabled: {
-          default: boolean("Disabled", false)
-        },
-        width: {
-          default: text("Width", "100%")
-        },
-        placeholder: {
-          default: text("Placeholder", "対象の期間")
-        }
-      },
+      props: props(),
       methods: actions,
       template: `
       <DatePickerInput
        :value="value"
        :width="width"
+       :show="show"
        :placeholder="placeholder"
        :disabled="disabled"
        :disabled-dates="disabledDates"
@@ -111,22 +110,13 @@ storiesOf("date-picker/DatePickerInput", module)
           selectedDates
         };
       },
-      props: {
-        disabled: {
-          default: boolean("Disabled", false)
-        },
-        width: {
-          default: text("Width", "100%")
-        },
-        placeholder: {
-          default: text("Placeholder", "対象の期間")
-        }
-      },
+      props: props(),
       methods: actions,
       template: `
       <DatePickerInput
        :value="value"
        :width="width"
+       :show="show"
        :placeholder="placeholder"
        :disabled="disabled"
        :disabled-dates="disabledDates"

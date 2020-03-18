@@ -52,6 +52,9 @@ export default class DatePickerInput extends Vue {
   value!: Date;
 
   @Prop({ type: Boolean, default: false })
+  show!: boolean;
+
+  @Prop({ type: Boolean, default: false })
   disabled!: boolean;
 
   @Prop({ type: String, default: "100%" })
@@ -76,6 +79,7 @@ export default class DatePickerInput extends Vue {
 
   @Emit("open")
   onOpen() {
+    console.log(this.show);
     this.showDatePickerPopup = true;
     this.focus = true;
     this.onBuild();
@@ -86,6 +90,12 @@ export default class DatePickerInput extends Vue {
     this.showDatePickerPopup = false;
     this.focus = false;
     this.popupX = 0;
+  }
+
+  created() {
+    if (this.show) {
+      this.onOpen();
+    }
   }
 
   currentDate: Date | null = null;
