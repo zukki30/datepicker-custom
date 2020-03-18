@@ -1,6 +1,7 @@
 <template>
   <div class="date-picker-range-input" :style="{ width }">
     <DatePickerInput
+      ref="startDatePickerInput"
       placeholder="対象期間の開始"
       :value="startInputValue"
       :disabled="disabled"
@@ -11,6 +12,7 @@
     />
     <div class="date-picker-range-input__hyphen">-</div>
     <DatePickerInput
+      ref="endDatePickerInput"
       placeholder="対象期間の終了"
       :value="endInputValue"
       :disabled="disabled"
@@ -116,6 +118,10 @@ export default class DatePickerRangeInput extends Vue {
     this.startInputValue = date;
     this.onCalendarClose();
 
+    if (this.endInputValue === null) {
+      (this.$refs.endDatePickerInput as DatePickerInput).onOpen();
+    }
+
     if (this.endInputValue instanceof Date && date > this.endInputValue) {
       this.startInputValue = this.endInputValue;
       this.endInputValue = date;
@@ -125,6 +131,10 @@ export default class DatePickerRangeInput extends Vue {
   onEndInput(date: Date) {
     this.endInputValue = date;
     this.onCalendarClose();
+
+    if (this.startInputValue === null) {
+      (this.$refs.startDatePickerInput as DatePickerInput).onOpen();
+    }
 
     if (this.startInputValue instanceof Date && date < this.startInputValue) {
       this.endInputValue = this.startInputValue;
