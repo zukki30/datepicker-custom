@@ -1,37 +1,41 @@
 <template>
-  <div v-click-outside="onReset" class="period-direct-select">
-    <div
+  <div class="period-direct-select">
+    <label
       v-for="directSelect in directSelects"
       :key="directSelect.dateRange.min.getDate()"
       class="period-direct-select__button"
       :class="{
-        'period-direct-select__button--current':
-          currentButton === directSelect.name
+        'period-direct-select__button--current': current(directSelect.name)
       }"
-      @click="onPeriodClick(directSelect)"
     >
-      {{ directSelect.name }}
-    </div>
+      <input
+        type="radio"
+        name="periodDirectSelect"
+        class="period-direct-select__radio"
+        :checked="current(directSelect.name)"
+        @change="onPeriodClick(directSelect)"
+      />
+      {{ directSelect.label }}
+    </label>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Emit } from "vue-property-decorator";
+import { Component, Vue, Prop, Model, Emit } from "vue-property-decorator";
 import { DateRange } from "@/components/calendar/Calendar";
-
-interface DirectSelect {
-  name: string;
-  dateRange: DateRange;
-}
+import { DirectSelect } from "@/components/date-picker/DatePicker";
 
 @Component
 export default class PeriodDirectSelect extends Vue {
-  currentButton: string = "";
+  @Model("input", { type: String })
+  value: string = "";
 
   @Emit("click")
-  onClick(dates: DateRange) {}
+  onClick(directSelect: DirectSelect) {}
 
-  get directSelects() {
+  currentDirectSelect: DirectSelect | null = null;
+
+  get directSelects(): DirectSelect[] {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
@@ -55,22 +59,50 @@ export default class PeriodDirectSelect extends Vue {
     const lastMonthEnd = new Date(today.getFullYear(), today.getMonth(), 0);
 
     return [
-      { name: "昨日", dateRange: { min: yesterday, max: yesterday } },
-      { name: "今日", dateRange: { min: today, max: today } },
-      { name: "先週", dateRange: { min: lastMonday, max: lastSunday } },
-      { name: "先月", dateRange: { min: lastMonthStart, max: lastMonthEnd } }
+      {
+        label: "昨日",
+        name: "yesterday",
+        dateRange: { min: yesterday, max: yesterday }
+      },
+      { label: "今日", name: "today", dateRange: { min: today, max: today } },
+      {
+        label: "先週",
+        name: "lastWeek",
+        dateRange: { min: lastMonday, max: lastSunday }
+      },
+      {
+        label: "先月",
+        name: "lastMonth",
+        dateRange: { min: lastMonthStart, max: lastMonthEnd }
+      }
     ];
   }
 
-  onPeriodClick(directSelect: DirectSelect) {
-    if (this.currentButton !== directSelect.name) {
-      this.onClick(directSelect.dateRange);
-      this.currentButton = directSelect.name;
-    }
+  get currentButton() {
+    return this.directSelects.find(
+      directSelect => directSelect.name === this.value
+    );
   }
 
-  onReset() {
-    this.currentButton = "";
+  get selected(): DirectSelect | null {
+    return this.currentButton === undefined
+      ? this.currentDirectSelect
+      : this.currentButton;
+  }
+
+  current(name: string): boolean {
+    if (this.currentButton === undefined) {
+      return false;
+    }
+
+    return this.selected !== null && name === this.selected.name;
+  }
+
+  onPeriodClick(directSelect: DirectSelect) {
+    if (this.currentButton !== directSelect) {
+      this.onClick(directSelect);
+      this.currentDirectSelect = directSelect;
+    }
   }
 }
 </script>
@@ -80,6 +112,8 @@ export default class PeriodDirectSelect extends Vue {
   display: flex;
 
   &__button {
+    position: relative;
+    display: block;
     padding: 5px;
     min-width: 85px;
     border: 1px solid #ddd;
@@ -102,6 +136,15 @@ export default class PeriodDirectSelect extends Vue {
       font-weight: bold;
       cursor: text;
     }
+  }
+
+  &__radio {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 </style>

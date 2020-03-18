@@ -1,8 +1,14 @@
-import { Calendar } from "@/components/calendar/Calendar";
+import { Calendar, DateRange } from "@/components/calendar/Calendar";
 
 export enum DateRangeInput {
   Start = "startDatePicker",
   End = "endDatePicker"
+}
+
+export interface DirectSelect {
+  label: string;
+  name: string;
+  dateRange: DateRange;
 }
 
 export class DatePicker {

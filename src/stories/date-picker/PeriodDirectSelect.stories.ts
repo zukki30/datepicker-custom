@@ -6,11 +6,16 @@ storiesOf("date-picker/PeriodDirectSelect", module).add(
   "default",
   () => ({
     components: { PeriodDirectSelect },
+    data() {
+      return {
+        value: ""
+      };
+    },
     methods: {
       onClick: action("click")
     },
     template: `
-      <PeriodDirectSelect @click="onClick" />`
+      <PeriodDirectSelect v-model="value" @click="onClick" />`
   }),
   {
     info: {
