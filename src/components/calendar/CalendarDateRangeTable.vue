@@ -128,11 +128,17 @@ export default class CalendarDateRangeTable extends Vue {
 
     const dateRange = changeDateRange([selectedMinDate, selectedMaxDate]);
 
-    if (dateRange.min.getTime() === date.getTime()) {
+    if (
+      dateRange.min.getTime() === date.getTime() &&
+      dateRange.max.getTime() !== date.getTime()
+    ) {
       return "calendar-date-range-table__inner--range-start";
     }
 
-    if (dateRange.max.getTime() === date.getTime()) {
+    if (
+      dateRange.min.getTime() !== date.getTime() &&
+      dateRange.max.getTime() === date.getTime()
+    ) {
       return "calendar-date-range-table__inner--range-end";
     }
 
