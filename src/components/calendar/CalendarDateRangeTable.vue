@@ -80,6 +80,7 @@ export default class CalendarDateRangeTable extends Vue {
 
     // prop dates の日付に付与
     if (this.isSelectedDate(date)) {
+      console.log(date);
       addClass.push("calendar-date-range-table__date--selected");
     }
 
@@ -241,6 +242,7 @@ $cellHeight: 35px;
     &--selected {
       background-color: #3468eb;
       color: #fff;
+      cursor: pointer;
     }
 
     &--another-month {
