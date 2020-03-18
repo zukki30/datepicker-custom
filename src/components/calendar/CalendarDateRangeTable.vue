@@ -80,7 +80,6 @@ export default class CalendarDateRangeTable extends Vue {
 
     // prop dates の日付に付与
     if (this.isSelectedDate(date)) {
-      console.log(date);
       addClass.push("calendar-date-range-table__date--selected");
     }
 
