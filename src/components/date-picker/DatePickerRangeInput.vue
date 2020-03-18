@@ -58,14 +58,14 @@ export default class DatePickerRangeInput extends Vue {
   selectDates: Date[] = [];
 
   get dates(): DateRange | null {
-    if (this.onStartCalendarMouseEnterDate) {
+    if (this.endInputValue && this.onStartCalendarMouseEnterDate) {
       return this.onChangeDateRange(
         this.onStartCalendarMouseEnterDate,
         this.endInputValue
       );
     }
 
-    if (this.onEndCalendarMouseEnterDate) {
+    if (this.startInputValue && this.onEndCalendarMouseEnterDate) {
       return this.onChangeDateRange(
         this.startInputValue,
         this.onEndCalendarMouseEnterDate
