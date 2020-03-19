@@ -25,7 +25,6 @@
       class="periodDirectSelect"
       @click="onDatepicker3Click"
     />
-    {{ datepicker3Dates }}
 
     <h2>DatePicker - 4</h2>
     <DateRangeConfirmPicker :disabled-dates="disabledDates" />

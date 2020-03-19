@@ -1,7 +1,7 @@
 <template>
   <div class="date-range-confirm-picker" :style="{ width }">
     <DateRangePickerContainer
-      :dates="dates"
+      :dates="inputDates"
       :disabled="disabled"
       :focus="focus"
       @input="onOpen"
@@ -10,7 +10,7 @@
     <Transition name="datePickerPopup">
       <div
         v-if="showDateRangePickerPopup"
-        v-click-outside="onClose"
+        v-click-outside="onOutSideClick"
         class="date-range-confirm-picker__popup"
       >
         <div class="date-range-confirm-picker__header">
@@ -31,7 +31,7 @@
         <div class="date-range-confirm-picker__body">
           <DateRangePickerPopup
             :date-picker="datePicker"
-            :selected-dates="dates"
+            :selected-dates="popupDates"
             :disabled-dates="disabledDates"
             @click="onClick"
             @move="onMoveCalendar"
@@ -115,7 +115,15 @@ export default class DateRangeConfirmPicker extends Vue {
       : this.selectedDates;
   }
 
-  get dates(): DateRange | null {
+  get inputDates(): DateRange | null {
+    return this.selectDates.length > 0
+      ? changeDateRange(this.selectDates)
+      : this.selectedDates;
+
+    return this.selectedDates === null ? null : this.dateRange;
+  }
+
+  get popupDates(): DateRange | null {
     if (this.selectDates.length > 0) {
       return this.dateRange;
     }
@@ -191,6 +199,13 @@ export default class DateRangeConfirmPicker extends Vue {
     this.onClose();
   }
 
+  onOutSideClick() {
+    this.onMouseEnterDate = null;
+    this.selectDates = [];
+    this.currentButton = "";
+    this.onClose();
+  }
+
   onMoveCalendar(calendar: Calendar) {
     this.datePicker = DatePicker.rebuild(calendar);
   }
@@ -202,7 +217,8 @@ export default class DateRangeConfirmPicker extends Vue {
   }
 
   onOpen() {
-    const date: Date = this.dates !== null ? this.dates.max : new Date();
+    const date: Date =
+      this.inputDates !== null ? this.inputDates.max : new Date();
     this.datePicker = new DatePicker(date);
     this.showDateRangePickerPopup = true;
     this.focus = this.dateRangeInput.Start;
