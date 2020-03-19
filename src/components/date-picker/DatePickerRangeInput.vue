@@ -3,7 +3,7 @@
     <DatePickerInput
       ref="startDatePickerInput"
       placeholder="対象期間の開始"
-      :value="startInputValue"
+      :value="selectedStartInputValue"
       :disabled="disabled"
       :disabled-dates="disabledDates"
       :selected-dates="dates"
@@ -14,7 +14,7 @@
     <DatePickerInput
       ref="endDatePickerInput"
       placeholder="対象期間の終了"
-      :value="endInputValue"
+      :value="selectedEndInputValue"
       :disabled="disabled"
       :disabled-dates="disabledDates"
       :selected-dates="dates"
@@ -49,32 +49,59 @@ export default class DatePickerRangeInput extends Vue {
   @Emit("input")
   onInput(dates: DateRange) {}
 
-  startInputValue: Date | null =
-    this.selectedDates !== null ? this.selectedDates.min : null;
+  startInputValue: Date | null = null;
   onStartCalendarMouseEnterDate: Date | null = null;
 
-  endInputValue: Date | null =
-    this.selectedDates !== null ? this.selectedDates.max : null;
+  endInputValue: Date | null = null;
   onEndCalendarMouseEnterDate: Date | null = null;
 
   selectDates: Date[] = [];
 
+  get selectedStartInputValue(): Date | null {
+    if (this.selectedDates !== null) {
+      this.startInputValue = this.selectedDates.min;
+      return this.selectedDates.min;
+    }
+
+    if (this.startInputValue !== null) {
+      return this.startInputValue;
+    }
+
+    return null;
+  }
+
+  get selectedEndInputValue(): Date | null {
+    if (this.selectedDates !== null) {
+      this.endInputValue = this.selectedDates.max;
+      return this.selectedDates.max;
+    }
+
+    if (this.endInputValue !== null) {
+      return this.endInputValue;
+    }
+
+    return null;
+  }
+
   get dates(): DateRange | null {
-    if (this.endInputValue && this.onStartCalendarMouseEnterDate) {
+    if (this.selectedEndInputValue && this.onStartCalendarMouseEnterDate) {
       return this.onChangeDateRange(
         this.onStartCalendarMouseEnterDate,
-        this.endInputValue
+        this.selectedEndInputValue
       );
     }
 
-    if (this.startInputValue && this.onEndCalendarMouseEnterDate) {
+    if (this.selectedStartInputValue && this.onEndCalendarMouseEnterDate) {
       return this.onChangeDateRange(
-        this.startInputValue,
+        this.selectedStartInputValue,
         this.onEndCalendarMouseEnterDate
       );
     }
 
-    return this.onChangeDateRange(this.startInputValue, this.endInputValue);
+    return this.onChangeDateRange(
+      this.selectedStartInputValue,
+      this.selectedEndInputValue
+    );
   }
 
   onStartCalendarMouseEnter(date: Date) {

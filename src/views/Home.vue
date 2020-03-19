@@ -14,11 +14,21 @@
 
     <h2>DatePicker - 3</h2>
     <div class="datepicker3">
-      <DatePickerRangeInput />
+      <DatePickerRangeInput
+        :selected-dates="datepicker3Dates"
+        :disabled-dates="disabledDates"
+        @input="onInput"
+      />
     </div>
+    <PeriodDirectSelect
+      v-model="datepicker3Value"
+      class="periodDirectSelect"
+      @click="onDatepicker3Click"
+    />
+    {{ datepicker3Dates }}
 
     <h2>DatePicker - 4</h2>
-    <DateRangeConfirmPicker />
+    <DateRangeConfirmPicker :disabled-dates="disabledDates" />
   </div>
 </template>
 
@@ -28,21 +38,51 @@ import {
   disabledDateForDatePicker,
   dateRangePickerShortcuts
 } from "@/util/date-range-picker-util";
+import { DateRange } from "@/components/calendar/Calendar";
+import { DirectSelect } from "@/components/date-picker/DatePicker";
 import DateRangePicker from "@/components/DateRangePicker.vue";
 import PeriodSpecification from "@/components/PeriodSpecification.vue";
 import DatePickerRangeInput from "@/components/date-picker/DatePickerRangeInput.vue";
 import DateRangeConfirmPicker from "@/components/date-picker/DateRangeConfirmPicker.vue";
+import PeriodDirectSelect from "@/components/date-picker/PeriodDirectSelect.vue";
 
 @Component({
   components: {
     DateRangePicker,
     PeriodSpecification,
     DatePickerRangeInput,
-    DateRangeConfirmPicker
+    DateRangeConfirmPicker,
+    PeriodDirectSelect
   }
 })
 export default class Home extends Vue {
   value = null;
+  datepicker3Value: string = "";
+  datepicker3Dates: DateRange | null = null;
+
+  onInput(dates: DateRange) {
+    this.datepicker3Dates = null;
+    this.datepicker3Value = "";
+  }
+
+  onDatepicker3Click(directSelect: DirectSelect) {
+    this.datepicker3Dates = directSelect.dateRange;
+    this.datepicker3Value = directSelect.name;
+  }
+
+  get disabledDates(): DateRange {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const twoYearsBefore = new Date();
+    twoYearsBefore.setHours(0, 0, 0, 0);
+    twoYearsBefore.setFullYear(twoYearsBefore.getFullYear() - 2);
+
+    return {
+      min: twoYearsBefore,
+      max: today
+    };
+  }
 
   get disabledDate() {
     return disabledDateForDatePicker();
@@ -79,5 +119,9 @@ export default class Home extends Vue {
 .datepicker3 {
   position: relative;
   z-index: 50;
+}
+
+.periodDirectSelect {
+  margin-top: 10px;
 }
 </style>

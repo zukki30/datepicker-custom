@@ -19,6 +19,11 @@ storiesOf("date-picker/DatePickerRangeInput", module)
     "default",
     () => ({
       components: { DatePickerRangeInput },
+      data() {
+        return {
+          disabledDates
+        };
+      },
       props: {
         disabled: {
           default: boolean("Disabled", false)
@@ -31,7 +36,11 @@ storiesOf("date-picker/DatePickerRangeInput", module)
         onInput: action("input")
       },
       template: `
-      <DatePickerRangeInput :width="width" :disabled="disabled" @input="onInput" />`
+      <DatePickerRangeInput
+       :width="width"
+       :disabled="disabled"
+       :disabled-dates="disabledDates"
+       @input="onInput" />`
     }),
     {
       info: {
