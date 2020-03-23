@@ -12,19 +12,33 @@
       <PeriodSpecification />
     </div>
 
-    <h2>DatePicker - 3</h2>
-    <div class="datepicker3">
+    <h2>DatePicker - 3 - A</h2>
+    <div class="datepicker3A">
       <DatePickerRangeInput
-        :selected-dates="datepicker3Dates"
+        :selected-dates="datepicker3ADates"
         :disabled-dates="disabledDates"
-        @input="onInput"
+        @input="onAInput"
       />
     </div>
-    <PeriodDirectSelect
-      v-model="datepicker3Value"
+    <!-- <PeriodDirectSelect
+      v-model="datepicker3AValue"
       class="periodDirectSelect"
-      @click="onDatepicker3Click"
-    />
+      @click="onADatepicker3Click"
+    /> -->
+
+    <h2>DatePicker - 3 - B</h2>
+    <div class="datepicker3B">
+      <DatePickerRangeChangeInput
+        :selected-dates="datepicker3BDates"
+        :disabled-dates="disabledDates"
+        @input="onBInput"
+      />
+    </div>
+    <!-- <PeriodDirectSelect
+      v-model="datepicker3BValue"
+      class="periodDirectSelect"
+      @click="onBDatepicker3Click"
+    /> -->
 
     <h2>DatePicker - 4</h2>
     <DateRangeConfirmPicker :disabled-dates="disabledDates" />
@@ -44,6 +58,7 @@ import PeriodSpecification from "@/components/PeriodSpecification.vue";
 import DatePickerRangeInput from "@/components/date-picker/DatePickerRangeInput.vue";
 import DateRangeConfirmPicker from "@/components/date-picker/DateRangeConfirmPicker.vue";
 import PeriodDirectSelect from "@/components/date-picker/PeriodDirectSelect.vue";
+import DatePickerRangeChangeInput from "@/components/date-picker/DatePickerRangeChangeInput.vue";
 
 @Component({
   components: {
@@ -51,22 +66,36 @@ import PeriodDirectSelect from "@/components/date-picker/PeriodDirectSelect.vue"
     PeriodSpecification,
     DatePickerRangeInput,
     DateRangeConfirmPicker,
-    PeriodDirectSelect
+    PeriodDirectSelect,
+    DatePickerRangeChangeInput
   }
 })
 export default class Home extends Vue {
   value = null;
-  datepicker3Value: string = "";
-  datepicker3Dates: DateRange | null = null;
+  datepicker3AValue: string = "";
+  datepicker3ADates: DateRange | null = null;
 
-  onInput(dates: DateRange) {
-    this.datepicker3Dates = null;
-    this.datepicker3Value = "";
+  datepicker3BValue: string = "";
+  datepicker3BDates: DateRange | null = null;
+
+  onAInput(dates: DateRange) {
+    this.datepicker3ADates = null;
+    this.datepicker3AValue = "";
   }
 
-  onDatepicker3Click(directSelect: DirectSelect) {
-    this.datepicker3Dates = directSelect.dateRange;
-    this.datepicker3Value = directSelect.name;
+  onADatepicker3Click(directSelect: DirectSelect) {
+    this.datepicker3ADates = directSelect.dateRange;
+    this.datepicker3AValue = directSelect.name;
+  }
+
+  onBInput(dates: DateRange) {
+    this.datepicker3BDates = null;
+    this.datepicker3BValue = "";
+  }
+
+  onBDatepicker3Click(directSelect: DirectSelect) {
+    this.datepicker3BDates = directSelect.dateRange;
+    this.datepicker3BValue = directSelect.name;
   }
 
   get disabledDates(): DateRange {
@@ -115,9 +144,14 @@ export default class Home extends Vue {
   z-index: 100;
 }
 
-.datepicker3 {
+.datepicker3A {
   position: relative;
   z-index: 50;
+}
+
+.datepicker3B {
+  position: relative;
+  z-index: 40;
 }
 
 .periodDirectSelect {
