@@ -5,7 +5,7 @@
       placeholder="対象期間の開始"
       :value="selectedStartInputValue"
       :disabled="disabled"
-      :disabled-dates="disabledDates"
+      :disabled-dates="startInputDisabledDates"
       :selected-dates="dates"
       @input="onStartInput"
       @mouse-enter="onStartCalendarMouseEnter"
@@ -16,7 +16,7 @@
       placeholder="対象期間の終了"
       :value="selectedEndInputValue"
       :disabled="disabled"
-      :disabled-dates="disabledDates"
+      :disabled-dates="endInputDisabledDates"
       :selected-dates="dates"
       @input="onEndInput"
       @mouse-enter="onEndCalendarMouseEnter"
@@ -57,32 +57,6 @@ export default class DatePickerRangeInput extends Vue {
 
   selectDates: Date[] = [];
 
-  get selectedStartInputValue(): Date | null {
-    if (this.selectedDates !== null) {
-      this.startInputValue = this.selectedDates.min;
-      return this.selectedDates.min;
-    }
-
-    if (this.startInputValue !== null) {
-      return this.startInputValue;
-    }
-
-    return null;
-  }
-
-  get selectedEndInputValue(): Date | null {
-    if (this.selectedDates !== null) {
-      this.endInputValue = this.selectedDates.max;
-      return this.selectedDates.max;
-    }
-
-    if (this.endInputValue !== null) {
-      return this.endInputValue;
-    }
-
-    return null;
-  }
-
   get dates(): DateRange | null {
     if (this.selectedEndInputValue && this.onStartCalendarMouseEnterDate) {
       return this.onChangeDateRange(
@@ -102,6 +76,54 @@ export default class DatePickerRangeInput extends Vue {
       this.selectedStartInputValue,
       this.selectedEndInputValue
     );
+  }
+
+  get selectedStartInputValue(): Date | null {
+    if (this.startInputValue !== null) {
+      return this.startInputValue;
+    }
+
+    if (this.selectedDates !== null) {
+      this.startInputValue = this.selectedDates.min;
+      return this.selectedDates.min;
+    }
+
+    return null;
+  }
+
+  get selectedEndInputValue(): Date | null {
+    if (this.endInputValue !== null) {
+      return this.endInputValue;
+    }
+
+    if (this.selectedDates !== null) {
+      this.endInputValue = this.selectedDates.max;
+      return this.selectedDates.max;
+    }
+
+    return null;
+  }
+
+  get startInputDisabledDates(): DateRange {
+    if (this.selectedEndInputValue !== null) {
+      return {
+        min: this.disabledDates.min,
+        max: this.selectedEndInputValue
+      };
+    }
+
+    return this.disabledDates;
+  }
+
+  get endInputDisabledDates(): DateRange {
+    if (this.selectedStartInputValue !== null) {
+      return {
+        min: this.selectedStartInputValue,
+        max: this.disabledDates.max
+      };
+    }
+
+    return this.disabledDates;
   }
 
   onStartCalendarMouseEnter(date: Date) {
