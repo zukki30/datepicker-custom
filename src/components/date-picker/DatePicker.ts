@@ -5,6 +5,11 @@ export enum DateRangeInput {
   End = "endDatePicker"
 }
 
+export enum PopupAlign {
+  Left = "left",
+  Center = "center"
+}
+
 export interface DirectSelect {
   label: string;
   name: string;

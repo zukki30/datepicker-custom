@@ -1,7 +1,8 @@
 import { storiesOf } from "@storybook/vue";
-import { date, boolean, text } from "@storybook/addon-knobs";
+import { date, boolean, text, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import { DateRange } from "@/components/calendar/Calendar";
+import { PopupAlign } from "@/components/date-picker/DatePicker";
 import DateRangeConfirmPicker from "@/components/date-picker/DateRangeConfirmPicker.vue";
 
 const selectedDates: DateRange = {
@@ -31,6 +32,9 @@ storiesOf("date-picker/DateRangeConfirmPicker", module)
         },
         width: {
           default: text("Width", "350px")
+        },
+        align: {
+          default: select("Align", PopupAlign, PopupAlign.Center)
         }
       },
       methods: {
@@ -40,6 +44,7 @@ storiesOf("date-picker/DateRangeConfirmPicker", module)
       <DateRangeConfirmPicker
        :width="width"
        :disabled="disabled"
+       :align="align"
        :disabled-dates="disabledDates"
        @input="onInput"
       />`

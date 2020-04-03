@@ -12,6 +12,7 @@
         v-if="showDateRangePickerPopup"
         v-click-outside="onOutSideClick"
         class="date-range-confirm-picker__popup"
+        :class="popupAlign"
       >
         <div class="date-range-confirm-picker__header">
           <div
@@ -62,7 +63,8 @@
 import { Component, Vue, Prop, Model, Emit } from "vue-property-decorator";
 import {
   DatePicker,
-  DateRangeInput
+  DateRangeInput,
+  PopupAlign
 } from "@/components/date-picker/DatePicker";
 import {
   Calendar,
@@ -94,6 +96,9 @@ export default class DateRangeConfirmPicker extends Vue {
   @Prop({ type: Object, default: null })
   selectedDates!: DateRange;
 
+  @Prop({ type: String, default: PopupAlign.Center })
+  align!: string;
+
   @Emit("input")
   onInput(dates: DateRange | null) {}
 
@@ -104,6 +109,10 @@ export default class DateRangeConfirmPicker extends Vue {
   dateRangeInput = DateRangeInput;
   currentButton: string = "";
   onMouseEnterDate: Date | null = null;
+
+  get popupAlign(): string {
+    return "date-range-confirm-picker__popup--" + this.align;
+  }
 
   get dateRange(): DateRange {
     if (this.onMouseEnterDate !== null) {
@@ -256,10 +265,17 @@ export default class DateRangeConfirmPicker extends Vue {
   &__popup {
     position: absolute;
     top: 40px;
-    left: 50%;
     width: 750px;
     box-shadow: 2px 2px 5px rgba(#000, 0.1);
-    transform: translateX(-50%);
+
+    &--left {
+      left: 0;
+    }
+
+    &--center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &__direct {
