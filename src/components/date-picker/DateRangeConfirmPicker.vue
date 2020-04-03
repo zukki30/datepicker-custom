@@ -1,6 +1,6 @@
 <template>
   <div class="date-range-confirm-picker" :style="{ width }">
-    <DateRangePickerContainer
+    <DateRangePickerContainer2
       :dates="inputDates"
       :disabled="disabled"
       :focus="focus"
@@ -73,7 +73,7 @@ import {
 } from "@/components/calendar/Calendar";
 import { WidthProperty } from "csstype";
 import DateRangePickerPopup from "@/components/date-picker/DateRangePickerPopup.vue";
-import DateRangePickerContainer from "@/components/date-picker/DateRangePickerContainer.vue";
+import DateRangePickerContainer2 from "@/components/date-picker/DateRangePickerContainer2.vue";
 
 interface DirectSelect {
   name: string;
@@ -81,7 +81,7 @@ interface DirectSelect {
 }
 
 @Component({
-  components: { DateRangePickerPopup, DateRangePickerContainer }
+  components: { DateRangePickerPopup, DateRangePickerContainer2 }
 })
 export default class DateRangeConfirmPicker extends Vue {
   @Prop({ type: Boolean, default: false })
