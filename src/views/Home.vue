@@ -41,7 +41,11 @@
     /> -->
 
     <h2>DatePicker - 4</h2>
-    <DateRangeConfirmPicker :disabled-dates="disabledDates" />
+    <DateRangeConfirmPicker
+      :selected-dates="datepicker4Dates"
+      :disabled-dates="disabledDates"
+      @input="onDateRangeConfirmPickerInput"
+    />
   </div>
 </template>
 
@@ -78,6 +82,8 @@ export default class Home extends Vue {
   datepicker3BValue: string = "";
   datepicker3BDates: DateRange | null = null;
 
+  datepicker4Dates: DateRange | null = null;
+
   onAInput(dates: DateRange) {
     this.datepicker3ADates = null;
     this.datepicker3AValue = "";
@@ -96,6 +102,12 @@ export default class Home extends Vue {
   onBDatepicker3Click(directSelect: DirectSelect) {
     this.datepicker3BDates = directSelect.dateRange;
     this.datepicker3BValue = directSelect.name;
+  }
+
+  onDateRangeConfirmPickerInput(dates: DateRange | null) {
+    if (dates !== null) {
+      this.datepicker4Dates = dates;
+    }
   }
 
   get disabledDates(): DateRange {
