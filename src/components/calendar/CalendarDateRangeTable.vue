@@ -59,7 +59,7 @@ export default class CalendarDateRangeTable extends Vue {
   }
 
   onDateClick(date: Date) {
-    if (!this.isDisabled(date) && date.getMonth() === this.currentMonthIndex) {
+    if (!this.isDisabled(date)) {
       this.onClick(date);
     }
   }
@@ -166,7 +166,7 @@ export default class CalendarDateRangeTable extends Vue {
 </script>
 
 <style scoped lang="scss">
-$cellHeight: 35px;
+$cellHeight: 30px;
 
 .calendar-date-range-table {
   &__inner {

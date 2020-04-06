@@ -4,7 +4,7 @@
       :dates="dates"
       :disabled="disabled"
       :focus="focus"
-      @input="onOopen"
+      @input="onOpen"
     />
 
     <div
@@ -109,7 +109,7 @@ export default class DateRangePicker extends Vue {
     }
   }
 
-  onOopen() {
+  onOpen() {
     this.showDateRangePickerPopup = true;
     this.focus = this.dateRangeInput.Start;
   }

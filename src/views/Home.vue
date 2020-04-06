@@ -45,12 +45,14 @@
       :align="datapicker4APopup"
       @click="onDatePicker4APopupAlignChange"
     />
-    <DateRangeConfirmPicker
-      :selected-dates="datepicker4ADates"
-      :disabled-dates="disabledDates"
-      :align="datapicker4APopup"
-      @input="onDateRangeConfirmPickerInput"
-    />
+    <div class="datepicker4A">
+      <DateRangeConfirmPicker
+        :selected-dates="datepicker4ADates"
+        :disabled-dates="disabledDates"
+        :align="datapicker4APopup"
+        @input="onDateRangeConfirmPickerInput"
+      />
+    </div>
 
     <h2>DatePicker - 4 - B</h2>
     <AlignChange
@@ -190,46 +192,6 @@ export default class Home extends Vue {
   }
 }
 
-.align-change {
-  margin-top: -5px;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-
-  &__label {
-    font-weight: bold;
-  }
-
-  &__select {
-    margin-left: 20px;
-    display: flex;
-    li {
-      padding: 8px 5px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      width: 85px;
-      text-align: center;
-      cursor: pointer;
-
-      &:hover {
-        background-color: #f2f5fc;
-      }
-
-      &.current {
-        background-color: #f2f5fc;
-        border-color: #3468eb;
-        cursor: text;
-        pointer-events: none;
-      }
-
-      &:not(:first-child) {
-        margin-left: 10px;
-      }
-    }
-  }
-}
-
 .datepicker2 {
   position: relative;
   z-index: 100;
@@ -243,6 +205,11 @@ export default class Home extends Vue {
 .datepicker3B {
   position: relative;
   z-index: 40;
+}
+
+.datepicker4A {
+  position: relative;
+  z-index: 35;
 }
 
 .periodDirectSelect {
