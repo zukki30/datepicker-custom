@@ -19,7 +19,7 @@
           <td
             v-for="date in row"
             :key="date.getDate()"
-            class="calendar-base__cell"
+            class="calendar-base__cell calendar-base__body-cell"
             @click="onClick(date)"
           >
             <slot :date="date" />
@@ -99,6 +99,11 @@ $cellHeight: 35px;
     &--sat {
       color: #3468eb;
     }
+  }
+
+  &__body-cell {
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
 }
 </style>

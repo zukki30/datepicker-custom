@@ -177,9 +177,10 @@ $cellHeight: 35px;
     height: $cellHeight;
 
     &--desable {
-      background-color: #fbfbfb;
+      background-color: #efefef;
       cursor: text;
       pointer-events: none;
+      color: #bbb;
     }
 
     &:before {
