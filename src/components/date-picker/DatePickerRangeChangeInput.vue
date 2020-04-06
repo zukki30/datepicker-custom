@@ -97,6 +97,10 @@ export default class DatePickerRangeChangeInput extends Vue {
   selectDates: Date[] = [];
 
   get selectedStartInputValue(): Date | null {
+    if (this.onStartCalendarMouseEnterDate !== null) {
+      return this.onStartCalendarMouseEnterDate;
+    }
+
     if (this.startInputValue !== null) {
       return this.startInputValue;
     }
@@ -110,6 +114,10 @@ export default class DatePickerRangeChangeInput extends Vue {
   }
 
   get selectedEndInputValue(): Date | null {
+    if (this.onEndCalendarMouseEnterDate !== null) {
+      return this.onEndCalendarMouseEnterDate;
+    }
+
     if (this.endInputValue !== null) {
       return this.endInputValue;
     }
@@ -250,7 +258,6 @@ export default class DatePickerRangeChangeInput extends Vue {
 
   &__input--hidden {
     opacity: 0;
-    transition: opacity 0.1s ease;
   }
 
   &__date {
