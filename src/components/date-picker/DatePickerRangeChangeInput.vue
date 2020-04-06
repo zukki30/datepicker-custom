@@ -233,7 +233,7 @@ export default class DatePickerRangeChangeInput extends Vue {
   onSwitched() {
     setTimeout(() => {
       this.showDateValue = false;
-    }, 1200);
+    }, 500);
   }
 }
 </script>
@@ -279,26 +279,14 @@ export default class DatePickerRangeChangeInput extends Vue {
     }
 
     &--start-switch {
-      &::before {
-        animation: start-anime 0.3s ease 0.5s forwards;
-      }
-
       &::after {
         opacity: 0;
-        transform: translate(-50%, -50%);
-        animation: start-anime 0.3s ease 1s reverse forwards;
       }
     }
 
     &--end-switch {
-      &::before {
-        animation: end-anime 0.3s ease 0.5s forwards;
-      }
-
       &::after {
         opacity: 0;
-        transform: translate(-50%, -50%);
-        animation: end-anime 0.3s ease 1s reverse forwards;
       }
     }
   }
