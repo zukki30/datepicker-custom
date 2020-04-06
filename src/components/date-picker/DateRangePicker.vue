@@ -1,7 +1,7 @@
 <template>
   <div class="date-range-picker" :style="{ width }">
     <DateRangePickerContainer
-      :dates="dates"
+      :dates="inputDates"
       :disabled="disabled"
       :focus="focus"
       @input="onOpen"
@@ -14,7 +14,7 @@
     >
       <DateRangePickerPopup
         :date-picker="datePicker"
-        :selected-dates="dates"
+        :selected-dates="popupDates"
         :disabled-dates="disabledDates"
         @click="onClick"
         @move="onMoveCalendar"
@@ -75,15 +75,28 @@ export default class DateRangePicker extends Vue {
       : this.selectedDates;
   }
 
-  get dates(): DateRange | null {
+  get popupDates(): DateRange | null {
     if (this.selectDates.length === 1) {
       return this.dateRange;
     }
     return this.selectedDates === null ? null : this.dateRange;
   }
 
+  get inputDates(): DateRange | null {
+    const dateRange =
+      this.selectDates.length > 0
+        ? changeDateRange(this.selectDates)
+        : this.selectedDates;
+
+    if (this.selectDates.length === 1) {
+      return dateRange;
+    }
+    return this.selectedDates === null ? null : dateRange;
+  }
+
   created() {
-    const date: Date = this.dates !== null ? this.dates.max : new Date();
+    const date: Date =
+      this.inputDates !== null ? this.inputDates.max : new Date();
     this.datePicker = new DatePicker(date);
   }
 
@@ -104,9 +117,7 @@ export default class DateRangePicker extends Vue {
   }
 
   onMouseEnter(date: Date) {
-    if (this.selectDates.length === 1) {
-      this.onMouseEnterDate = date;
-    }
+    this.onMouseEnterDate = date;
   }
 
   onOpen() {

@@ -13,6 +13,7 @@
     </div>
 
     <h2>DatePicker - 3 - A</h2>
+    <p>選択されている日付より前、もしくは後を入力させない</p>
     <div class="datepicker3A">
       <DatePickerRangeInput
         :selected-dates="datepicker3ADates"
@@ -20,13 +21,9 @@
         @input="onAInput"
       />
     </div>
-    <!-- <PeriodDirectSelect
-      v-model="datepicker3AValue"
-      class="periodDirectSelect"
-      @click="onADatepicker3Click"
-    /> -->
 
     <h2>DatePicker - 3 - B</h2>
+    <p>選択した日付が前後する時入れかるアニメーションが発生</p>
     <div class="datepicker3B">
       <DatePickerRangeChangeInput
         :selected-dates="datepicker3BDates"
@@ -34,13 +31,9 @@
         @input="onBInput"
       />
     </div>
-    <!-- <PeriodDirectSelect
-      v-model="datepicker3BValue"
-      class="periodDirectSelect"
-      @click="onBDatepicker3Click"
-    /> -->
 
     <h2>DatePicker - 4 - A</h2>
+    <p>キャンセル時に選択していた日付が無効になる</p>
     <AlignChange
       :align="datapicker4APopup"
       @click="onDatePicker4APopupAlignChange"
@@ -55,6 +48,7 @@
     </div>
 
     <h2>DatePicker - 4 - B</h2>
+    <p>キャンセル時に選択していた日付が有効になる</p>
     <AlignChange
       :align="datapicker4BPopup"
       @click="onDatePicker4BPopupAlignChange"
@@ -183,11 +177,20 @@ export default class Home extends Vue {
   max-width: 1000px;
 
   h2 {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     font-weight: bold;
     font-size: 36px;
     &:not(:first-child) {
       margin-top: 45px;
+    }
+  }
+
+  p {
+    margin-bottom: 20px;
+
+    &::before {
+      margin-right: 5px;
+      content: "ー";
     }
   }
 }

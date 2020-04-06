@@ -261,6 +261,7 @@ export default class DateRangeConfirmCanselInputPicker extends Vue {
   }
 
   &__popup {
+    background-color: #fff;
     position: absolute;
     top: 40px;
     width: 750px;
