@@ -41,32 +41,27 @@
     /> -->
 
     <h2>DatePicker - 4 - A</h2>
-    <div class="align-change">
-      <div class="align-change__label">ポップアップ位置切り替え</div>
-      <ul class="align-change__select">
-        <li
-          :class="{
-            current: datapicker4APopup === 'center'
-          }"
-          @click="onDatePicker4APopupAlignChange('center')"
-        >
-          Center
-        </li>
-        <li
-          :class="{
-            current: datapicker4APopup === 'left'
-          }"
-          @click="onDatePicker4APopupAlignChange('left')"
-        >
-          Left
-        </li>
-      </ul>
-    </div>
+    <AlignChange
+      :align="datapicker4APopup"
+      @click="onDatePicker4APopupAlignChange"
+    />
     <DateRangeConfirmPicker
       :selected-dates="datepicker4ADates"
       :disabled-dates="disabledDates"
       :align="datapicker4APopup"
       @input="onDateRangeConfirmPickerInput"
+    />
+
+    <h2>DatePicker - 4 - B</h2>
+    <AlignChange
+      :align="datapicker4BPopup"
+      @click="onDatePicker4BPopupAlignChange"
+    />
+    <DateRangeConfirmCanselInputPicker
+      :selected-dates="datepicker4BDates"
+      :disabled-dates="disabledDates"
+      :align="datapicker4BPopup"
+      @input="onDateRangeConfirmCanselInputPicker"
     />
   </div>
 </template>
@@ -85,6 +80,8 @@ import DatePickerRangeInput from "@/components/date-picker/DatePickerRangeInput.
 import DateRangeConfirmPicker from "@/components/date-picker/DateRangeConfirmPicker.vue";
 import PeriodDirectSelect from "@/components/date-picker/PeriodDirectSelect.vue";
 import DatePickerRangeChangeInput from "@/components/date-picker/DatePickerRangeChangeInput.vue";
+import AlignChange from "@/components/AlignChange.vue";
+import DateRangeConfirmCanselInputPicker from "@/components/date-picker/DateRangeConfirmCanselInputPicker.vue";
 
 @Component({
   components: {
@@ -93,7 +90,9 @@ import DatePickerRangeChangeInput from "@/components/date-picker/DatePickerRange
     DatePickerRangeInput,
     DateRangeConfirmPicker,
     PeriodDirectSelect,
-    DatePickerRangeChangeInput
+    DatePickerRangeChangeInput,
+    DateRangeConfirmCanselInputPicker,
+    AlignChange
   }
 })
 export default class Home extends Vue {
@@ -105,8 +104,10 @@ export default class Home extends Vue {
   datepicker3BDates: DateRange | null = null;
 
   datepicker4ADates: DateRange | null = null;
-
   datapicker4APopup: string = "center";
+
+  datepicker4BDates: DateRange | null = null;
+  datapicker4BPopup: string = "center";
 
   onAInput(dates: DateRange) {
     this.datepicker3ADates = null;
@@ -134,8 +135,18 @@ export default class Home extends Vue {
     }
   }
 
+  onDateRangeConfirmCanselInputPicker(dates: DateRange | null) {
+    if (dates !== null) {
+      this.datepicker4BDates = dates;
+    }
+  }
+
   onDatePicker4APopupAlignChange(value: string) {
     this.datapicker4APopup = value;
+  }
+
+  onDatePicker4BPopupAlignChange(value: string) {
+    this.datapicker4BPopup = value;
   }
 
   get disabledDates(): DateRange {

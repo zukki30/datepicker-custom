@@ -27,7 +27,7 @@ import { Component, Vue, Emit, Prop } from "vue-property-decorator";
 
 @Component
 export default class AlignChange extends Vue {
-  @Prop({ type: String, default: null })
+  @Prop({ type: String, default: "" })
   align!: string;
 
   @Emit("click")
