@@ -40,10 +40,32 @@
       @click="onBDatepicker3Click"
     /> -->
 
-    <h2>DatePicker - 4</h2>
+    <h2>DatePicker - 4 - A</h2>
+    <div class="align-change">
+      <div class="align-change__label">ポップアップ位置切り替え</div>
+      <ul class="align-change__select">
+        <li
+          :class="{
+            current: datapicker4APopup === 'center'
+          }"
+          @click="onDatePicker4APopupAlignChange('center')"
+        >
+          Center
+        </li>
+        <li
+          :class="{
+            current: datapicker4APopup === 'left'
+          }"
+          @click="onDatePicker4APopupAlignChange('left')"
+        >
+          Left
+        </li>
+      </ul>
+    </div>
     <DateRangeConfirmPicker
-      :selected-dates="datepicker4Dates"
+      :selected-dates="datepicker4ADates"
       :disabled-dates="disabledDates"
+      :align="datapicker4APopup"
       @input="onDateRangeConfirmPickerInput"
     />
   </div>
@@ -82,7 +104,9 @@ export default class Home extends Vue {
   datepicker3BValue: string = "";
   datepicker3BDates: DateRange | null = null;
 
-  datepicker4Dates: DateRange | null = null;
+  datepicker4ADates: DateRange | null = null;
+
+  datapicker4APopup: string = "center";
 
   onAInput(dates: DateRange) {
     this.datepicker3ADates = null;
@@ -106,8 +130,12 @@ export default class Home extends Vue {
 
   onDateRangeConfirmPickerInput(dates: DateRange | null) {
     if (dates !== null) {
-      this.datepicker4Dates = dates;
+      this.datepicker4ADates = dates;
     }
+  }
+
+  onDatePicker4APopupAlignChange(value: string) {
+    this.datapicker4APopup = value;
   }
 
   get disabledDates(): DateRange {
@@ -138,8 +166,8 @@ export default class Home extends Vue {
 .home {
   margin-right: auto;
   margin-left: auto;
-  padding: 100px 0 500px;
-  max-width: 800px;
+  padding: 100px 100px 500px;
+  max-width: 1000px;
 
   h2 {
     margin-bottom: 30px;
@@ -147,6 +175,46 @@ export default class Home extends Vue {
     font-size: 36px;
     &:not(:first-child) {
       margin-top: 45px;
+    }
+  }
+}
+
+.align-change {
+  margin-top: -5px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+
+  &__label {
+    font-weight: bold;
+  }
+
+  &__select {
+    margin-left: 20px;
+    display: flex;
+    li {
+      padding: 8px 5px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 85px;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f2f5fc;
+      }
+
+      &.current {
+        background-color: #f2f5fc;
+        border-color: #3468eb;
+        cursor: text;
+        pointer-events: none;
+      }
+
+      &:not(:first-child) {
+        margin-left: 10px;
+      }
     }
   }
 }
