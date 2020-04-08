@@ -29,8 +29,8 @@ export default class PeriodSpecification extends Vue {
 
   get disabledDates(): DateRange {
     return {
-      min: new Date("2019-12-15"),
-      max: new Date("2020-03-20")
+      min: new Date("2018-12-15"),
+      max: new Date()
     };
   }
 
