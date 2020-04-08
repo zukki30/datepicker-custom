@@ -101,13 +101,13 @@ export default class DatePickerRangeChangeInput extends Vue {
       return this.onStartCalendarMouseEnterDate;
     }
 
-    if (this.startInputValue !== null) {
-      return this.startInputValue;
-    }
-
     if (this.selectedDates !== null) {
       this.startInputValue = this.selectedDates.min;
       return this.selectedDates.min;
+    }
+
+    if (this.startInputValue !== null) {
+      return this.startInputValue;
     }
 
     return null;
@@ -118,13 +118,13 @@ export default class DatePickerRangeChangeInput extends Vue {
       return this.onEndCalendarMouseEnterDate;
     }
 
-    if (this.endInputValue !== null) {
-      return this.endInputValue;
-    }
-
     if (this.selectedDates !== null) {
       this.endInputValue = this.selectedDates.max;
       return this.selectedDates.max;
+    }
+
+    if (this.endInputValue !== null) {
+      return this.endInputValue;
     }
 
     return null;
