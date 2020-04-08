@@ -21,6 +21,11 @@
         @input="onAInput"
       />
     </div>
+    <PeriodDirectSelect
+      v-model="datepicker3AValue"
+      class="periodDirectSelect"
+      @click="onADatepicker3Click"
+    />
 
     <h2>DatePicker - 3 - B</h2>
     <p>選択した日付が前後する時入れかるアニメーションが発生</p>
@@ -31,6 +36,11 @@
         @input="onBInput"
       />
     </div>
+    <PeriodDirectSelect
+      v-model="datepicker3BValue"
+      class="periodDirectSelect"
+      @click="onBDatepicker3Click"
+    />
 
     <h2>DatePicker - 4 - A</h2>
     <p>キャンセル時に選択していた日付が無効になる</p>
