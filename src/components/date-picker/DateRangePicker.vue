@@ -111,8 +111,6 @@ export default class DateRangePicker extends Vue {
     if (this.selectDates.length === 2) {
       this.onInput(this.dateRange);
       this.onClose();
-      this.selectDates = [];
-      this.onMouseEnterDate = null;
     }
   }
 
@@ -121,18 +119,23 @@ export default class DateRangePicker extends Vue {
   }
 
   onMouseEnter(date: Date) {
-    console.log(date);
     this.onMouseEnterDate = date;
   }
 
   onOpen() {
     this.showDateRangePickerPopup = true;
     this.focus = this.dateRangeInput.Start;
+
+    if (this.selectedDates !== null) {
+      this.datePicker = new DatePicker(this.selectedDates.max);
+    }
   }
 
   onClose() {
     this.showDateRangePickerPopup = false;
     this.focus = "";
+    this.selectDates = [];
+    this.onMouseEnterDate = null;
   }
 }
 </script>
