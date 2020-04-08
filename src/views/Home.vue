@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h2>DatePicker - 1</h2>
+    <p>始点を終点を個別選択</p>
     <DateRangePicker
       v-model="value"
       :shortcuts="shortcuts"
@@ -8,12 +9,13 @@
     />
 
     <h2>DatePicker - 2</h2>
+    <p>始点を終点をワンアクションで選択</p>
     <div class="datepicker2">
       <PeriodSpecification />
     </div>
 
     <h2>DatePicker - 3 - A</h2>
-    <p>選択されている日付より前、もしくは後を入力させない</p>
+    <p>個別選択、始点・終点の片方だけの変更が可能で入れ替え選択は不可</p>
     <div class="datepicker3A">
       <DatePickerRangeInput
         :selected-dates="datepicker3ADates"
@@ -28,7 +30,7 @@
     />
 
     <h2>DatePicker - 3 - B</h2>
-    <p>選択した日付が前後する時入れかるアニメーションが発生</p>
+    <p>個別選択、始点・終点の片方だけの変更が可能で入れ替え選択も可能</p>
     <div class="datepicker3B">
       <DatePickerRangeChangeInput
         :selected-dates="datepicker3BDates"
@@ -43,7 +45,10 @@
     />
 
     <h2>DatePicker - 4 - A</h2>
-    <p>キャンセル時に選択していた日付が無効になる</p>
+    <p>
+      範囲選択、完了ボタンを押すまで確定せず何度でも再選択可能<br />
+      カレンダーの外側をクリックした時はキャンセル扱い
+    </p>
     <AlignChange
       :align="datapicker4APopup"
       @click="onDatePicker4APopupAlignChange"
@@ -58,7 +63,10 @@
     </div>
 
     <h2>DatePicker - 4 - B</h2>
-    <p>キャンセル時に選択していた日付が有効になる</p>
+    <p>
+      範囲選択、完了ボタンを押すまで確定せず何度でも再選択可能<br />
+      カレンダーの外側をクリックした時は確定扱い
+    </p>
     <AlignChange
       :align="datapicker4BPopup"
       @click="onDatePicker4BPopupAlignChange"
@@ -187,21 +195,18 @@ export default class Home extends Vue {
   max-width: 1000px;
 
   h2 {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-weight: bold;
     font-size: 36px;
     &:not(:first-child) {
-      margin-top: 45px;
+      margin-top: 60px;
     }
   }
 
   p {
     margin-bottom: 20px;
-
-    &::before {
-      margin-right: 5px;
-      content: "ー";
-    }
+    padding-left: 10px;
+    line-height: 1.5;
   }
 }
 
