@@ -227,11 +227,13 @@ export default class DateRangeConfirmCanselInputPicker extends Vue {
   }
 
   onOpen() {
-    const date: Date =
-      this.inputDates !== null ? this.inputDates.max : new Date();
-    this.datePicker = new DatePicker(date);
-    this.showDateRangePickerPopup = true;
-    this.focus = this.dateRangeInput.Start;
+    if (!this.showDateRangePickerPopup) {
+      const date: Date =
+        this.inputDates !== null ? this.inputDates.max : new Date();
+      this.datePicker = new DatePicker(date);
+      this.showDateRangePickerPopup = true;
+      this.focus = this.dateRangeInput.Start;
+    }
   }
 
   onClose() {
