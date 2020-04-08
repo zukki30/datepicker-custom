@@ -1,5 +1,9 @@
 <template>
-  <div class="date-range-confirm-cansel-input-picker" :style="{ width }">
+  <div
+    v-click-outside="onOutSideClick"
+    class="date-range-confirm-cansel-input-picker"
+    :style="{ width }"
+  >
     <DateRangePickerContainer2
       :dates="inputDates"
       :disabled="disabled"
@@ -10,7 +14,6 @@
     <Transition name="datePickerPopup">
       <div
         v-if="showDateRangePickerPopup"
-        v-click-outside="onOutSideClick"
         class="date-range-confirm-cansel-input-picker__popup"
         :class="popupAlign"
       >
