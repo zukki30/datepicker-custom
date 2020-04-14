@@ -143,20 +143,26 @@ export default class DatePickerInput extends Vue {
   &__field {
     padding: 0 10px;
     width: 100%;
-    height: 30px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 13px;
-    line-height: 30px;
-    box-shadow: 0 0 3px rgba(#3468eb, 0);
+    height: $formPartsHeight;
+    border: 1px solid $colorBase600;
+    border-radius: $sizeRadius;
+    box-shadow: 0 0 3px rgba($colorBlue900, 0);
+    font-size: $basicFontSize;
+    line-height: $formPartsHeight;
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    &::placeholder {
+      color: $colorBase700;
+    }
+
     &:disabled {
-      background-color: #eee;
+      border-color: $colorBase500;
+      background-color: $colorBase300;
+      color: $colorBase600;
     }
 
     &--focus {
-      border-color: #cfdcff;
-      box-shadow: 0 0 3px rgba(#3468eb, 0.7);
+      border-color: $colorBlue800;
+      box-shadow: 0 0 3px rgba($colorBlue900, 0.7);
     }
   }
   &__popup {
@@ -164,22 +170,22 @@ export default class DatePickerInput extends Vue {
     top: 40px;
     left: 50%;
     padding: 10px;
-    width: 100%;
     min-width: 700px;
-    box-shadow: 2px 2px 5px rgba(#000, 0.1);
+    width: 100%;
+    box-shadow: 0 1px 4px rgba(#000, 0.1);
     transform: translateX(-50%);
   }
 }
 
 .datePickerPopup-enter-active,
 .datePickerPopup-leave-active {
-  opacity: 1;
   margin-top: 0;
+  opacity: 1;
   transition: opacity 0.3s ease, margin-top 0.3s ease;
 }
 .datePickerPopup-enter,
 .datePickerPopup-leave-to {
-  opacity: 0;
   margin-top: -40px;
+  opacity: 0;
 }
 </style>
