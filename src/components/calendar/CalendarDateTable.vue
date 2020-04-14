@@ -94,15 +94,15 @@ export default class CalendarDateTable extends Vue {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 35px;
+    height: $cellHeight;
 
     &:not(.calendar-date-table__inner--desable):hover {
-      color: #7a9aeb;
+      color: $colorBlue800;
       cursor: pointer;
     }
 
     &--desable {
-      background-color: #fafafa;
+      background-color: $colorBase300;
       cursor: text;
       pointer-events: none;
     }
@@ -116,17 +116,17 @@ export default class CalendarDateTable extends Vue {
     justify-content: center;
     width: 24px;
     height: 24px;
-    border: 2px solid rgba(0, 0, 0, 0);
+    border: 2px solid $colorClear;
     border-radius: 50%;
 
     &--today {
-      border-color: #7a9aeb;
-      color: #3468eb;
+      border-color: $colorBlue800;
+      color: $colorBlue900;
     }
 
     &--selected {
-      background-color: #3468eb;
-      color: #fff;
+      background-color: $colorBlue800;
+      color: $colorWhite;
     }
   }
 }
