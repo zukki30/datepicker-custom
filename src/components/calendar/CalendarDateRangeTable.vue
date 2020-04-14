@@ -166,8 +166,6 @@ export default class CalendarDateRangeTable extends Vue {
 </script>
 
 <style scoped lang="scss">
-$cellHeight: 30px;
-
 .calendar-date-range-table {
   &__inner {
     position: relative;
@@ -177,10 +175,10 @@ $cellHeight: 30px;
     height: $cellHeight;
 
     &--desable {
-      background-color: #efefef;
+      background-color: $colorBase300;
+      color: $colorBase600;
       cursor: text;
       pointer-events: none;
-      color: #bbb;
     }
 
     &:before {
@@ -189,7 +187,7 @@ $cellHeight: 30px;
       z-index: 0;
       margin-top: -12px;
       height: 24px;
-      background-color: #f0f5ff;
+      background-color: $colorBlue600;
       content: "";
     }
 
@@ -223,30 +221,30 @@ $cellHeight: 30px;
     justify-content: center;
     width: 22px;
     height: 22px;
-    border: 2px solid rgba(0, 0, 0, 0);
+    border: 2px solid $colorClear;
     border-radius: 50%;
     transition: background-color 0.3s ease;
 
     &:hover {
       &:not(.calendar-date-range-table__date--selected) {
-        background-color: #cfdcff;
+        background-color: $colorBlue750;
         cursor: pointer;
       }
     }
 
     &--today {
-      border-color: #7a9aeb;
-      color: #3468eb;
+      border-color: $colorBlue800;
+      color: $colorBlue900;
     }
 
     &--selected {
-      background-color: #3468eb;
-      color: #fff;
+      background-color: $colorBlue900;
+      color: $colorWhite;
       cursor: pointer;
     }
 
     &--another-month {
-      color: #ccc;
+      color: $colorBase600;
     }
   }
 }

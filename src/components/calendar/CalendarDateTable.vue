@@ -103,6 +103,7 @@ export default class CalendarDateTable extends Vue {
 
     &--desable {
       background-color: $colorBase300;
+      color: $colorBase600;
       cursor: text;
       pointer-events: none;
     }

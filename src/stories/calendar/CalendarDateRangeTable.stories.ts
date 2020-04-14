@@ -88,6 +88,44 @@ storiesOf("caledar/CalendarDateRangeTable", module)
         summary: "Simple CalendarDateRangeTable component"
       }
     }
+  )
+  .add(
+    "disabled date",
+    () => ({
+      components: { CalendarDateRangeTable },
+      data() {
+        return {
+          selectedDates,
+          disabledDates
+        };
+      },
+      props: {
+        date: {
+          default: myDateKnob("Calendar", new Date())
+        }
+      },
+      methods: {
+        onClick: action("click")
+      },
+      computed: {
+        calendar() {
+          const props: any = this.$props;
+          const date: Date = props.date;
+          return Calendar.build(date);
+        }
+      },
+      template: `
+      <CalendarDateRangeTable
+       :calendar="calendar"
+       :selected-dates="selectedDates"
+       :disabled-dates="disabledDates"
+       @click="onClick" />`
+    }),
+    {
+      info: {
+        summary: "Simple CalendarDateRangeTable component"
+      }
+    }
   );
 
 function myDateKnob(name: string, value: Date) {
