@@ -2,6 +2,7 @@
 
 @import "_webfont";
 @import "_element-ui";
+@import "_variable";
 
 /*
  Layout
@@ -14,7 +15,7 @@
 #root,
 #app,
 .modal-wrapper {
-  color: #333;
+  color: $colorBase900;
   font-size: 14px;
 }
 
