@@ -72,39 +72,34 @@ export default class DateRangePickerPopup extends Vue {
 <style scoped lang="scss">
 .date-range-picker-popup {
   position: relative;
-  background-color: #fff;
+  background-color: $colorWhite;
 
   &__button {
-    width: 25px;
-    height: 25px;
     position: absolute;
     top: 0;
     padding: 5px;
-    border: 1px solid #ddd;
+    width: 25px;
+    height: 25px;
+    border: 1px solid $colorBase500;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: $colorWhite;
     font-size: 12px;
     line-height: 1;
     cursor: pointer;
     transition: border-color 0.3s ease, background-color 0.3s ease;
 
     &::before {
-      width: 7px;
-      height: 7px;
-      border-top: 2px solid #ccc;
       position: absolute;
       top: 50%;
+      width: 7px;
+      height: 7px;
+      border-top: 2px solid $colorBase500;
       content: "";
       transition: border-color 0.3s ease;
     }
 
     &:hover {
-      background-color: #cfdcff;
-      border-color: #cfdcff;
-
-      &::before {
-        border-color: #fff;
-      }
+      background-color: $colorBlue600;
     }
   }
 
@@ -113,9 +108,9 @@ export default class DateRangePickerPopup extends Vue {
 
     &::before {
       left: 50%;
-      border-left: 2px solid #ccc;
-      transform: translate(-50%, -50%) rotate(-45deg);
       margin-left: 5%;
+      border-left: 2px solid $colorBase500;
+      transform: translate(-50%, -50%) rotate(-45deg);
     }
   }
 
@@ -124,9 +119,9 @@ export default class DateRangePickerPopup extends Vue {
 
     &::before {
       right: 50%;
-      border-right: 2px solid #ccc;
-      transform: translate(50%, -50%) rotate(45deg);
       margin-right: 3%;
+      border-right: 2px solid $colorBase500;
+      transform: translate(50%, -50%) rotate(45deg);
     }
   }
 
