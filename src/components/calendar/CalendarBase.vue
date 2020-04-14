@@ -1,6 +1,6 @@
 <template>
   <div class="calendar-base">
-    <div class="calendar-base__title">{{ title }}</div>
+    <div class="calendar-base__title" v-text="title" />
     <table class="calendar-base__body">
       <thead>
         <tr>
@@ -67,22 +67,19 @@ export default class CalendarBase extends Vue {
 </script>
 
 <style scoped lang="scss">
-$cellHeight: 35px;
-
 .calendar-base {
   &__title {
     display: flex;
     align-items: center;
     justify-content: center;
     height: $cellHeight;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid $colorBase400;
     text-align: center;
     font-weight: bold;
   }
 
   &__body {
     width: 100%;
-    color: #111;
     table-layout: fixed;
   }
 
