@@ -116,15 +116,15 @@ export default class PeriodDirectSelect extends Vue {
     display: block;
     padding: 5px;
     min-width: 85px;
-    border: 1px solid #ddd;
+    border: 1px solid $colorBase400;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: $colorWhite;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: #f2f5fc;
+      background-color: $colorBlue600;
     }
 
     &:not(:first-child) {
@@ -132,19 +132,19 @@ export default class PeriodDirectSelect extends Vue {
     }
 
     &--current {
-      background-color: #f2f5fc;
+      background-color: $colorBlue600;
       font-weight: bold;
       cursor: text;
     }
   }
 
   &__radio {
-    width: 0;
-    height: 0;
-    opacity: 0;
     position: absolute;
     top: 0;
     left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
   }
 }
 </style>
