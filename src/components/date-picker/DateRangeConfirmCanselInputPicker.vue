@@ -249,28 +249,28 @@ export default class DateRangeConfirmCanselInputPicker extends Vue {
   position: relative;
 
   &__header {
-    border-bottom: 1px solid #eee;
-    padding: 10px;
     display: flex;
+    padding: 10px;
+    border-bottom: 1px solid $colorBase400;
   }
 
   &__body {
-    padding: 0 10px 10px;
+    padding: 5px 10px 10px;
   }
 
   &__footer {
     display: flex;
     justify-content: flex-end;
     padding: 10px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid $colorBase500;
   }
 
   &__popup {
-    background-color: #fff;
     position: absolute;
     top: 40px;
     width: 750px;
-    box-shadow: 2px 2px 5px rgba(#000, 0.1);
+    background-color: $colorWhite;
+    box-shadow: 2px 2px 5px $colorShadow100;
 
     &--left {
       left: 0;
@@ -285,15 +285,15 @@ export default class DateRangeConfirmCanselInputPicker extends Vue {
   &__direct {
     padding: 5px;
     min-width: 85px;
-    border: 1px solid #ddd;
+    border: 1px solid $colorBase400;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: $colorWhite;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: #f2f5fc;
+      background-color: $colorBlue600;
     }
 
     &:not(:first-child) {
@@ -301,7 +301,7 @@ export default class DateRangeConfirmCanselInputPicker extends Vue {
     }
 
     &--current {
-      background-color: #f2f5fc;
+      background-color: $colorBlue600;
       font-weight: bold;
       cursor: text;
     }
@@ -312,31 +312,31 @@ export default class DateRangeConfirmCanselInputPicker extends Vue {
     padding: 10px 10px 8px;
     min-width: 85px;
     border: 1px solid;
-    background-color: #fff;
     border-radius: 5px;
+    background-color: $colorWhite;
+    text-align: center;
     font-size: 12px;
     line-height: 1;
     cursor: pointer;
-    text-align: center;
     transition: border-color 0.3s ease, background-color 0.3s ease;
 
     &--cancel {
-      border-color: #ccc;
-      color: #666;
+      border-color: $colorBase500;
+      color: $colorBase800;
 
       &:hover {
-        background-color: #ebf0ff;
+        background-color: $colorBlue600;
       }
     }
 
     &--apply {
-      background-color: #3468eb;
-      border-color: #3468eb;
-      color: #fff;
+      border-color: $colorBlue900;
+      background-color: $colorBlue900;
+      color: $colorWhite;
 
       &:hover {
-        background-color: #4e7ef5;
-        border-color: #4e7ef5;
+        border-color: $colorBlue800;
+        background-color: $colorBlue800;
       }
     }
   }
@@ -344,13 +344,13 @@ export default class DateRangeConfirmCanselInputPicker extends Vue {
 
 .datePickerPopup-enter-active,
 .datePickerPopup-leave-active {
-  opacity: 1;
   margin-top: 0;
+  opacity: 1;
   transition: opacity 0.3s ease, margin-top 0.3s ease;
 }
 .datePickerPopup-enter,
 .datePickerPopup-leave-to {
-  opacity: 0;
   margin-top: -40px;
+  opacity: 0;
 }
 </style>
