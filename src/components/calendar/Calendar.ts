@@ -49,7 +49,7 @@ export class Calendar {
     });
   }
 
-  get calendarDates(): Date[] {
+  get table(): Table {
     // 月の初め日を取得
     const startDate = new Date(this.year, this.monthIndex, 1);
     // 初めの日の曜日を取得
@@ -79,11 +79,8 @@ export class Calendar {
     );
 
     const result: Date[] = dates.concat(nextMonthDates);
-    return result;
-  }
 
-  get table(): Table {
-    return splitDatas(this.calendarDates, weeks.length);
+    return splitDatas(result, weeks.length);
   }
 
   public static build(date: Date): Calendar {
