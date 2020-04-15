@@ -87,7 +87,6 @@ export default class DateRangePickerContainer extends Vue {
   &--disabled {
     border-color: $colorBase500;
     background-color: $colorBase300;
-    color: $colorBase600;
   }
 
   &__input {
@@ -100,6 +99,7 @@ export default class DateRangePickerContainer extends Vue {
     line-height: $formPartsHeight;
     &:disabled {
       background-color: $colorBase300;
+      color: $colorBase600;
     }
 
     &--focus {
