@@ -81,27 +81,29 @@ export default class DateRangePickerContainer extends Vue {
   align-items: center;
   justify-content: center;
   padding: 1px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  border: 1px solid $colorBase600;
+  border-radius: $sizeRadius;
 
   &--disabled {
-    background-color: #eee;
+    border-color: $colorBase500;
+    background-color: $colorBase300;
+    color: $colorBase600;
   }
 
   &__input {
     flex: 1;
-    height: 30px;
+    height: $formPartsHeight;
     border: 2px solid rgba(0, 0, 0, 0);
     border-radius: 5px;
     text-align: center;
-    font-size: 13px;
-    line-height: 30px;
+    font-size: $basicFontSize;
+    line-height: $formPartsHeight;
     &:disabled {
-      background-color: #eee;
+      background-color: $colorBase300;
     }
 
     &--focus {
-      border-color: #3468eb;
+      border-color: $colorBlue800;
     }
   }
 
