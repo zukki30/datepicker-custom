@@ -261,13 +261,13 @@ export default class DatePickerRangeChangeInput extends Vue {
   }
 
   &__date {
-    background-color: #f2f5fc;
-    border-radius: 5px;
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: $colorBlue600;
 
     &::before,
     &::after {
