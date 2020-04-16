@@ -26,7 +26,7 @@ storiesOf("caledar/CalendarDateRangeTable", module)
       },
       props: {
         date: {
-          default: myDateKnob("Calendar", new Date())
+          default: () => myDateKnob("Calendar", new Date())
         }
       },
       methods: {
@@ -63,7 +63,7 @@ storiesOf("caledar/CalendarDateRangeTable", module)
       },
       props: {
         date: {
-          default: myDateKnob("Calendar", new Date())
+          default: () => myDateKnob("Calendar", new Date())
         }
       },
       methods: {
@@ -101,7 +101,7 @@ storiesOf("caledar/CalendarDateRangeTable", module)
       },
       props: {
         date: {
-          default: myDateKnob("Calendar", new Date())
+          default: () => myDateKnob("Calendar", new Date())
         }
       },
       methods: {

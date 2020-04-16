@@ -1,0 +1,6459 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots AlignChange default 1`] = `
+<div
+  class="align-change"
+>
+  <div
+    class="align-change__label"
+  >
+    ポップアップ位置切り替え
+  </div>
+   
+  <ul
+    class="align-change__select"
+  >
+    <li
+      class="current"
+    >
+      
+      Center
+    
+    </li>
+     
+    <li
+      class=""
+    >
+      
+      Left
+    
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots DateRangePicker Disable date 1`] = `
+<div
+  class="dateRangePicker"
+  style="width: 350px;"
+>
+  <div
+    class="dateRangePicker__icon"
+  >
+    <i
+      class="icon-calendar"
+      data-cy="icon-calendar"
+      style="color: rgb(153, 153, 153); font-size: 16px;"
+    />
+  </div>
+   
+  <div
+    class="el-date-editor dateRangePicker__input el-input el-input--prefix el-input--suffix el-date-editor--date"
+  >
+    <!---->
+    <input
+      autocomplete="off"
+      class="el-input__inner"
+      name=""
+      placeholder="期間の開始日"
+      type="text"
+    />
+    <span
+      class="el-input__prefix"
+    >
+      <i
+        class="el-input__icon el-icon-date"
+      />
+      <!---->
+    </span>
+    <span
+      class="el-input__suffix"
+    >
+      <span
+        class="el-input__suffix-inner"
+      >
+        <i
+          class="el-input__icon"
+        />
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+      </span>
+      <!---->
+    </span>
+    <!---->
+    <!---->
+  </div>
+   
+  <div
+    class="dateRangePicker__hyphen"
+  >
+    -
+  </div>
+   
+  <div
+    class="el-date-editor dateRangePicker__input el-input el-input--prefix el-input--suffix el-date-editor--date"
+  >
+    <!---->
+    <input
+      autocomplete="off"
+      class="el-input__inner"
+      name=""
+      placeholder="期間の最終日"
+      type="text"
+    />
+    <span
+      class="el-input__prefix"
+    >
+      <i
+        class="el-input__icon el-icon-date"
+      />
+      <!---->
+    </span>
+    <span
+      class="el-input__suffix"
+    >
+      <span
+        class="el-input__suffix-inner"
+      >
+        <i
+          class="el-input__icon"
+        />
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+      </span>
+      <!---->
+    </span>
+    <!---->
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots DateRangePicker Shortcuts + Disable date 1`] = `
+<div
+  class="dateRangePicker"
+  style="width: 350px;"
+>
+  <div
+    class="dateRangePicker__icon"
+  >
+    <i
+      class="icon-calendar"
+      data-cy="icon-calendar"
+      style="color: rgb(153, 153, 153); font-size: 16px;"
+    />
+  </div>
+   
+  <div
+    class="el-date-editor dateRangePicker__input el-input el-input--prefix el-input--suffix el-date-editor--date"
+  >
+    <!---->
+    <input
+      autocomplete="off"
+      class="el-input__inner"
+      name=""
+      placeholder="期間の開始日"
+      type="text"
+    />
+    <span
+      class="el-input__prefix"
+    >
+      <i
+        class="el-input__icon el-icon-date"
+      />
+      <!---->
+    </span>
+    <span
+      class="el-input__suffix"
+    >
+      <span
+        class="el-input__suffix-inner"
+      >
+        <i
+          class="el-input__icon"
+        />
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+      </span>
+      <!---->
+    </span>
+    <!---->
+    <!---->
+  </div>
+   
+  <div
+    class="dateRangePicker__hyphen"
+  >
+    -
+  </div>
+   
+  <div
+    class="el-date-editor dateRangePicker__input el-input el-input--prefix el-input--suffix el-date-editor--date"
+  >
+    <!---->
+    <input
+      autocomplete="off"
+      class="el-input__inner"
+      name=""
+      placeholder="期間の最終日"
+      type="text"
+    />
+    <span
+      class="el-input__prefix"
+    >
+      <i
+        class="el-input__icon el-icon-date"
+      />
+      <!---->
+    </span>
+    <span
+      class="el-input__suffix"
+    >
+      <span
+        class="el-input__suffix-inner"
+      >
+        <i
+          class="el-input__icon"
+        />
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+      </span>
+      <!---->
+    </span>
+    <!---->
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots DateRangePicker Shortcuts 1`] = `
+<div
+  class="dateRangePicker"
+  style="width: 350px;"
+>
+  <div
+    class="dateRangePicker__icon"
+  >
+    <i
+      class="icon-calendar"
+      data-cy="icon-calendar"
+      style="color: rgb(153, 153, 153); font-size: 16px;"
+    />
+  </div>
+   
+  <div
+    class="el-date-editor dateRangePicker__input el-input el-input--prefix el-input--suffix el-date-editor--date"
+  >
+    <!---->
+    <input
+      autocomplete="off"
+      class="el-input__inner"
+      name=""
+      placeholder="期間の開始日"
+      type="text"
+    />
+    <span
+      class="el-input__prefix"
+    >
+      <i
+        class="el-input__icon el-icon-date"
+      />
+      <!---->
+    </span>
+    <span
+      class="el-input__suffix"
+    >
+      <span
+        class="el-input__suffix-inner"
+      >
+        <i
+          class="el-input__icon"
+        />
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+      </span>
+      <!---->
+    </span>
+    <!---->
+    <!---->
+  </div>
+   
+  <div
+    class="dateRangePicker__hyphen"
+  >
+    -
+  </div>
+   
+  <div
+    class="el-date-editor dateRangePicker__input el-input el-input--prefix el-input--suffix el-date-editor--date"
+  >
+    <!---->
+    <input
+      autocomplete="off"
+      class="el-input__inner"
+      name=""
+      placeholder="期間の最終日"
+      type="text"
+    />
+    <span
+      class="el-input__prefix"
+    >
+      <i
+        class="el-input__icon el-icon-date"
+      />
+      <!---->
+    </span>
+    <span
+      class="el-input__suffix"
+    >
+      <span
+        class="el-input__suffix-inner"
+      >
+        <i
+          class="el-input__icon"
+        />
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+      </span>
+      <!---->
+    </span>
+    <!---->
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots DateRangePicker default 1`] = `
+<div
+  class="dateRangePicker"
+  style="width: 350px;"
+>
+  <div
+    class="dateRangePicker__icon"
+  >
+    <i
+      class="icon-calendar"
+      data-cy="icon-calendar"
+      style="color: rgb(153, 153, 153); font-size: 16px;"
+    />
+  </div>
+   
+  <div
+    class="el-date-editor dateRangePicker__input el-input el-input--prefix el-input--suffix el-date-editor--date"
+  >
+    <!---->
+    <input
+      autocomplete="off"
+      class="el-input__inner"
+      name=""
+      placeholder="期間の開始日"
+      type="text"
+    />
+    <span
+      class="el-input__prefix"
+    >
+      <i
+        class="el-input__icon el-icon-date"
+      />
+      <!---->
+    </span>
+    <span
+      class="el-input__suffix"
+    >
+      <span
+        class="el-input__suffix-inner"
+      >
+        <i
+          class="el-input__icon"
+        />
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+      </span>
+      <!---->
+    </span>
+    <!---->
+    <!---->
+  </div>
+   
+  <div
+    class="dateRangePicker__hyphen"
+  >
+    -
+  </div>
+   
+  <div
+    class="el-date-editor dateRangePicker__input el-input el-input--prefix el-input--suffix el-date-editor--date"
+  >
+    <!---->
+    <input
+      autocomplete="off"
+      class="el-input__inner"
+      name=""
+      placeholder="期間の最終日"
+      type="text"
+    />
+    <span
+      class="el-input__prefix"
+    >
+      <i
+        class="el-input__icon el-icon-date"
+      />
+      <!---->
+    </span>
+    <span
+      class="el-input__suffix"
+    >
+      <span
+        class="el-input__suffix-inner"
+      >
+        <i
+          class="el-input__icon"
+        />
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+      </span>
+      <!---->
+    </span>
+    <!---->
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots PeriodSpecification default 1`] = `
+<div
+  class="period-specification"
+>
+  <div
+    class="date-range-picker period-specification__date-picker"
+    style="width: 350px;"
+  >
+    <div
+      class="date-range-picker-container"
+    >
+      <input
+        class="date-range-picker-container__input"
+        name="start"
+        placeholder="対象期間の開始"
+        type="text"
+      />
+       
+      <div
+        class="date-range-picker-container__hyphen"
+      >
+        -
+      </div>
+       
+      <input
+        class="date-range-picker-container__input"
+        name="end"
+        placeholder="対象期間の終了"
+        type="text"
+      />
+    </div>
+     
+    <!---->
+  </div>
+   
+  <div
+    class="period-specification__directly-select"
+  >
+    <div
+      class="period-direct-select"
+    >
+      <label
+        class="period-direct-select__button"
+      >
+        <input
+          class="period-direct-select__radio"
+          name="periodDirectSelect"
+          type="radio"
+        />
+        
+    昨日
+  
+      </label>
+      <label
+        class="period-direct-select__button"
+      >
+        <input
+          class="period-direct-select__radio"
+          name="periodDirectSelect"
+          type="radio"
+        />
+        
+    今日
+  
+      </label>
+      <label
+        class="period-direct-select__button"
+      >
+        <input
+          class="period-direct-select__radio"
+          name="periodDirectSelect"
+          type="radio"
+        />
+        
+    先週
+  
+      </label>
+      <label
+        class="period-direct-select__button"
+      >
+        <input
+          class="period-direct-select__radio"
+          name="periodDirectSelect"
+          type="radio"
+        />
+        
+    先月
+  
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots caledar/CalendarBase default 1`] = `
+<div
+  class="calendar-base"
+>
+  <div
+    class="calendar-base__title"
+  >
+    2020年4月
+  </div>
+   
+  <table
+    class="calendar-base__body"
+  >
+    <thead>
+      <tr>
+        <th
+          class="calendar-base__cell calendar-base__cell--sun"
+        >
+          
+          Sun
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Mon
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Tue
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Wed
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Thu
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Fri
+        
+        </th>
+        <th
+          class="calendar-base__cell calendar-base__cell--sat"
+        >
+          
+          Sat
+        
+        </th>
+      </tr>
+    </thead>
+     
+    <tbody>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      29
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      30
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      31
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      1
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      2
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      3
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      4
+    
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      5
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      6
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      7
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      8
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      9
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      10
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      11
+    
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      12
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      13
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      14
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      15
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      16
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      17
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      18
+    
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      19
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      20
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      21
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      22
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      23
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      24
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      25
+    
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      26
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      27
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      28
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      29
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      30
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      1
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      2
+    
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      3
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      4
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      5
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      6
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      7
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      8
+    
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          
+      9
+    
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Storyshots caledar/CalendarDateRangeTable default 1`] = `
+<div
+  class="calendar-base calendar-date-table"
+>
+  <div
+    class="calendar-base__title"
+  >
+    2020年4月
+  </div>
+   
+  <table
+    class="calendar-base__body"
+  >
+    <thead>
+      <tr>
+        <th
+          class="calendar-base__cell calendar-base__cell--sun"
+        >
+          
+          Sun
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Mon
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Tue
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Wed
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Thu
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Fri
+        
+        </th>
+        <th
+          class="calendar-base__cell calendar-base__cell--sat"
+        >
+          
+          Sat
+        
+        </th>
+      </tr>
+    </thead>
+     
+    <tbody>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      29
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      30
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      31
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      1
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      2
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      3
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      4
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      5
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      6
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      7
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      8
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      9
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      10
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      11
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      12
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      13
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      14
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      15
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--today"
+            >
+              
+      16
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      17
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      18
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      19
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      20
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      21
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      22
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      23
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      24
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      25
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      26
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      27
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      28
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      29
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      30
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      1
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      2
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      3
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      4
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      5
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      6
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      7
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      8
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      9
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Storyshots caledar/CalendarDateRangeTable disabled date 1`] = `
+<div
+  class="calendar-base calendar-date-table"
+>
+  <div
+    class="calendar-base__title"
+  >
+    2020年4月
+  </div>
+   
+  <table
+    class="calendar-base__body"
+  >
+    <thead>
+      <tr>
+        <th
+          class="calendar-base__cell calendar-base__cell--sun"
+        >
+          
+          Sun
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Mon
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Tue
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Wed
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Thu
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Fri
+        
+        </th>
+        <th
+          class="calendar-base__cell calendar-base__cell--sat"
+        >
+          
+          Sat
+        
+        </th>
+      </tr>
+    </thead>
+     
+    <tbody>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      29
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      30
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      31
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      1
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      2
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      3
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      4
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      5
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      6
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      7
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      8
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      9
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      10
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      11
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      12
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      13
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      14
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      15
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--today"
+            >
+              
+      16
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      17
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      18
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      19
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      20
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      21
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      22
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      23
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      24
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      25
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      26
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      27
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      28
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      29
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date"
+            >
+              
+      30
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      1
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      2
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      3
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      4
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      5
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      6
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      7
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      8
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+          >
+            <div
+              class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+            >
+              
+      9
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Storyshots caledar/CalendarDateTable default 1`] = `
+<div
+  class="calendar-base calendar-date-table"
+>
+  <div
+    class="calendar-base__title"
+  >
+    2020年4月
+  </div>
+   
+  <table
+    class="calendar-base__body"
+  >
+    <thead>
+      <tr>
+        <th
+          class="calendar-base__cell calendar-base__cell--sun"
+        >
+          
+          Sun
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Mon
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Tue
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Wed
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Thu
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Fri
+        
+        </th>
+        <th
+          class="calendar-base__cell calendar-base__cell--sat"
+        >
+          
+          Sat
+        
+        </th>
+      </tr>
+    </thead>
+     
+    <tbody>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      29
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      30
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      31
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      1
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      2
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      3
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      4
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      5
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      6
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      7
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      8
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      9
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      10
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      11
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      12
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      13
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      14
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      15
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date calendar-date-table__date--today"
+            >
+              
+      16
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      17
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      18
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      19
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      20
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      21
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      22
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      23
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      24
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      25
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      26
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      27
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      28
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      29
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      30
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      1
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      2
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      3
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      4
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      5
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      6
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      7
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      8
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      9
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Storyshots caledar/CalendarDateTable disabled date 1`] = `
+<div
+  class="calendar-base calendar-date-table"
+>
+  <div
+    class="calendar-base__title"
+  >
+    2020年4月
+  </div>
+   
+  <table
+    class="calendar-base__body"
+  >
+    <thead>
+      <tr>
+        <th
+          class="calendar-base__cell calendar-base__cell--sun"
+        >
+          
+          Sun
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Mon
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Tue
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Wed
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Thu
+        
+        </th>
+        <th
+          class="calendar-base__cell"
+        >
+          
+          Fri
+        
+        </th>
+        <th
+          class="calendar-base__cell calendar-base__cell--sat"
+        >
+          
+          Sat
+        
+        </th>
+      </tr>
+    </thead>
+     
+    <tbody>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      29
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      30
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      31
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      1
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      2
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      3
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      4
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      5
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      6
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      7
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      8
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      9
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      10
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      11
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      12
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      13
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      14
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      15
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date calendar-date-table__date--today"
+            >
+              
+      16
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      17
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      18
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      19
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      20
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      21
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      22
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      23
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      24
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      25
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      26
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      27
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      28
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      29
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      30
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      1
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      2
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      3
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      4
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      5
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      6
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      7
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      8
+    
+            </div>
+          </div>
+        </td>
+        <td
+          class="calendar-base__cell calendar-base__body-cell"
+        >
+          <div
+            class="calendar-date-table__inner calendar-date-table__inner--desable"
+          >
+            <div
+              class="calendar-date-table__date"
+            >
+              
+      9
+    
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`Storyshots date-picker/DatePickerInput default 1`] = `
+<div
+  class="date-picker-input"
+  style="width: 100%;"
+>
+  <input
+    class="date-picker-input__field"
+    placeholder="対象の期間"
+    readonly="readonly"
+    type="text"
+  />
+   
+  <!---->
+</div>
+`;
+
+exports[`Storyshots date-picker/DatePickerInput set selectedDates 1`] = `
+<div
+  class="date-picker-input"
+  style="width: 100%;"
+>
+  <input
+    class="date-picker-input__field"
+    placeholder="対象の期間"
+    readonly="readonly"
+    type="text"
+  />
+   
+  <!---->
+</div>
+`;
+
+exports[`Storyshots date-picker/DatePickerInput set value 1`] = `
+<div
+  class="date-picker-input"
+  style="width: 100%;"
+>
+  <input
+    class="date-picker-input__field"
+    placeholder="対象の期間"
+    readonly="readonly"
+    type="text"
+  />
+   
+  <!---->
+</div>
+`;
+
+exports[`Storyshots date-picker/DatePickerRangeChangeInput default 1`] = `
+<div
+  class="date-picker-range-change-input"
+  style="width: 350px;"
+>
+  <div
+    class="date-picker-range-change-input__field"
+  >
+    <div
+      class="date-picker-input"
+      style="width: 100%;"
+    >
+      <input
+        class="date-picker-input__field"
+        placeholder="対象期間の開始"
+        readonly="readonly"
+        type="text"
+      />
+       
+      <!---->
+    </div>
+     
+    <div
+      class="date-picker-range-change-input__date"
+      data-after-value=""
+      data-before-value=""
+      style="display: none;"
+    />
+  </div>
+   
+  <div
+    class="date-picker-range-change-input__hyphen"
+  >
+    -
+  </div>
+   
+  <div
+    class="date-picker-range-change-input__field"
+  >
+    <div
+      class="date-picker-input"
+      style="width: 100%;"
+    >
+      <input
+        class="date-picker-input__field"
+        placeholder="対象期間の終了"
+        readonly="readonly"
+        type="text"
+      />
+       
+      <!---->
+    </div>
+     
+    <div
+      class="date-picker-range-change-input__date"
+      data-after-value=""
+      data-before-value=""
+      style="display: none;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots date-picker/DatePickerRangeChangeInput set props 1`] = `
+<div
+  class="date-picker-range-change-input"
+  style="width: 350px;"
+>
+  <div
+    class="date-picker-range-change-input__field"
+  >
+    <div
+      class="date-picker-input"
+      style="width: 100%;"
+    >
+      <input
+        class="date-picker-input__field"
+        placeholder="対象期間の開始"
+        readonly="readonly"
+        type="text"
+      />
+       
+      <!---->
+    </div>
+     
+    <div
+      class="date-picker-range-change-input__date"
+      data-after-value=""
+      data-before-value=""
+      style="display: none;"
+    />
+  </div>
+   
+  <div
+    class="date-picker-range-change-input__hyphen"
+  >
+    -
+  </div>
+   
+  <div
+    class="date-picker-range-change-input__field"
+  >
+    <div
+      class="date-picker-input"
+      style="width: 100%;"
+    >
+      <input
+        class="date-picker-input__field"
+        placeholder="対象期間の終了"
+        readonly="readonly"
+        type="text"
+      />
+       
+      <!---->
+    </div>
+     
+    <div
+      class="date-picker-range-change-input__date"
+      data-after-value=""
+      data-before-value=""
+      style="display: none;"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots date-picker/DatePickerRangeInput default 1`] = `
+<div
+  class="date-picker-range-input"
+  style="width: 350px;"
+>
+  <div
+    class="date-picker-input"
+    style="width: 100%;"
+  >
+    <input
+      class="date-picker-input__field"
+      placeholder="対象期間の開始"
+      readonly="readonly"
+      type="text"
+    />
+     
+    <!---->
+  </div>
+   
+  <div
+    class="date-picker-range-input__hyphen"
+  >
+    -
+  </div>
+   
+  <div
+    class="date-picker-input"
+    style="width: 100%;"
+  >
+    <input
+      class="date-picker-input__field"
+      placeholder="対象期間の終了"
+      readonly="readonly"
+      type="text"
+    />
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots date-picker/DatePickerRangeInput set props 1`] = `
+<div
+  class="date-picker-range-input"
+  style="width: 350px;"
+>
+  <div
+    class="date-picker-input"
+    style="width: 100%;"
+  >
+    <input
+      class="date-picker-input__field"
+      placeholder="対象期間の開始"
+      readonly="readonly"
+      type="text"
+    />
+     
+    <!---->
+  </div>
+   
+  <div
+    class="date-picker-range-input__hyphen"
+  >
+    -
+  </div>
+   
+  <div
+    class="date-picker-input"
+    style="width: 100%;"
+  >
+    <input
+      class="date-picker-input__field"
+      placeholder="対象期間の終了"
+      readonly="readonly"
+      type="text"
+    />
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`Storyshots date-picker/DateRangeConfirmCanselInputPicker default 1`] = `
+<div
+  class="date-range-confirm-cansel-input-picker"
+  style="width: 350px;"
+>
+  <div
+    class="date-range-picker-container"
+  >
+    <input
+      class="date-range-picker-container__input"
+      name="start"
+      placeholder="対象期間の開始"
+      type="text"
+    />
+     
+    <div
+      class="date-range-picker-container__hyphen"
+    >
+      -
+    </div>
+     
+    <input
+      class="date-range-picker-container__input"
+      name="end"
+      placeholder="対象期間の終了"
+      type="text"
+    />
+  </div>
+   
+  <!---->
+</div>
+`;
+
+exports[`Storyshots date-picker/DateRangeConfirmCanselInputPicker set date 1`] = `
+<div
+  class="date-range-confirm-cansel-input-picker"
+  style="width: 350px;"
+>
+  <div
+    class="date-range-picker-container"
+  >
+    <input
+      class="date-range-picker-container__input"
+      name="start"
+      placeholder="対象期間の開始"
+      type="text"
+    />
+     
+    <div
+      class="date-range-picker-container__hyphen"
+    >
+      -
+    </div>
+     
+    <input
+      class="date-range-picker-container__input"
+      name="end"
+      placeholder="対象期間の終了"
+      type="text"
+    />
+  </div>
+   
+  <!---->
+</div>
+`;
+
+exports[`Storyshots date-picker/DateRangeConfirmPicker default 1`] = `
+<div
+  class="date-range-confirm-picker"
+  style="width: 350px;"
+>
+  <div
+    class="date-range-picker-container"
+  >
+    <input
+      class="date-range-picker-container__input"
+      name="start"
+      placeholder="対象期間の開始"
+      type="text"
+    />
+     
+    <div
+      class="date-range-picker-container__hyphen"
+    >
+      -
+    </div>
+     
+    <input
+      class="date-range-picker-container__input"
+      name="end"
+      placeholder="対象期間の終了"
+      type="text"
+    />
+  </div>
+   
+  <!---->
+</div>
+`;
+
+exports[`Storyshots date-picker/DateRangeConfirmPicker set date 1`] = `
+<div
+  class="date-range-confirm-picker"
+  style="width: 350px;"
+>
+  <div
+    class="date-range-picker-container"
+  >
+    <input
+      class="date-range-picker-container__input"
+      name="start"
+      placeholder="対象期間の開始"
+      type="text"
+    />
+     
+    <div
+      class="date-range-picker-container__hyphen"
+    >
+      -
+    </div>
+     
+    <input
+      class="date-range-picker-container__input"
+      name="end"
+      placeholder="対象期間の終了"
+      type="text"
+    />
+  </div>
+   
+  <!---->
+</div>
+`;
+
+exports[`Storyshots date-picker/DateRangePicker default 1`] = `
+<div
+  class="date-range-picker"
+  style="width: 350px;"
+>
+  <div
+    class="date-range-picker-container"
+  >
+    <input
+      class="date-range-picker-container__input"
+      name="start"
+      placeholder="対象期間の開始"
+      type="text"
+    />
+     
+    <div
+      class="date-range-picker-container__hyphen"
+    >
+      -
+    </div>
+     
+    <input
+      class="date-range-picker-container__input"
+      name="end"
+      placeholder="対象期間の終了"
+      type="text"
+    />
+  </div>
+   
+  <!---->
+</div>
+`;
+
+exports[`Storyshots date-picker/DateRangePickerContainer default 1`] = `
+<div
+  class="date-range-picker-container"
+>
+  <input
+    class="date-range-picker-container__input date-range-picker-container__input--focus"
+    name="start"
+    placeholder="対象期間の開始"
+    type="text"
+  />
+   
+  <div
+    class="date-range-picker-container__hyphen"
+  >
+    -
+  </div>
+   
+  <input
+    class="date-range-picker-container__input"
+    name="end"
+    placeholder="対象期間の終了"
+    type="text"
+  />
+</div>
+`;
+
+exports[`Storyshots date-picker/DateRangePickerContainer2 default 1`] = `
+<div
+  class="date-range-picker-container date-range-picker-container--focus"
+>
+  <input
+    class="date-range-picker-container__input date-range-picker-container__input--focus"
+    name="start"
+    placeholder="対象期間の開始"
+    type="text"
+  />
+   
+  <div
+    class="date-range-picker-container__hyphen"
+  >
+    -
+  </div>
+   
+  <input
+    class="date-range-picker-container__input"
+    name="end"
+    placeholder="対象期間の終了"
+    type="text"
+  />
+</div>
+`;
+
+exports[`Storyshots date-picker/DateRangePickerPopup default 1`] = `
+<div
+  class="date-range-picker-popup"
+>
+  <div
+    class="date-range-picker-popup__switch"
+  >
+    <button
+      class="date-range-picker-popup__button date-range-picker-popup__previous"
+      title="2020年1月"
+    />
+     
+    <button
+      class="date-range-picker-popup__button date-range-picker-popup__next"
+      title="2020年5月"
+    />
+  </div>
+   
+  <div
+    class="date-range-picker-popup__body"
+  >
+    <div
+      class="calendar-base calendar-date-table date-range-picker-popup__calendar"
+    >
+      <div
+        class="calendar-base__title"
+      >
+        2020年2月
+      </div>
+       
+      <table
+        class="calendar-base__body"
+      >
+        <thead>
+          <tr>
+            <th
+              class="calendar-base__cell calendar-base__cell--sun"
+            >
+              
+          Sun
+        
+            </th>
+            <th
+              class="calendar-base__cell"
+            >
+              
+          Mon
+        
+            </th>
+            <th
+              class="calendar-base__cell"
+            >
+              
+          Tue
+        
+            </th>
+            <th
+              class="calendar-base__cell"
+            >
+              
+          Wed
+        
+            </th>
+            <th
+              class="calendar-base__cell"
+            >
+              
+          Thu
+        
+            </th>
+            <th
+              class="calendar-base__cell"
+            >
+              
+          Fri
+        
+            </th>
+            <th
+              class="calendar-base__cell calendar-base__cell--sat"
+            >
+              
+          Sat
+        
+            </th>
+          </tr>
+        </thead>
+         
+        <tbody>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      26
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      27
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      28
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      29
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      30
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      31
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      1
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      2
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      3
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      4
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      5
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      6
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      7
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      8
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      9
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      10
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      11
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      12
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      13
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      14
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range-start"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--selected"
+                >
+                  
+      15
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      16
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      17
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      18
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      19
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      20
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      21
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      22
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      23
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      24
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      25
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      26
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      27
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      28
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      29
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      1
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      2
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      3
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      4
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      5
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      6
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      7
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      class="calendar-base calendar-date-table date-range-picker-popup__calendar"
+    >
+      <div
+        class="calendar-base__title"
+      >
+        2020年3月
+      </div>
+       
+      <table
+        class="calendar-base__body"
+      >
+        <thead>
+          <tr>
+            <th
+              class="calendar-base__cell calendar-base__cell--sun"
+            >
+              
+          Sun
+        
+            </th>
+            <th
+              class="calendar-base__cell"
+            >
+              
+          Mon
+        
+            </th>
+            <th
+              class="calendar-base__cell"
+            >
+              
+          Tue
+        
+            </th>
+            <th
+              class="calendar-base__cell"
+            >
+              
+          Wed
+        
+            </th>
+            <th
+              class="calendar-base__cell"
+            >
+              
+          Thu
+        
+            </th>
+            <th
+              class="calendar-base__cell"
+            >
+              
+          Fri
+        
+            </th>
+            <th
+              class="calendar-base__cell calendar-base__cell--sat"
+            >
+              
+          Sat
+        
+            </th>
+          </tr>
+        </thead>
+         
+        <tbody>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      1
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      2
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      3
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      4
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      5
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      6
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      7
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      8
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      9
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--range-end"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--selected"
+                >
+                  
+      10
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      11
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      12
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      13
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      14
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      15
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      16
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      17
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      18
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      19
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      20
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      21
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      22
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      23
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      24
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      25
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      26
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      27
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      28
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      29
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      30
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      31
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      1
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      2
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      3
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      4
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      5
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      6
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      7
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      8
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      9
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      10
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      11
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      class="calendar-base calendar-date-table date-range-picker-popup__calendar"
+    >
+      <div
+        class="calendar-base__title"
+      >
+        2020年4月
+      </div>
+       
+      <table
+        class="calendar-base__body"
+      >
+        <thead>
+          <tr>
+            <th
+              class="calendar-base__cell calendar-base__cell--sun"
+            >
+              
+          Sun
+        
+            </th>
+            <th
+              class="calendar-base__cell"
+            >
+              
+          Mon
+        
+            </th>
+            <th
+              class="calendar-base__cell"
+            >
+              
+          Tue
+        
+            </th>
+            <th
+              class="calendar-base__cell"
+            >
+              
+          Wed
+        
+            </th>
+            <th
+              class="calendar-base__cell"
+            >
+              
+          Thu
+        
+            </th>
+            <th
+              class="calendar-base__cell"
+            >
+              
+          Fri
+        
+            </th>
+            <th
+              class="calendar-base__cell calendar-base__cell--sat"
+            >
+              
+          Sat
+        
+            </th>
+          </tr>
+        </thead>
+         
+        <tbody>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      29
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      30
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      31
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      1
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      2
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      3
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      4
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      5
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      6
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      7
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      8
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      9
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      10
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      11
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      12
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      13
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      14
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      15
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--today"
+                >
+                  
+      16
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      17
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      18
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      19
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      20
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      21
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      22
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      23
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      24
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      25
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      26
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      27
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      28
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      29
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date"
+                >
+                  
+      30
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      1
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      2
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      3
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      4
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      5
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      6
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      7
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      8
+    
+                </div>
+              </div>
+            </td>
+            <td
+              class="calendar-base__cell calendar-base__body-cell"
+            >
+              <div
+                class="calendar-date-range-table__inner calendar-date-range-table__inner--desable"
+              >
+                <div
+                  class="calendar-date-range-table__date calendar-date-range-table__date--another-month"
+                >
+                  
+      9
+    
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots date-picker/PeriodDirectSelect default 1`] = `
+<div
+  class="period-direct-select"
+>
+  <label
+    class="period-direct-select__button"
+  >
+    <input
+      class="period-direct-select__radio"
+      name="periodDirectSelect"
+      type="radio"
+    />
+    
+    昨日
+  
+  </label>
+  <label
+    class="period-direct-select__button"
+  >
+    <input
+      class="period-direct-select__radio"
+      name="periodDirectSelect"
+      type="radio"
+    />
+    
+    今日
+  
+  </label>
+  <label
+    class="period-direct-select__button"
+  >
+    <input
+      class="period-direct-select__radio"
+      name="periodDirectSelect"
+      type="radio"
+    />
+    
+    先週
+  
+  </label>
+  <label
+    class="period-direct-select__button"
+  >
+    <input
+      class="period-direct-select__radio"
+      name="periodDirectSelect"
+      type="radio"
+    />
+    
+    先月
+  
+  </label>
+</div>
+`;

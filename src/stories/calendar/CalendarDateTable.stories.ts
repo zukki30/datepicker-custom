@@ -16,10 +16,10 @@ storiesOf("caledar/CalendarDateTable", module)
       components: { CalendarDateTable },
       props: {
         date: {
-          default: myDateKnob("Calendar", new Date())
+          default: () => myDateKnob("Calendar", new Date())
         },
         selectedDate: {
-          default: myDateKnob("Selected date", new Date("2020-03-20"))
+          default: () => myDateKnob("Selected date", new Date("2020-03-20"))
         }
       },
       methods: {
@@ -55,10 +55,10 @@ storiesOf("caledar/CalendarDateTable", module)
       },
       props: {
         date: {
-          default: myDateKnob("Calendar", new Date())
+          default: () => myDateKnob("Calendar", new Date())
         },
         selectedDate: {
-          default: myDateKnob("Selected date", new Date("2020-03-20"))
+          default: () => myDateKnob("Selected date", new Date("2020-03-20"))
         }
       },
       methods: {

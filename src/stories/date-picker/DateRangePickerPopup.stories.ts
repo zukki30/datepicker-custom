@@ -27,7 +27,7 @@ storiesOf("date-picker/DateRangePickerPopup", module).add(
     },
     props: {
       date: {
-        default: myDateKnob("DatePicker", new Date())
+        default: () => myDateKnob("DatePicker", new Date())
       }
     },
     methods: {
