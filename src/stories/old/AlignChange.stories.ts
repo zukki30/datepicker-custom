@@ -2,9 +2,9 @@ import { storiesOf } from "@storybook/vue";
 import { select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import { PopupAlign } from "@/components/date-picker/DatePicker";
-import AlignChange from "@/components/AlignChange.vue";
+import AlignChange from "@/components/old/AlignChange.vue";
 
-storiesOf("AlignChange", module).add(
+storiesOf("old/AlignChange", module).add(
   "default",
   () => ({
     components: { AlignChange },

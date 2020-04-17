@@ -76,7 +76,7 @@ import {
 } from "@/components/calendar/Calendar";
 import { WidthProperty } from "csstype";
 import DateRangePickerPopup from "@/components/date-picker/DateRangePickerPopup.vue";
-import DateRangePickerContainer2 from "@/components/date-picker/DateRangePickerContainer2.vue";
+import DateRangePickerContainer2 from "@/components/old/date-picker/DateRangePickerContainer2.vue";
 
 interface DirectSelect {
   name: string;

@@ -3,14 +3,14 @@ import { select, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import { DateRange } from "@/components/calendar/Calendar";
 import { DateRangeInput } from "@/components/date-picker/DatePicker";
-import DateRangePickerContainer2 from "@/components/date-picker/DateRangePickerContainer2.vue";
+import DateRangePickerContainer2 from "@/components/old/date-picker/DateRangePickerContainer2.vue";
 
 const dates: DateRange = {
   min: new Date("2020-02-15"),
   max: new Date("2020-03-10")
 };
 
-storiesOf("date-picker/DateRangePickerContainer2", module).add(
+storiesOf("old/date-picker/DateRangePickerContainer2", module).add(
   "default",
   () => ({
     components: { DateRangePickerContainer2 },

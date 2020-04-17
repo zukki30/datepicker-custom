@@ -5,9 +5,9 @@ import {
   disabledDateForDatePicker,
   dateRangePickerShortcuts
 } from "@/util/date-range-picker-util";
-import DateRangePicker from "@/components/DateRangePicker.vue";
+import DateRangePicker from "@/components/old/DateRangePicker.vue";
 
-storiesOf("DateRangePicker", module)
+storiesOf("old/DateRangePicker", module)
   .add(
     "default",
     () => ({

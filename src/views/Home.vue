@@ -1,12 +1,14 @@
 <template>
   <div class="home">
-    <h2>DatePicker - 1</h2>
-    <p>始点を終点を個別選択</p>
-    <DateRangePicker
-      v-model="value"
-      :shortcuts="shortcuts"
-      :disabled-date="disabledDate"
-    />
+    <div v-if="false">
+      <h2>DatePicker - 1</h2>
+      <p>始点を終点を個別選択</p>
+      <DateRangePicker
+        v-model="value"
+        :shortcuts="shortcuts"
+        :disabled-date="disabledDate"
+      />
+    </div>
 
     <h2>DatePicker - 2</h2>
     <p>始点を終点をワンアクションで選択</p>
@@ -44,39 +46,41 @@
       @click="onBDatepicker3Click"
     />
 
-    <h2>DatePicker - 4 - A</h2>
-    <p>
-      範囲選択、完了ボタンを押すまで確定せず何度でも再選択可能<br />
-      カレンダーの外側をクリックした時はキャンセル扱い
-    </p>
-    <AlignChange
-      :align="datapicker4APopup"
-      @click="onDatePicker4APopupAlignChange"
-    />
-    <div class="datepicker4A">
-      <DateRangeConfirmPicker
-        :selected-dates="datepicker4ADates"
-        :disabled-dates="disabledDates"
+    <div v-if="false">
+      <h2>DatePicker - 4 - A</h2>
+      <p>
+        範囲選択、完了ボタンを押すまで確定せず何度でも再選択可能<br />
+        カレンダーの外側をクリックした時はキャンセル扱い
+      </p>
+      <AlignChange
         :align="datapicker4APopup"
-        @input="onDateRangeConfirmPickerInput"
+        @click="onDatePicker4APopupAlignChange"
+      />
+      <div class="datepicker4A">
+        <DateRangeConfirmPicker
+          :selected-dates="datepicker4ADates"
+          :disabled-dates="disabledDates"
+          :align="datapicker4APopup"
+          @input="onDateRangeConfirmPickerInput"
+        />
+      </div>
+
+      <h2>DatePicker - 4 - B</h2>
+      <p>
+        範囲選択、完了ボタンを押すまで確定せず何度でも再選択可能<br />
+        カレンダーの外側をクリックした時は確定扱い
+      </p>
+      <AlignChange
+        :align="datapicker4BPopup"
+        @click="onDatePicker4BPopupAlignChange"
+      />
+      <DateRangeConfirmCanselInputPicker
+        :selected-dates="datepicker4BDates"
+        :disabled-dates="disabledDates"
+        :align="datapicker4BPopup"
+        @input="onDateRangeConfirmCanselInputPicker"
       />
     </div>
-
-    <h2>DatePicker - 4 - B</h2>
-    <p>
-      範囲選択、完了ボタンを押すまで確定せず何度でも再選択可能<br />
-      カレンダーの外側をクリックした時は確定扱い
-    </p>
-    <AlignChange
-      :align="datapicker4BPopup"
-      @click="onDatePicker4BPopupAlignChange"
-    />
-    <DateRangeConfirmCanselInputPicker
-      :selected-dates="datepicker4BDates"
-      :disabled-dates="disabledDates"
-      :align="datapicker4BPopup"
-      @input="onDateRangeConfirmCanselInputPicker"
-    />
   </div>
 </template>
 
@@ -88,13 +92,13 @@ import {
 } from "@/util/date-range-picker-util";
 import { DateRange } from "@/components/calendar/Calendar";
 import { DirectSelect } from "@/components/date-picker/DatePicker";
-import DateRangePicker from "@/components/DateRangePicker.vue";
+import DateRangePicker from "@/components/old/DateRangePicker.vue";
 import PeriodSpecification from "@/components/PeriodSpecification.vue";
 import DatePickerRangeInput from "@/components/date-picker/DatePickerRangeInput.vue";
 import DateRangeConfirmPicker from "@/components/date-picker/DateRangeConfirmPicker.vue";
 import PeriodDirectSelect from "@/components/date-picker/PeriodDirectSelect.vue";
 import DatePickerRangeChangeInput from "@/components/date-picker/DatePickerRangeChangeInput.vue";
-import AlignChange from "@/components/AlignChange.vue";
+import AlignChange from "@/components/old/AlignChange.vue";
 import DateRangeConfirmCanselInputPicker from "@/components/date-picker/DateRangeConfirmCanselInputPicker.vue";
 
 @Component({

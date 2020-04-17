@@ -1,9 +1,9 @@
 import { storiesOf } from "@storybook/vue";
-import { date, boolean, text, select } from "@storybook/addon-knobs";
+import { boolean, text, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import { DateRange } from "@/components/calendar/Calendar";
 import { PopupAlign } from "@/components/date-picker/DatePicker";
-import DateRangeConfirmPicker from "@/components/date-picker/DateRangeConfirmPicker.vue";
+import DateRangeConfirmCanselInputPicker from "@/components/old/date-picker/DateRangeConfirmCanselInputPicker.vue";
 
 const selectedDates: DateRange = {
   min: new Date("2020-02-15"),
@@ -15,11 +15,11 @@ const disabledDates: DateRange = {
   max: new Date("2020-03-20")
 };
 
-storiesOf("date-picker/DateRangeConfirmPicker", module)
+storiesOf("old/date-picker/DateRangeConfirmCanselInputPicker", module)
   .add(
     "default",
     () => ({
-      components: { DateRangeConfirmPicker },
+      components: { DateRangeConfirmCanselInputPicker },
       data() {
         return {
           disabledDates,
@@ -41,7 +41,7 @@ storiesOf("date-picker/DateRangeConfirmPicker", module)
         onInput: action("input")
       },
       template: `
-      <DateRangeConfirmPicker
+      <DateRangeConfirmCanselInputPicker
        :width="width"
        :disabled="disabled"
        :align="align"
@@ -51,14 +51,14 @@ storiesOf("date-picker/DateRangeConfirmPicker", module)
     }),
     {
       info: {
-        summary: "Simple DateRangeConfirmPicker component"
+        summary: "Simple DateRangeConfirmCanselInputPicker component"
       }
     }
   )
   .add(
     "set date",
     () => ({
-      components: { DateRangeConfirmPicker },
+      components: { DateRangeConfirmCanselInputPicker },
       data() {
         return {
           disabledDates,
@@ -77,7 +77,7 @@ storiesOf("date-picker/DateRangeConfirmPicker", module)
         onInput: action("input")
       },
       template: `
-      <DateRangeConfirmPicker
+      <DateRangeConfirmCanselInputPicker
        :width="width"
        :disabled="disabled"
        :disabled-dates="disabledDates"
@@ -91,8 +91,3 @@ storiesOf("date-picker/DateRangeConfirmPicker", module)
       }
     }
   );
-
-function myDateKnob(name: string, value: Date) {
-  const stringTimestamp = date(name, value);
-  return new Date(stringTimestamp);
-}
