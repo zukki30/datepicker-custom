@@ -108,14 +108,14 @@ export default class DateRangePickerPopup extends Vue {
 
   &__previous-button-container {
     position: absolute;
-    top: 0;
+    top: 5px;
     left: 0;
     display: flex;
   }
 
   &__next-button-container {
     position: absolute;
-    top: 0;
+    top: 5px;
     right: 0;
     display: flex;
   }
@@ -134,14 +134,14 @@ export default class DateRangePickerPopup extends Vue {
       top: 7px;
       width: 7px;
       height: 7px;
-      border-top: 1px solid $colorBase800;
+      border-top: 1px solid $colorBase700;
       content: "";
       transition: border-color 0.3s ease;
     }
 
     &:hover {
       &::before {
-        border-color: $colorBase600;
+        border-color: $colorBase500;
       }
     }
   }
@@ -149,7 +149,7 @@ export default class DateRangePickerPopup extends Vue {
   &__previous {
     &::before {
       left: 8px;
-      border-left: 1px solid $colorBase800;
+      border-left: 1px solid $colorBase700;
       transform: translate(-50%, -50%) rotate(-45deg);
     }
   }
@@ -157,7 +157,7 @@ export default class DateRangePickerPopup extends Vue {
   &__next {
     &::before {
       right: 8px;
-      border-right: 1px solid $colorBase800;
+      border-right: 1px solid $colorBase700;
       transform: translate(50%, -50%) rotate(45deg);
     }
   }
@@ -177,7 +177,7 @@ export default class DateRangePickerPopup extends Vue {
       top: 7px;
       width: 7px;
       height: 7px;
-      border-top: 1px solid $colorBase800;
+      border-top: 1px solid $colorBase700;
       content: "";
       transition: border-color 0.3s ease;
     }
@@ -185,7 +185,7 @@ export default class DateRangePickerPopup extends Vue {
     &:hover {
       &::before,
       &::after {
-        border-color: $colorBase600;
+        border-color: $colorBase500;
       }
     }
   }
@@ -195,7 +195,7 @@ export default class DateRangePickerPopup extends Vue {
 
     &::before,
     &::after {
-      border-left: 1px solid $colorBase800;
+      border-left: 1px solid $colorBase700;
       transform: translate(-50%, -50%) rotate(-45deg);
     }
 
@@ -212,7 +212,7 @@ export default class DateRangePickerPopup extends Vue {
 
     &::before,
     &::after {
-      border-right: 1px solid $colorBase800;
+      border-right: 1px solid $colorBase700;
       transform: translate(50%, -50%) rotate(45deg);
     }
 
