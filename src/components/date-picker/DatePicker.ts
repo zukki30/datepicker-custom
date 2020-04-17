@@ -43,6 +43,14 @@ export class DatePicker {
     return Calendar.nextCalendarBuild(this.date, 1);
   }
 
+  get oneYearAgoCalendar(): Calendar {
+    return Calendar.oneYearAgoCalendarBuild(this.date);
+  }
+
+  get oneYearLaterCalendar(): Calendar {
+    return Calendar.oneYearLaterCalendarBuild(this.date);
+  }
+
   public static rebuild(calendar: Calendar): DatePicker {
     const date = new Date(calendar.year, calendar.monthIndex);
     return new DatePicker(date);

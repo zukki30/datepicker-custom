@@ -1,16 +1,32 @@
 <template>
   <div class="date-range-picker-popup">
     <div class="date-range-picker-popup__switch">
-      <button
-        class="date-range-picker-popup__button date-range-picker-popup__previous"
-        :title="previousCalendar.title"
-        @click="onMoveCalendar(calendars[1])"
-      ></button>
-      <button
-        class="date-range-picker-popup__button date-range-picker-popup__next"
-        :title="nextCalendar.title"
-        @click="onMoveCalendar(nextCalendar)"
-      ></button>
+      <div class="date-range-picker-popup__previous-button-container">
+        <button
+          class="date-range-picker-popup__skip-button date-range-picker-popup__one-year-ago"
+          :title="oneYearAgoCalendar.title"
+          @click="onMoveCalendar(oneYearAgoCalendar)"
+        />
+
+        <button
+          class="date-range-picker-popup__button date-range-picker-popup__previous"
+          :title="previousCalendar.title"
+          @click="onMoveCalendar(calendars[1])"
+        />
+      </div>
+      <div class="date-range-picker-popup__next-button-container">
+        <button
+          class="date-range-picker-popup__button date-range-picker-popup__next"
+          :title="nextCalendar.title"
+          @click="onMoveCalendar(nextCalendar)"
+        />
+
+        <button
+          class="date-range-picker-popup__skip-button date-range-picker-popup__one-year-later"
+          :title="oneYearLaterCalendar.title"
+          @click="onMoveCalendar(oneYearLaterCalendar)"
+        />
+      </div>
     </div>
     <div class="date-range-picker-popup__body">
       <CalendarDateRangeTable
@@ -20,8 +36,10 @@
         :calendar="calendar"
         :selected-dates="selectedDates"
         :disabled-dates="disabledDates"
+        :disabled-month-click="disabledMonthClick"
         @click="onClick"
         @mouse-enter="onMouseEnter"
+        @month-click="onMonthClick"
       />
     </div>
   </div>
@@ -46,6 +64,9 @@ export default class DateRangePickerPopup extends Vue {
   @Prop({ type: Object, default: null })
   disabledDates!: DateRange;
 
+  @Prop({ type: Boolean, default: false })
+  disabledMonthClick!: boolean;
+
   @Emit("click")
   onClick(date: Date) {}
 
@@ -54,6 +75,9 @@ export default class DateRangePickerPopup extends Vue {
 
   @Emit("move")
   onMoveCalendar(calender: Calendar) {}
+
+  @Emit("month-click")
+  onMonthClick(calendar: Calendar) {}
 
   get calendars(): Calendar[] {
     return this.datePicker.calendars;
@@ -66,6 +90,14 @@ export default class DateRangePickerPopup extends Vue {
   get nextCalendar(): Calendar {
     return this.datePicker.nextCalendar;
   }
+
+  get oneYearAgoCalendar(): Calendar {
+    return this.datePicker.oneYearAgoCalendar;
+  }
+
+  get oneYearLaterCalendar(): Calendar {
+    return this.datePicker.oneYearLaterCalendar;
+  }
 }
 </script>
 
@@ -74,54 +106,121 @@ export default class DateRangePickerPopup extends Vue {
   position: relative;
   background-color: $colorWhite;
 
-  &__button {
+  &__previous-button-container {
     position: absolute;
     top: 0;
-    padding: 5px;
-    width: 25px;
-    height: 25px;
-    border: 1px solid $colorBase500;
-    border-radius: 50%;
+    left: 0;
+    display: flex;
+  }
+
+  &__next-button-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+  }
+
+  &__button {
+    position: relative;
+    width: 12px;
+    height: 15px;
     background-color: $colorWhite;
-    font-size: 12px;
     line-height: 1;
     cursor: pointer;
     transition: border-color 0.3s ease, background-color 0.3s ease;
 
     &::before {
       position: absolute;
-      top: 50%;
+      top: 7px;
       width: 7px;
       height: 7px;
-      border-top: 2px solid $colorBase500;
+      border-top: 1px solid $colorBase800;
       content: "";
       transition: border-color 0.3s ease;
     }
 
     &:hover {
-      background-color: $colorBlue600;
+      &::before {
+        border-color: $colorBase600;
+      }
     }
   }
 
   &__previous {
-    left: 0;
-
     &::before {
-      left: 50%;
-      margin-left: 5%;
-      border-left: 2px solid $colorBase500;
+      left: 8px;
+      border-left: 1px solid $colorBase800;
       transform: translate(-50%, -50%) rotate(-45deg);
     }
   }
 
   &__next {
-    right: 0;
+    &::before {
+      right: 8px;
+      border-right: 1px solid $colorBase800;
+      transform: translate(50%, -50%) rotate(45deg);
+    }
+  }
+
+  &__skip-button {
+    position: relative;
+    width: 12px;
+    height: 15px;
+    background-color: $colorWhite;
+    line-height: 1;
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 7px;
+      width: 7px;
+      height: 7px;
+      border-top: 1px solid $colorBase800;
+      content: "";
+      transition: border-color 0.3s ease;
+    }
+
+    &:hover {
+      &::before,
+      &::after {
+        border-color: $colorBase600;
+      }
+    }
+  }
+
+  &__one-year-ago {
+    margin-right: 8px;
+
+    &::before,
+    &::after {
+      border-left: 1px solid $colorBase800;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
 
     &::before {
-      right: 50%;
-      margin-right: 3%;
-      border-right: 2px solid $colorBase500;
+      left: 7px;
+    }
+    &::after {
+      left: 10px;
+    }
+  }
+
+  &__one-year-later {
+    margin-left: 8px;
+
+    &::before,
+    &::after {
+      border-right: 1px solid $colorBase800;
       transform: translate(50%, -50%) rotate(45deg);
+    }
+
+    &::before {
+      right: 7px;
+    }
+    &::after {
+      right: 10px;
     }
   }
 

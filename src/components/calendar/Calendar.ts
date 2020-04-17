@@ -114,6 +114,22 @@ export class Calendar {
 
     return new Calendar(year, monthIndex, month);
   }
+
+  public static oneYearAgoCalendarBuild(date: Date): Calendar {
+    const year = date.getFullYear() - 1;
+    const monthIndex = date.getMonth();
+    const month = monthIndex + 1;
+
+    return new Calendar(year, monthIndex, month);
+  }
+
+  public static oneYearLaterCalendarBuild(date: Date): Calendar {
+    const year = date.getFullYear() + 1;
+    const monthIndex = date.getMonth();
+    const month = monthIndex + 1;
+
+    return new Calendar(year, monthIndex, month);
+  }
 }
 
 /**
