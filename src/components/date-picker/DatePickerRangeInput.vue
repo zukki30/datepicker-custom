@@ -107,7 +107,6 @@ export default class DatePickerRangeInput extends Vue {
   onEndCalendarMouseEnterDate: Date | null = null;
   endInputFocus: boolean = false;
 
-  selectDates: Date[] = [];
   datePicker: DatePicker | null = null;
   popupX: number = 0;
   showDatePickerPopup: boolean = false;
