@@ -54,9 +54,6 @@ export default class DatePickerInput extends Vue {
   value!: Date;
 
   @Prop({ type: Boolean, default: false })
-  show!: boolean;
-
-  @Prop({ type: Boolean, default: false })
   disabled!: boolean;
 
   @Prop({ type: String, default: "100%" })
