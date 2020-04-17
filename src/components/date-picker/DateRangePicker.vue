@@ -1,5 +1,5 @@
 <template>
-  <div class="date-range-picker" :style="{ width }">
+  <div v-click-outside="onClose" class="date-range-picker" :style="{ width }">
     <DateRangePickerContainer
       :dates="inputDates"
       :disabled="disabled"
@@ -7,19 +7,20 @@
       @input="onOpen"
     />
 
-    <div
-      v-if="showDateRangePickerPopup"
-      v-click-outside="onClose"
-      class="date-range-picker__popup"
-    >
-      <DateRangePickerPopup
-        :date-picker="datePicker"
-        :selected-dates="popupDates"
-        :disabled-dates="disabledDates"
-        @click="onClick"
-        @move="onMoveCalendar"
-        @mouse-enter="onMouseEnter"
-      />
+    <div v-if="showDateRangePickerPopup" class="date-range-picker__popup">
+      <div class="date-range-picker__header">
+        <PeriodDirectSelect v-model="value" @click="onDirectSelectClick" />
+      </div>
+      <div class="date-range-picker__body">
+        <DateRangePickerPopup
+          :date-picker="datePicker"
+          :selected-dates="popupDates"
+          :disabled-dates="disabledDates"
+          @click="onClick"
+          @move="onMoveCalendar"
+          @mouse-enter="onMouseEnter"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -36,11 +37,17 @@ import {
   changeDateRange
 } from "@/components/calendar/Calendar";
 import { WidthProperty } from "csstype";
+import { DirectSelect } from "@/components/date-picker/DatePicker";
 import DateRangePickerPopup from "@/components/date-picker/DateRangePickerPopup.vue";
 import DateRangePickerContainer from "@/components/date-picker/DateRangePickerContainer.vue";
+import PeriodDirectSelect from "@/components/date-picker/PeriodDirectSelect.vue";
 
 @Component({
-  components: { DateRangePickerPopup, DateRangePickerContainer }
+  components: {
+    DateRangePickerPopup,
+    DateRangePickerContainer,
+    PeriodDirectSelect
+  }
 })
 export default class DateRangePicker extends Vue {
   @Prop({ type: Boolean, default: false })
@@ -56,8 +63,17 @@ export default class DateRangePicker extends Vue {
   selectedDates!: DateRange;
 
   @Emit("input")
-  onInput(dates: DateRange | null) {}
+  onInput(dates: DateRange | null) {
+    this.value = "";
+  }
 
+  @Emit("click")
+  onDirectSelectClick(directSelect: DirectSelect) {
+    this.value = directSelect.name;
+    this.onClose();
+  }
+
+  value: string = "";
   focus: string = "";
   selectDates: Date[] = [];
   datePicker: DatePicker | null = null;
@@ -105,6 +121,7 @@ export default class DateRangePicker extends Vue {
   }
 
   onClick(date: Date) {
+    this.value = "";
     this.selectDates.push(date);
     this.focus = this.dateRangeInput.End;
 
@@ -147,9 +164,17 @@ export default class DateRangePicker extends Vue {
   &__popup {
     position: absolute;
     top: 40px;
-    padding: 10px;
     width: 800px;
     box-shadow: 2px 2px 5px rgba(#000, 0.1);
+  }
+
+  &__header {
+    padding: 10px;
+    border-bottom: 1px solid $colorBase400;
+  }
+
+  &__body {
+    padding: 10px;
   }
 }
 </style>

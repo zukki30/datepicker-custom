@@ -5,11 +5,8 @@
       :selected-dates="dateRange"
       :disabled-dates="disabledDates"
       @input="onInput"
+      @click="onClick"
     />
-
-    <div class="period-specification__directly-select">
-      <PeriodDirectSelect v-model="value" @click="onClick" />
-    </div>
   </div>
 </template>
 
@@ -18,10 +15,9 @@ import { Component, Vue } from "vue-property-decorator";
 import { DateRange } from "@/components/calendar/Calendar";
 import { DirectSelect } from "@/components/date-picker/DatePicker";
 import DateRangePicker from "@/components/date-picker/DateRangePicker.vue";
-import PeriodDirectSelect from "@/components/date-picker/PeriodDirectSelect.vue";
 
 @Component({
-  components: { DateRangePicker, PeriodDirectSelect }
+  components: { DateRangePicker }
 })
 export default class PeriodSpecification extends Vue {
   dateRange: DateRange | null = null;
@@ -36,12 +32,10 @@ export default class PeriodSpecification extends Vue {
 
   onInput(dateRange: DateRange) {
     this.dateRange = dateRange;
-    this.value = "";
   }
 
   onClick(directSelect: DirectSelect) {
     this.dateRange = directSelect.dateRange;
-    this.value = directSelect.name;
   }
 }
 </script>
