@@ -43,6 +43,7 @@
             :date-picker="datePicker"
             :disabled-dates="changeDisabledDates"
             :selected-dates="dates"
+            :disabled-month-click="true"
             @click="onSelectDate"
             @move="onMoveCalendar"
             @mouse-enter="onMouseEnter"

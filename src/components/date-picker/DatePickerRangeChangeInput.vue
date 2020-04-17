@@ -75,6 +75,7 @@
             :date-picker="datePicker"
             :disabled-dates="disabledDates"
             :selected-dates="dates"
+            :disabled-month-click="true"
             @click="onSelectDate"
             @move="onMoveCalendar"
             @mouse-enter="onMouseEnter"
