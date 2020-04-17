@@ -36,11 +36,6 @@
         @input="onBInput"
       />
     </div>
-    <PeriodDirectSelect
-      v-model="datepicker3BValue"
-      class="periodDirectSelect"
-      @click="onBDatepicker3Click"
-    />
 
     <div v-if="false">
       <h2>DatePicker - 4 - A</h2>
@@ -111,10 +106,8 @@ import DateRangeConfirmCanselInputPicker from "@/components/old/date-picker/Date
 })
 export default class Home extends Vue {
   value = null;
-  datepicker3AValue: string = "";
-  datepicker3ADates: DateRange | null = null;
 
-  datepicker3BValue: string = "";
+  datepicker3ADates: DateRange | null = null;
   datepicker3BDates: DateRange | null = null;
 
   datepicker4ADates: DateRange | null = null;
@@ -124,17 +117,11 @@ export default class Home extends Vue {
   datapicker4BPopup: string = "center";
 
   onAInput(dates: DateRange) {
-    console.log(dates);
+    this.datepicker3ADates = dates;
   }
 
   onBInput(dates: DateRange) {
-    this.datepicker3BDates = null;
-    this.datepicker3BValue = "";
-  }
-
-  onBDatepicker3Click(directSelect: DirectSelect) {
-    this.datepicker3BDates = directSelect.dateRange;
-    this.datepicker3BValue = directSelect.name;
+    this.datepicker3BDates = dates;
   }
 
   onDateRangeConfirmPickerInput(dates: DateRange | null) {
