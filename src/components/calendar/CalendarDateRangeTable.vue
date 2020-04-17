@@ -3,7 +3,9 @@
     v-slot:default="{ date }"
     class="calendar-date-table"
     :calendar="calendar"
+    :disabled-month-click="disabledMonthClick"
     @click="onDateClick"
+    @month-click="onMonthClick"
   >
     <div
       class="calendar-date-range-table__inner"
@@ -42,11 +44,17 @@ export default class CalendarDateRangeTable extends Vue {
   @Prop({ type: Object, default: null })
   disabledDates!: DateRange;
 
+  @Prop({ type: Boolean, default: false })
+  disabledMonthClick!: boolean;
+
   @Emit("click")
   onClick(date: Date) {}
 
   @Emit("mouse-enter")
   onMouseEnter(date: Date) {}
+
+  @Emit("month-click")
+  onMonthClick(calendar: Calendar) {}
 
   get currentDates(): Date[] {
     return this.selectedDates !== null

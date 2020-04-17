@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/vue";
-import { date } from "@storybook/addon-knobs";
+import { date, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import { Calendar, DateRange } from "@/components/calendar/Calendar";
 import CalendarDateRangeTable from "@/components/calendar/CalendarDateRangeTable.vue";
@@ -27,10 +27,14 @@ storiesOf("caledar/CalendarDateRangeTable", module)
       props: {
         date: {
           default: () => myDateKnob("Calendar", new Date())
+        },
+        disabledMonthClick: {
+          default: boolean("disabledMonthClick", false)
         }
       },
       methods: {
-        onClick: action("click")
+        onClick: action("click"),
+        onMonthClick: action("month-click")
       },
       computed: {
         calendar() {
@@ -42,8 +46,10 @@ storiesOf("caledar/CalendarDateRangeTable", module)
       template: `
       <CalendarDateRangeTable
        :calendar="calendar"
+       :disabled-month-click="disabledMonthClick"
        :selected-dates="selectedDates"
-       @click="onClick" />`
+       @click="onClick"
+       @month-click="onMonthClick" />`
     }),
     {
       info: {
@@ -64,10 +70,14 @@ storiesOf("caledar/CalendarDateRangeTable", module)
       props: {
         date: {
           default: () => myDateKnob("Calendar", new Date())
+        },
+        disabledMonthClick: {
+          default: boolean("disabledMonthClick", false)
         }
       },
       methods: {
-        onClick: action("click")
+        onClick: action("click"),
+        onMonthClick: action("month-click")
       },
       computed: {
         calendar() {
@@ -79,9 +89,11 @@ storiesOf("caledar/CalendarDateRangeTable", module)
       template: `
       <CalendarDateRangeTable
        :calendar="calendar"
+       :disabled-month-click="disabledMonthClick"
        :selected-dates="selectedDates"
        :disabled-dates="disabledDates"
-       @click="onClick" />`
+       @click="onClick"
+       @month-click="onMonthClick" />`
     }),
     {
       info: {
@@ -102,10 +114,14 @@ storiesOf("caledar/CalendarDateRangeTable", module)
       props: {
         date: {
           default: () => myDateKnob("Calendar", new Date())
+        },
+        disabledMonthClick: {
+          default: boolean("disabledMonthClick", false)
         }
       },
       methods: {
-        onClick: action("click")
+        onClick: action("click"),
+        onMonthClick: action("month-click")
       },
       computed: {
         calendar() {
@@ -117,9 +133,11 @@ storiesOf("caledar/CalendarDateRangeTable", module)
       template: `
       <CalendarDateRangeTable
        :calendar="calendar"
+       :disabled-month-click="disabledMonthClick"
        :selected-dates="selectedDates"
        :disabled-dates="disabledDates"
-       @click="onClick" />`
+       @click="onClick"
+       @month-click="onMonthClick" />`
     }),
     {
       info: {

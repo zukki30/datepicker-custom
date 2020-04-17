@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/vue";
-import { date } from "@storybook/addon-knobs";
+import { date, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
-import { Calendar, DateRange } from "@/components/calendar/Calendar";
+import { Calendar } from "@/components/calendar/Calendar";
 import CalendarBase from "@/components/calendar/CalendarBase.vue";
 
 storiesOf("caledar/CalendarBase", module).add(
@@ -11,10 +11,14 @@ storiesOf("caledar/CalendarBase", module).add(
     props: {
       date: {
         default: () => myDateKnob("Calendar", new Date())
+      },
+      disabledMonthClick: {
+        default: boolean("disabledMonthClick", false)
       }
     },
     methods: {
-      onClick: action("click")
+      onClick: action("click"),
+      onMonthClick: action("month-click")
     },
     computed: {
       calendar() {
@@ -24,7 +28,12 @@ storiesOf("caledar/CalendarBase", module).add(
       }
     },
     template: `
-    <CalendarBase v-slot:default="{ date }" :calendar="calendar" @click="onClick">
+    <CalendarBase
+     v-slot:default="{ date }"
+     :calendar="calendar"
+     :disabled-month-click="disabledMonthClick"
+     @click="onClick"
+     @month-click="onMonthClick">
       {{ date.getDate() }}
     </CalendarBase>`
   }),

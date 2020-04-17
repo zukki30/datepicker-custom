@@ -1,6 +1,13 @@
 <template>
   <div class="calendar-base">
-    <div class="calendar-base__title" v-text="title" />
+    <div class="calendar-base__title">
+      <span
+        class="calendar-base__text"
+        :class="{ 'calendar-base__text--disabled': disabledMonthClick }"
+        @click="onMonthClick(calendar)"
+        v-text="title"
+      />
+    </div>
     <table class="calendar-base__body">
       <thead>
         <tr>
@@ -39,8 +46,14 @@ export default class CalendarBase extends Vue {
   @Prop({ type: Calendar, required: true })
   calendar!: Calendar;
 
+  @Prop({ type: Boolean, default: false })
+  disabledMonthClick!: boolean;
+
   @Emit("click")
   onClick(date: Date) {}
+
+  @Emit("month-click")
+  onMonthClick(calendar: Calendar) {}
 
   get title(): string {
     return this.calendar.title;
@@ -76,6 +89,24 @@ export default class CalendarBase extends Vue {
     border-bottom: 1px solid $colorBase400;
     text-align: center;
     font-weight: bold;
+  }
+
+  &__text {
+    display: inline-block;
+    padding: 8px 10px 0;
+    height: $cellHeight;
+
+    &--disabled {
+      pointer-events: none;
+    }
+
+    &:not(.calendar-base__text--disabled) {
+      cursor: pointer;
+
+      &:hover {
+        color: $colorBlue900;
+      }
+    }
   }
 
   &__body {
