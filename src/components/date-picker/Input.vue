@@ -7,6 +7,7 @@
     :value="formatValue"
     :class="{ 'input--focus': focus }"
     :disabled="disabled"
+    @click="onClick"
   />
 </template>
 
@@ -25,10 +26,11 @@ export default class DatePickerInput extends Vue {
   @Prop({ type: String, default: "" })
   placeholder!: string;
 
-  @Emit("input")
-  onInput(date: Date) {}
+  @Prop({ type: Boolean, default: false })
+  focus!: boolean;
 
-  focus: boolean = false;
+  @Emit("click")
+  onClick() {}
 
   get formatValue(): string {
     return this.value !== null ? dateFormat(this.value) : "";

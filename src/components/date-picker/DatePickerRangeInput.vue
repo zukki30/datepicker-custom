@@ -1,37 +1,73 @@
 <template>
-  <div class="date-picker-range-input" :style="{ width }">
-    <DatePickerInput
-      ref="startDatePickerInput"
-      placeholder="対象期間の開始"
-      :value="selectedStartInputValue"
-      :disabled="disabled"
-      :disabled-dates="startInputDisabledDates"
-      :selected-dates="dates"
-      @input="onStartInput"
-      @mouse-enter="onStartCalendarMouseEnter"
-    />
-    <div class="date-picker-range-input__hyphen">-</div>
-    <DatePickerInput
-      ref="endDatePickerInput"
-      placeholder="対象期間の終了"
-      :value="selectedEndInputValue"
-      :disabled="disabled"
-      :disabled-dates="endInputDisabledDates"
-      :selected-dates="dates"
-      @input="onEndInput"
-      @mouse-enter="onEndCalendarMouseEnter"
-    />
+  <div
+    v-click-outside="onClose"
+    class="date-picker-range-input"
+    :style="{ width }"
+  >
+    <div class="date-picker-range-input__container">
+      <Input
+        ref="startInput"
+        placeholder="対象期間の開始"
+        :value="selectedStartInputValue"
+        :disabled="disabled"
+        :focus="startInputFocus"
+        @click="onStartClick"
+      />
+      <div class="date-picker-range-input__hyphen">-</div>
+      <Input
+        ref="endInput"
+        placeholder="対象期間の終了"
+        :value="selectedEndInputValue"
+        :disabled="disabled"
+        :focus="endInputFocus"
+        @click="onEndClick"
+      />
+    </div>
+
+    <Transition name="datePickerPopup" @enter="onChangePosition">
+      <div
+        v-if="showDatePickerPopup"
+        ref="datePickerPopup"
+        class="date-picker-range-input__popup"
+        :style="{ 'margin-left': popupX + 'px' }"
+      >
+        <div class="date-picker-range-input__header">
+          <PeriodDirectSelect
+            v-model="periodDirectSelectValue"
+            @click="onPeriodDirectSelectClick"
+          />
+        </div>
+
+        <div class="date-picker-range-input__body">
+          <DateRangePickerPopup
+            :date-picker="datePicker"
+            :disabled-dates="changeDisabledDates"
+            :selected-dates="dates"
+            @click="onSelectDate"
+            @move="onMoveCalendar"
+            @mouse-enter="onMouseEnter"
+          />
+        </div>
+      </div>
+    </Transition>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Model, Emit } from "vue-property-decorator";
-import { DateRange, changeDateRange } from "@/components/calendar/Calendar";
+import { Component, Vue, Prop, Emit } from "vue-property-decorator";
+import { DatePicker, DirectSelect } from "@/components/date-picker/DatePicker";
+import {
+  Calendar,
+  DateRange,
+  changeDateRange
+} from "@/components/calendar/Calendar";
 import { WidthProperty } from "csstype";
-import DatePickerInput from "@/components/date-picker/DatePickerInput.vue";
+import DateRangePickerPopup from "@/components/date-picker/DateRangePickerPopup.vue";
+import Input from "@/components/date-picker/Input.vue";
+import PeriodDirectSelect from "@/components/date-picker/PeriodDirectSelect.vue";
 
 @Component({
-  components: { DatePickerInput }
+  components: { DateRangePickerPopup, Input, PeriodDirectSelect }
 })
 export default class DatePickerRangeInput extends Vue {
   @Prop({ type: Boolean, default: false })
@@ -49,13 +85,33 @@ export default class DatePickerRangeInput extends Vue {
   @Emit("input")
   onInput(dates: DateRange) {}
 
+  @Emit("open")
+  onOpen() {
+    this.showDatePickerPopup = true;
+    this.onBuild();
+  }
+
+  @Emit("close")
+  onClose() {
+    this.showDatePickerPopup = false;
+    this.startInputFocus = false;
+    this.endInputFocus = false;
+    this.popupX = 0;
+  }
+
   startInputValue: Date | null = null;
   onStartCalendarMouseEnterDate: Date | null = null;
+  startInputFocus: boolean = false;
 
   endInputValue: Date | null = null;
   onEndCalendarMouseEnterDate: Date | null = null;
+  endInputFocus: boolean = false;
 
   selectDates: Date[] = [];
+  datePicker: DatePicker | null = null;
+  popupX: number = 0;
+  showDatePickerPopup: boolean = false;
+  periodDirectSelectValue: string = "";
 
   get dates(): DateRange | null {
     if (this.selectedEndInputValue && this.onStartCalendarMouseEnterDate) {
@@ -104,19 +160,15 @@ export default class DatePickerRangeInput extends Vue {
     return null;
   }
 
-  get startInputDisabledDates(): DateRange {
-    if (this.selectedEndInputValue !== null) {
+  get changeDisabledDates(): DateRange {
+    if (this.startInputFocus && this.selectedEndInputValue !== null) {
       return {
         min: this.disabledDates.min,
         max: this.selectedEndInputValue
       };
     }
 
-    return this.disabledDates;
-  }
-
-  get endInputDisabledDates(): DateRange {
-    if (this.selectedStartInputValue !== null) {
+    if (this.endInputFocus && this.selectedStartInputValue !== null) {
       return {
         min: this.selectedStartInputValue,
         max: this.disabledDates.max
@@ -124,14 +176,6 @@ export default class DatePickerRangeInput extends Vue {
     }
 
     return this.disabledDates;
-  }
-
-  onStartCalendarMouseEnter(date: Date) {
-    this.onStartCalendarMouseEnterDate = date;
-  }
-
-  onEndCalendarMouseEnter(date: Date) {
-    this.onEndCalendarMouseEnterDate = date;
   }
 
   onCalendarClose() {
@@ -163,17 +207,38 @@ export default class DatePickerRangeInput extends Vue {
     return null;
   }
 
+  onBuild() {
+    const date: Date = this.dates !== null ? this.dates.max : new Date();
+
+    this.datePicker = new DatePicker(date);
+  }
+
+  onStartClick() {
+    this.startInputFocus = true;
+    this.endInputFocus = false;
+
+    if (!this.showDatePickerPopup) {
+      this.onOpen();
+    }
+  }
+
+  onEndClick() {
+    this.startInputFocus = false;
+    this.endInputFocus = true;
+
+    if (!this.showDatePickerPopup) {
+      this.onOpen();
+    }
+  }
+
   onStartInput(date: Date) {
     this.startInputValue = date;
     this.onCalendarClose();
 
     if (this.endInputValue === null) {
-      (this.$refs.endDatePickerInput as DatePickerInput).onOpen();
-    }
-
-    if (this.endInputValue instanceof Date && date > this.endInputValue) {
-      this.startInputValue = this.endInputValue;
-      this.endInputValue = date;
+      this.onEndClick();
+    } else {
+      this.onClose();
     }
   }
 
@@ -182,24 +247,103 @@ export default class DatePickerRangeInput extends Vue {
     this.onCalendarClose();
 
     if (this.startInputValue === null) {
-      (this.$refs.startDatePickerInput as DatePickerInput).onOpen();
+      this.onStartClick();
+    } else {
+      this.onClose();
+    }
+  }
+
+  onChangePosition(el: HTMLElement) {
+    // Using to `Left` value because work in IE11 browser.
+    const x = el.getBoundingClientRect().left;
+
+    if (0 > x) {
+      this.popupX = -x;
+    }
+  }
+
+  onMoveCalendar(calendar: Calendar) {
+    this.datePicker = DatePicker.rebuild(calendar);
+  }
+
+  onMouseEnter(date: Date) {
+    if (this.startInputFocus) {
+      this.onStartCalendarMouseEnterDate = date;
+      return;
     }
 
-    if (this.startInputValue instanceof Date && date < this.startInputValue) {
-      this.endInputValue = this.startInputValue;
-      this.startInputValue = date;
+    if (this.endInputFocus) {
+      this.onEndCalendarMouseEnterDate = date;
+      return;
     }
+  }
+
+  onSelectDate(date: Date) {
+    this.periodDirectSelectValue = "";
+
+    if (this.startInputFocus) {
+      this.onStartInput(date);
+      return;
+    }
+
+    if (this.endInputFocus) {
+      this.onEndInput(date);
+      return;
+    }
+  }
+
+  onPeriodDirectSelectClick(directSelect: DirectSelect) {
+    this.startInputValue = directSelect.dateRange.min;
+    this.endInputValue = directSelect.dateRange.max;
+    this.periodDirectSelectValue = directSelect.name;
+    this.onClose();
   }
 }
 </script>
 
 <style scoped lang="scss">
 .date-picker-range-input {
-  display: flex;
-  align-items: center;
+  position: relative;
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
 
   &__hyphen {
     padding: 0 10px;
   }
+
+  &__popup {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    min-width: 700px;
+    width: 100%;
+    background-color: $colorWhite;
+    box-shadow: 0 1px 4px rgba(#000, 0.1);
+    transform: translateX(-50%);
+  }
+
+  &__header {
+    padding: 10px;
+    border-bottom: 1px solid $colorBase400;
+  }
+
+  &__body {
+    padding: 10px;
+  }
+}
+
+.datePickerPopup-enter-active,
+.datePickerPopup-leave-active {
+  margin-top: 0;
+  opacity: 1;
+  transition: opacity 0.3s ease, margin-top 0.3s ease;
+}
+.datePickerPopup-enter,
+.datePickerPopup-leave-to {
+  margin-top: -40px;
+  opacity: 0;
 }
 </style>

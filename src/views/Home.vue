@@ -20,16 +20,12 @@
     <p>個別選択、始点・終点の片方だけの変更が可能で入れ替え選択は不可</p>
     <div class="datepicker3A">
       <DatePickerRangeInput
+        ref="datePickerRangeInput"
         :selected-dates="datepicker3ADates"
         :disabled-dates="disabledDates"
         @input="onAInput"
       />
     </div>
-    <PeriodDirectSelect
-      v-model="datepicker3AValue"
-      class="periodDirectSelect"
-      @click="onADatepicker3Click"
-    />
 
     <h2>DatePicker - 3 - B</h2>
     <p>個別選択、始点・終点の片方だけの変更が可能で入れ替え選択も可能</p>
@@ -95,11 +91,11 @@ import { DirectSelect } from "@/components/date-picker/DatePicker";
 import DateRangePicker from "@/components/old/DateRangePicker.vue";
 import PeriodSpecification from "@/components/PeriodSpecification.vue";
 import DatePickerRangeInput from "@/components/date-picker/DatePickerRangeInput.vue";
-import DateRangeConfirmPicker from "@/components/date-picker/DateRangeConfirmPicker.vue";
+import DateRangeConfirmPicker from "@/components/old/date-picker/DateRangeConfirmPicker.vue";
 import PeriodDirectSelect from "@/components/date-picker/PeriodDirectSelect.vue";
 import DatePickerRangeChangeInput from "@/components/date-picker/DatePickerRangeChangeInput.vue";
 import AlignChange from "@/components/old/AlignChange.vue";
-import DateRangeConfirmCanselInputPicker from "@/components/date-picker/DateRangeConfirmCanselInputPicker.vue";
+import DateRangeConfirmCanselInputPicker from "@/components/old/date-picker/DateRangeConfirmCanselInputPicker.vue";
 
 @Component({
   components: {
@@ -128,13 +124,7 @@ export default class Home extends Vue {
   datapicker4BPopup: string = "center";
 
   onAInput(dates: DateRange) {
-    this.datepicker3ADates = null;
-    this.datepicker3AValue = "";
-  }
-
-  onADatepicker3Click(directSelect: DirectSelect) {
-    this.datepicker3ADates = directSelect.dateRange;
-    this.datepicker3AValue = directSelect.name;
+    console.log(dates);
   }
 
   onBInput(dates: DateRange) {
@@ -212,6 +202,11 @@ export default class Home extends Vue {
     padding-left: 10px;
     line-height: 1.5;
   }
+}
+
+.header {
+  padding: 10px;
+  border-bottom: 1px solid $colorBase400;
 }
 
 .datepicker2 {

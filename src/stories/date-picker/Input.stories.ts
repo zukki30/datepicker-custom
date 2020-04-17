@@ -10,12 +10,15 @@ function props() {
     },
     placeholder: {
       default: text("Placeholder", "対象の期間")
+    },
+    focus: {
+      default: boolean("focus", false)
     }
   };
 }
 
 const actions = {
-  onInput: action("input")
+  onClick: action("click")
 };
 
 storiesOf("date-picker/Input", module)
@@ -29,7 +32,8 @@ storiesOf("date-picker/Input", module)
       <Input
        :placeholder="placeholder"
        :disabled="disabled"
-       @input="onInput" />`
+       :focus="focus"
+       @click="onClick" />`
     }),
     {
       info: {

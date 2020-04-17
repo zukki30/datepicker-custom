@@ -27,8 +27,8 @@ import { DirectSelect } from "@/components/date-picker/DatePicker";
 
 @Component
 export default class PeriodDirectSelect extends Vue {
-  @Model("input", { type: String })
-  value: string = "";
+  @Model("input", { type: String, default: "" })
+  value!: string;
 
   @Emit("click")
   onClick(directSelect: DirectSelect) {}
