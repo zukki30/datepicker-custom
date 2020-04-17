@@ -17,6 +17,9 @@
         ref="datePickerPopup"
         v-click-outside="onClose"
         class="date-picker-input__popup"
+        :class="{
+          'date-picker-input__popup--disabled-animation': disabledAnimation
+        }"
         :style="{ 'margin-left': popupX + 'px' }"
       >
         <DateRangePickerPopup
@@ -42,7 +45,6 @@ import {
 } from "@/components/calendar/Calendar";
 import { WidthProperty } from "csstype";
 import DateRangePickerPopup from "@/components/date-picker/DateRangePickerPopup.vue";
-import { date } from "@storybook/addon-knobs";
 
 @Component({
   components: { DateRangePickerPopup }
@@ -68,6 +70,9 @@ export default class DatePickerInput extends Vue {
 
   @Prop({ type: Object, default: null })
   selectedDates!: DateRange;
+
+  @Prop({ type: Boolean, default: false })
+  disabledAnimation!: boolean;
 
   @Emit("input")
   onInput(date: Date) {
@@ -182,6 +187,10 @@ export default class DatePickerInput extends Vue {
   margin-top: 0;
   opacity: 1;
   transition: opacity 0.3s ease, margin-top 0.3s ease;
+}
+.datePickerPopup-enter-active.date-picker-input__popup--disabled-animation,
+.datePickerPopup-leave-active.date-picker-input__popup--disabled-animation {
+  transition: opacity 0s ease, margin-top 0s ease;
 }
 .datePickerPopup-enter,
 .datePickerPopup-leave-to {

@@ -24,6 +24,9 @@ function props() {
     },
     placeholder: {
       default: text("Placeholder", "対象の期間")
+    },
+    disabledAnimation: {
+      default: boolean("disabledAnimation", false)
     }
   };
 }
@@ -53,6 +56,7 @@ storiesOf("date-picker/DatePickerInput", module)
        :placeholder="placeholder"
        :disabled="disabled"
        :disabled-dates="disabledDates"
+       :disabled-animation="disabledAnimation"
        @input="onInput"
        @mouse-enter="onMouseEnter"
        @open="onOpen"
