@@ -19,6 +19,7 @@
           @click="onClick"
           @move="onMoveCalendar"
           @mouse-enter="onMouseEnter"
+          @month-click="onMonthClick"
         />
       </div>
     </div>
@@ -153,6 +154,15 @@ export default class DateRangePicker extends Vue {
     this.focus = "";
     this.selectDates = [];
     this.onMouseEnterDate = null;
+  }
+
+  onMonthClick(calendar: Calendar) {
+    const min = new Date(calendar.year, calendar.month - 1, 1);
+    const max = new Date(calendar.year, calendar.month, 0);
+    this.selectDates = [min, max];
+
+    this.onInput(this.dateRange);
+    this.onClose();
   }
 }
 </script>
