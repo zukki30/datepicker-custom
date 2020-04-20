@@ -12,22 +12,8 @@
           :value="selectedStartInputValue"
           :disabled="disabled"
           :focus="startInputFocus"
-          :class="{
-            'date-picker-range-change-input__input--hidden': showDateValue
-          }"
           @click="onStartClick"
         />
-        <transition name="fade" @after-enter="onSwitched">
-          <div
-            v-show="showDateValue"
-            class="date-picker-range-change-input__date"
-            :class="{
-              'date-picker-range-change-input__date--start-switch': switching
-            }"
-            :data-before-value="beforeStartInputValue"
-            :data-after-value="afterStartInputValue"
-          />
-        </transition>
       </div>
       <div class="date-picker-range-change-input__hyphen">-</div>
       <div class="date-picker-range-change-input__field">
@@ -37,22 +23,8 @@
           :value="selectedEndInputValue"
           :disabled="disabled"
           :focus="endInputFocus"
-          :class="{
-            'date-picker-range-change-input__input--hidden': showDateValue
-          }"
           @click="onEndClick"
         />
-        <transition name="fade" @after-enter="onSwitched">
-          <div
-            v-show="showDateValue"
-            class="date-picker-range-change-input__date"
-            :class="{
-              'date-picker-range-change-input__date--end-switch': switching
-            }"
-            :data-before-value="beforeEndInputValue"
-            :data-after-value="afterEndInputValue"
-          />
-        </transition>
       </div>
 
       <div
@@ -156,36 +128,17 @@ export default class DatePickerRangeChangeInput extends Vue {
   startInputValue: Date | null = null;
   onStartCalendarMouseEnterDate: Date | null = null;
   startInputFocus: boolean = false;
-  beforeStartInputValue: string = "";
-  afterStartInputValue: string = "";
 
   endInputValue: Date | null = null;
   onEndCalendarMouseEnterDate: Date | null = null;
   endInputFocus: boolean = false;
-  beforeEndInputValue: string = "";
-  afterEndInputValue: string = "";
 
   datePicker: DatePicker | null = null;
   popupX: number = 0;
   showDatePickerPopup: boolean = false;
   periodDirectSelectValue: string = "";
 
-  showDateValue: boolean = false;
-  switching: boolean = false;
-
   get dates(): DateRange | null {
-    // if (this.startInputFocus && this.onStartCalendarMouseEnterDate) {
-    //   return this.onChangeDateRange(
-    //     this.onStartCalendarMouseEnterDate,
-    //   );
-    // }
-
-    // if (this.endInputFocus && this.onEndCalendarMouseEnterDate) {
-    //   return this.onChangeDateRange(
-    //     this.onEndCalendarMouseEnterDate
-    //   );
-    // }
-
     return this.onChangeDateRange(
       this.selectedStartInputValue,
       this.selectedEndInputValue
@@ -224,16 +177,6 @@ export default class DatePickerRangeChangeInput extends Vue {
     }
 
     return null;
-  }
-
-  setBeforeAndAfterStartValue(before: Date, after: Date) {
-    this.beforeStartInputValue = dateFormat(before);
-    this.afterStartInputValue = dateFormat(after);
-  }
-
-  setBeforeAndAfterEndValue(before: Date, after: Date) {
-    this.beforeEndInputValue = dateFormat(before);
-    this.afterEndInputValue = dateFormat(after);
   }
 
   onCalendarClose() {
@@ -290,7 +233,6 @@ export default class DatePickerRangeChangeInput extends Vue {
   }
 
   onStartInput(date: Date) {
-    this.switching = false;
     this.startInputValue = date;
     this.onCalendarClose();
 
@@ -299,20 +241,9 @@ export default class DatePickerRangeChangeInput extends Vue {
     } else {
       this.onClose();
     }
-
-    if (this.endInputValue instanceof Date && date > this.endInputValue) {
-      this.startInputValue = this.endInputValue;
-      this.endInputValue = date;
-      this.switching = true;
-      this.showDateValue = true;
-
-      this.setBeforeAndAfterStartValue(date, this.startInputValue);
-      this.setBeforeAndAfterEndValue(this.startInputValue, date);
-    }
   }
 
   onEndInput(date: Date) {
-    this.switching = false;
     this.endInputValue = date;
     this.onCalendarClose();
 
@@ -320,16 +251,6 @@ export default class DatePickerRangeChangeInput extends Vue {
       this.onStartClick();
     } else {
       this.onClose();
-    }
-
-    if (this.startInputValue instanceof Date && date < this.startInputValue) {
-      this.endInputValue = this.startInputValue;
-      this.startInputValue = date;
-      this.switching = true;
-      this.showDateValue = true;
-
-      this.setBeforeAndAfterStartValue(this.endInputValue, date);
-      this.setBeforeAndAfterEndValue(date, this.endInputValue);
     }
   }
 
@@ -414,14 +335,9 @@ export default class DatePickerRangeChangeInput extends Vue {
   onInputDelete() {
     this.startInputValue = null;
     this.endInputValue = null;
+    this.onStartCalendarMouseEnterDate = null;
+    this.onEndCalendarMouseEnterDate = null;
     this.periodDirectSelectValue = "";
-    this.onInput(null);
-  }
-
-  onSwitched() {
-    setTimeout(() => {
-      this.showDateValue = false;
-    }, 500);
   }
 }
 </script>
@@ -436,50 +352,7 @@ export default class DatePickerRangeChangeInput extends Vue {
   }
 
   &__field {
-    position: relative;
     flex: 1;
-  }
-
-  &__input--hidden {
-    opacity: 0;
-  }
-
-  &__date {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-    background-color: $colorBlue600;
-
-    &::before,
-    &::after {
-      position: absolute;
-      top: 50%;
-      left: 10px;
-      transform: translateY(-50%);
-    }
-
-    &::before {
-      content: attr(data-before-value);
-    }
-
-    &::after {
-      content: attr(data-after-value);
-    }
-
-    &--start-switch {
-      &::after {
-        opacity: 0;
-      }
-    }
-
-    &--end-switch {
-      &::after {
-        opacity: 0;
-      }
-    }
   }
 
   &__hyphen {
@@ -552,46 +425,5 @@ export default class DatePickerRangeChangeInput extends Vue {
 .datePickerPopup-leave-to {
   margin-top: -40px;
   opacity: 0;
-}
-
-.fade-enter-active {
-  transition: all 0.3s ease;
-}
-.fade-leave-active {
-  transition: all 0.3s ease;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
-@keyframes start-anime {
-  0% {
-    opacity: 1;
-    transform: translate(0, -50%);
-  }
-  50% {
-    opacity: 0;
-    transform: translate(50%, -50%);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(50%, -50%);
-  }
-}
-
-@keyframes end-anime {
-  0% {
-    opacity: 1;
-    transform: translate(0, -50%);
-  }
-  50% {
-    opacity: 0;
-    transform: translate(-50%, -50%);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%);
-  }
 }
 </style>

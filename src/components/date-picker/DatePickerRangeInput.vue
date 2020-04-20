@@ -327,7 +327,6 @@ export default class DatePickerRangeInput extends Vue {
     this.startInputValue = null;
     this.endInputValue = null;
     this.periodDirectSelectValue = "";
-    this.onInput(null);
   }
 }
 </script>
