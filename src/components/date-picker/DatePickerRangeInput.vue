@@ -317,8 +317,10 @@ export default class DatePickerRangeInput extends Vue {
   }
 
   onOutSideClick() {
-    this.onClose();
-    this.onInputDelete();
+    if (this.showDatePickerPopup) {
+      this.onClose();
+      this.onInputDelete();
+    }
   }
 
   onInputDelete() {

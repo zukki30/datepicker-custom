@@ -174,19 +174,17 @@ export default class DatePickerRangeChangeInput extends Vue {
   switching: boolean = false;
 
   get dates(): DateRange | null {
-    if (this.selectedEndInputValue && this.onStartCalendarMouseEnterDate) {
-      return this.onChangeDateRange(
-        this.onStartCalendarMouseEnterDate,
-        this.selectedEndInputValue
-      );
-    }
+    // if (this.startInputFocus && this.onStartCalendarMouseEnterDate) {
+    //   return this.onChangeDateRange(
+    //     this.onStartCalendarMouseEnterDate,
+    //   );
+    // }
 
-    if (this.selectedStartInputValue && this.onEndCalendarMouseEnterDate) {
-      return this.onChangeDateRange(
-        this.selectedStartInputValue,
-        this.onEndCalendarMouseEnterDate
-      );
-    }
+    // if (this.endInputFocus && this.onEndCalendarMouseEnterDate) {
+    //   return this.onChangeDateRange(
+    //     this.onEndCalendarMouseEnterDate
+    //   );
+    // }
 
     return this.onChangeDateRange(
       this.selectedStartInputValue,
@@ -195,6 +193,10 @@ export default class DatePickerRangeChangeInput extends Vue {
   }
 
   get selectedStartInputValue(): Date | null {
+    if (this.onStartCalendarMouseEnterDate !== null) {
+      return this.onStartCalendarMouseEnterDate;
+    }
+
     if (this.startInputValue !== null) {
       return this.startInputValue;
     }
@@ -208,6 +210,10 @@ export default class DatePickerRangeChangeInput extends Vue {
   }
 
   get selectedEndInputValue(): Date | null {
+    if (this.onEndCalendarMouseEnterDate !== null) {
+      return this.onEndCalendarMouseEnterDate;
+    }
+
     if (this.endInputValue !== null) {
       return this.endInputValue;
     }
@@ -343,11 +349,35 @@ export default class DatePickerRangeChangeInput extends Vue {
   onMouseEnter(date: Date) {
     if (this.startInputFocus) {
       this.onStartCalendarMouseEnterDate = date;
+
+      if (this.endInputValue !== null && this.endInputValue < date) {
+        this.endInputFocus = true;
+        this.startInputFocus = false;
+
+        this.startInputValue = this.endInputValue;
+        this.endInputValue = date;
+
+        this.onStartCalendarMouseEnterDate = null;
+        this.onEndCalendarMouseEnterDate = date;
+      }
+
       return;
     }
 
     if (this.endInputFocus) {
       this.onEndCalendarMouseEnterDate = date;
+
+      if (this.startInputValue !== null && this.startInputValue > date) {
+        this.endInputFocus = false;
+        this.startInputFocus = true;
+
+        this.endInputValue = this.startInputValue;
+        this.startInputValue = date;
+
+        this.onEndCalendarMouseEnterDate = null;
+        this.onStartCalendarMouseEnterDate = date;
+      }
+
       return;
     }
   }
@@ -375,8 +405,10 @@ export default class DatePickerRangeChangeInput extends Vue {
   }
 
   onOutSideClick() {
-    this.onClose();
-    this.onInputDelete();
+    if (this.showDatePickerPopup) {
+      this.onClose();
+      this.onInputDelete();
+    }
   }
 
   onInputDelete() {
