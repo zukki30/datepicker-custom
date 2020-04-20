@@ -2,7 +2,7 @@
   <div class="period-direct-select">
     <label
       v-for="directSelect in directSelects"
-      :key="directSelect.dateRange.min.getDate()"
+      :key="directSelect.name"
       class="period-direct-select__button"
       :class="{
         'period-direct-select__button--current': current(directSelect.name)
@@ -57,6 +57,11 @@ export default class PeriodDirectSelect extends Vue {
       1
     );
     const lastMonthEnd = new Date(today.getFullYear(), today.getMonth(), 0);
+    const currentMonthStart = new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      1
+    );
 
     return [
       {
@@ -71,9 +76,19 @@ export default class PeriodDirectSelect extends Vue {
         dateRange: { min: lastMonday, max: lastSunday }
       },
       {
+        label: "今週",
+        name: "thisWeek",
+        dateRange: { min: monday, max: today }
+      },
+      {
         label: "先月",
         name: "lastMonth",
         dateRange: { min: lastMonthStart, max: lastMonthEnd }
+      },
+      {
+        label: "今月",
+        name: "thisMonth",
+        dateRange: { min: currentMonthStart, max: today }
       }
     ];
   }
