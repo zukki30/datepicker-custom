@@ -1,0 +1,14 @@
+{
+  "csscomb.preset": "zen",
+  "csscomb.formatOnSave": true,
+  "eslint.enable": true,
+  "editor.formatOnSave": true,
+  "eslint.options": {
+    "configFile": ".eslintrc.js"
+  },
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "vetur.format.defaultFormatter.html": "prettier",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}

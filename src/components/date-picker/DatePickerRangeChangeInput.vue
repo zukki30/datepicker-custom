@@ -12,6 +12,9 @@
           :value="selectedStartInputValue"
           :disabled="disabled"
           :focus="startInputFocus"
+          :class="{
+            'date-picker-range-change-input__input-foucs': startInputFocus
+          }"
           @click="onStartClick"
         />
       </div>
@@ -23,6 +26,9 @@
           :value="selectedEndInputValue"
           :disabled="disabled"
           :focus="endInputFocus"
+          :class="{
+            'date-picker-range-change-input__input-foucs': endInputFocus
+          }"
           @click="onEndClick"
         />
       </div>
@@ -353,6 +359,10 @@ export default class DatePickerRangeChangeInput extends Vue {
 
   &__field {
     flex: 1;
+  }
+
+  &__input-foucs {
+    background-color: $colorBlue500;
   }
 
   &__hyphen {
