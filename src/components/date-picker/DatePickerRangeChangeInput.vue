@@ -125,11 +125,18 @@ export default class DatePickerRangeChangeInput extends Vue {
   selectedDates!: DateRange;
 
   @Emit("input")
-  onInput(dates: DateRange) {}
+  onInput(dates: DateRange | null) {}
 
   @Emit("delete")
   onDelete() {
     this.onInputDelete();
+    this.$nextTick(() => {
+      this.onOpen();
+    });
+
+    if (!this.startInputFocus && !this.endInputFocus) {
+      this.startInputFocus = true;
+    }
   }
 
   @Emit("open")
@@ -363,6 +370,7 @@ export default class DatePickerRangeChangeInput extends Vue {
     this.startInputValue = directSelect.dateRange.min;
     this.endInputValue = directSelect.dateRange.max;
     this.periodDirectSelectValue = directSelect.name;
+    this.onInput(directSelect.dateRange);
     this.onClose();
   }
 
@@ -374,6 +382,8 @@ export default class DatePickerRangeChangeInput extends Vue {
   onInputDelete() {
     this.startInputValue = null;
     this.endInputValue = null;
+    this.periodDirectSelectValue = "";
+    this.onInput(null);
   }
 
   onSwitched() {
