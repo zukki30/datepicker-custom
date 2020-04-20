@@ -20,10 +20,10 @@
     <p>個別選択、始点・終点の片方だけの変更が可能で入れ替え選択は不可</p>
     <div class="datepicker3A">
       <DatePickerRangeInput
-        ref="datePickerRangeInput"
         :selected-dates="datepicker3ADates"
         :disabled-dates="disabledDates"
         @input="onAInput"
+        @reset="onAReset"
       />
     </div>
 
@@ -34,6 +34,7 @@
         :selected-dates="datepicker3BDates"
         :disabled-dates="disabledDates"
         @input="onBInput"
+        @reset="onBReset"
       />
     </div>
 
@@ -120,8 +121,16 @@ export default class Home extends Vue {
     this.datepicker3ADates = dates;
   }
 
+  onAReset() {
+    this.datepicker3ADates = null;
+  }
+
   onBInput(dates: DateRange) {
     this.datepicker3BDates = dates;
+  }
+
+  onBReset() {
+    this.datepicker3BDates = null;
   }
 
   onDateRangeConfirmPickerInput(dates: DateRange | null) {

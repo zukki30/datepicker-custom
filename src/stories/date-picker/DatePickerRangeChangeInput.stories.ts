@@ -33,14 +33,16 @@ storiesOf("date-picker/DatePickerRangeChangeInput", module)
         }
       },
       methods: {
-        onInput: action("input")
+        onInput: action("input"),
+        onReset: action("reset")
       },
       template: `
       <DatePickerRangeChangeInput
        :width="width"
        :disabled="disabled"
        :disabled-dates="disabledDates"
-       @input="onInput" />`
+       @input="onInput"
+       @reset="onReset" />`
     }),
     {
       info: {
@@ -67,7 +69,8 @@ storiesOf("date-picker/DatePickerRangeChangeInput", module)
         }
       },
       methods: {
-        onInput: action("input")
+        onInput: action("input"),
+        onReset: action("reset")
       },
       template: `
       <DatePickerRangeChangeInput
@@ -75,7 +78,8 @@ storiesOf("date-picker/DatePickerRangeChangeInput", module)
        :disabled="disabled"
        :disabled-dates="disabledDates"
        :selected-dates="selectedDates"
-       @input="onInput" />`
+       @input="onInput"
+       @reset="onReset" />`
     }),
     {
       info: {

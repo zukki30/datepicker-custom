@@ -54,6 +54,11 @@
           />
         </transition>
       </div>
+
+      <div
+        class="date-picker-range-change-input__close-button"
+        @click="onReset"
+      />
     </div>
 
     <Transition name="datePickerPopup" @enter="onChangePosition">
@@ -122,6 +127,11 @@ export default class DatePickerRangeChangeInput extends Vue {
   @Emit("input")
   onInput(dates: DateRange) {}
 
+  @Emit("reset")
+  onReset() {
+    this.onInputReset();
+  }
+
   @Emit("open")
   onOpen() {
     this.showDatePickerPopup = true;
@@ -134,6 +144,7 @@ export default class DatePickerRangeChangeInput extends Vue {
     this.startInputFocus = false;
     this.endInputFocus = false;
     this.popupX = 0;
+    this.onInputReset();
   }
 
   startInputValue: Date | null = null;
@@ -356,6 +367,11 @@ export default class DatePickerRangeChangeInput extends Vue {
     this.onClose();
   }
 
+  onInputReset() {
+    this.startInputValue = null;
+    this.endInputValue = null;
+  }
+
   onSwitched() {
     setTimeout(() => {
       this.showDateValue = false;
@@ -422,6 +438,41 @@ export default class DatePickerRangeChangeInput extends Vue {
 
   &__hyphen {
     padding: 0 10px;
+  }
+
+  &__close-button {
+    position: relative;
+    margin-left: 8px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: $colorBase500;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $colorBase600;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -4px;
+      margin-left: -1px;
+      width: 1px;
+      height: 8px;
+      background-color: $colorWhite;
+      content: "";
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
   }
 
   &__popup {
