@@ -1,6 +1,6 @@
 <template>
   <div
-    v-click-outside="onClose"
+    v-click-outside="onOutSideClick"
     class="date-picker-range-input"
     :style="{ width }"
   >
@@ -25,7 +25,7 @@
         @click="onEndClick"
       />
 
-      <div class="date-picker-range-input__close-button" @click="onReset" />
+      <div class="date-picker-range-input__delete-button" @click="onDelete" />
     </div>
 
     <Transition name="datePickerPopup" @enter="onChangePosition">
@@ -90,9 +90,9 @@ export default class DatePickerRangeInput extends Vue {
   @Emit("input")
   onInput(dates: DateRange) {}
 
-  @Emit("reset")
-  onReset() {
-    this.onInputReset();
+  @Emit("delete")
+  onDelete() {
+    this.onInputDelete();
   }
 
   @Emit("open")
@@ -107,7 +107,6 @@ export default class DatePickerRangeInput extends Vue {
     this.startInputFocus = false;
     this.endInputFocus = false;
     this.popupX = 0;
-    this.onInputReset();
   }
 
   startInputValue: Date | null = null;
@@ -145,26 +144,26 @@ export default class DatePickerRangeInput extends Vue {
   }
 
   get selectedStartInputValue(): Date | null {
+    if (this.startInputValue !== null) {
+      return this.startInputValue;
+    }
+
     if (this.selectedDates !== null) {
       this.startInputValue = this.selectedDates.min;
       return this.selectedDates.min;
-    }
-
-    if (this.startInputValue !== null) {
-      return this.startInputValue;
     }
 
     return null;
   }
 
   get selectedEndInputValue(): Date | null {
+    if (this.endInputValue !== null) {
+      return this.endInputValue;
+    }
+
     if (this.selectedDates !== null) {
       this.endInputValue = this.selectedDates.max;
       return this.selectedDates.max;
-    }
-
-    if (this.endInputValue !== null) {
-      return this.endInputValue;
     }
 
     return null;
@@ -309,7 +308,12 @@ export default class DatePickerRangeInput extends Vue {
     this.onClose();
   }
 
-  onInputReset() {
+  onOutSideClick() {
+    this.onClose();
+    this.onInputDelete();
+  }
+
+  onInputDelete() {
     this.startInputValue = null;
     this.endInputValue = null;
   }
@@ -333,7 +337,7 @@ export default class DatePickerRangeInput extends Vue {
     padding: 0 8px;
   }
 
-  &__close-button {
+  &__delete-button {
     position: relative;
     margin-left: 8px;
     width: 18px;

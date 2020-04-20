@@ -23,7 +23,7 @@
         :selected-dates="datepicker3ADates"
         :disabled-dates="disabledDates"
         @input="onAInput"
-        @reset="onAReset"
+        @delete="onADelete"
       />
     </div>
 
@@ -34,7 +34,7 @@
         :selected-dates="datepicker3BDates"
         :disabled-dates="disabledDates"
         @input="onBInput"
-        @reset="onBReset"
+        @delete="onBDelete"
       />
     </div>
 
@@ -137,7 +137,7 @@ export default class Home extends Vue {
     this.datepicker3ADates = dates;
   }
 
-  onAReset() {
+  onADelete() {
     this.datepicker3ADates = null;
   }
 
@@ -145,7 +145,7 @@ export default class Home extends Vue {
     this.datepicker3BDates = dates;
   }
 
-  onBReset() {
+  onBDelete() {
     this.datepicker3BDates = null;
   }
 
