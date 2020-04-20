@@ -40,6 +40,10 @@ export default class CalendarDateTable extends Vue {
   selectDate: Date | null =
     this.selectedDate !== null ? this.selectedDate : null;
 
+  get currentMonthIndex(): number {
+    return this.calendar.monthIndex;
+  }
+
   onDateClick(date: Date) {
     if (!this.isDisabled(date)) {
       this.selectDate = date;
@@ -49,6 +53,10 @@ export default class CalendarDateTable extends Vue {
 
   addDateClass(date: Date): string[] {
     const addClass: string[] = [];
+
+    if (date.getMonth() !== this.currentMonthIndex) {
+      return ["calendar-date-table__date--another-month"];
+    }
 
     // 今日の日付に付与
     const today = new Date();
@@ -128,6 +136,10 @@ export default class CalendarDateTable extends Vue {
     &--selected {
       background-color: $colorBlue800;
       color: $colorWhite;
+    }
+
+    &--another-month {
+      color: $colorBase600;
     }
   }
 }

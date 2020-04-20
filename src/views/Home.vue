@@ -73,6 +73,18 @@
         @input="onDateRangeConfirmCanselInputPicker"
       />
     </div>
+
+    <h2>DatePicker - 単一の日付</h2>
+    <p>個別選択、始点・終点の片方だけの変更が可能で入れ替え選択も可能</p>
+    <div class="datepicker5">
+      <DatePickerInput
+        width="250px"
+        placeholder="対象の期間"
+        :value="datePickerInputValue"
+        :disabled-dates="disabledDates"
+        @input="onDatePickerInput"
+      />
+    </div>
   </div>
 </template>
 
@@ -92,6 +104,7 @@ import PeriodDirectSelect from "@/components/date-picker/PeriodDirectSelect.vue"
 import DatePickerRangeChangeInput from "@/components/date-picker/DatePickerRangeChangeInput.vue";
 import AlignChange from "@/components/old/AlignChange.vue";
 import DateRangeConfirmCanselInputPicker from "@/components/old/date-picker/DateRangeConfirmCanselInputPicker.vue";
+import DatePickerInput from "@/components/date-picker/DatePickerInput.vue";
 
 @Component({
   components: {
@@ -102,7 +115,8 @@ import DateRangeConfirmCanselInputPicker from "@/components/old/date-picker/Date
     PeriodDirectSelect,
     DatePickerRangeChangeInput,
     DateRangeConfirmCanselInputPicker,
-    AlignChange
+    AlignChange,
+    DatePickerInput
   }
 })
 export default class Home extends Vue {
@@ -116,6 +130,8 @@ export default class Home extends Vue {
 
   datepicker4BDates: DateRange | null = null;
   datapicker4BPopup: string = "center";
+
+  datePickerInputValue: Date | null = null;
 
   onAInput(dates: DateRange) {
     this.datepicker3ADates = dates;
@@ -151,6 +167,10 @@ export default class Home extends Vue {
 
   onDatePicker4BPopupAlignChange(value: string) {
     this.datapicker4BPopup = value;
+  }
+
+  onDatePickerInput(date: Date) {
+    this.datePickerInputValue = date;
   }
 
   get disabledDates(): DateRange {

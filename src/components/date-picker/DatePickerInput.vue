@@ -17,15 +17,12 @@
         ref="datePickerPopup"
         v-click-outside="onClose"
         class="date-picker-input__popup"
-        :class="{
-          'date-picker-input__popup--disabled-animation': disabledAnimation
-        }"
         :style="{ 'margin-left': popupX + 'px' }"
       >
-        <DateRangePickerPopup
+        <DatePickerPopup
           :date-picker="datePicker"
           :disabled-dates="disabledDates"
-          :selected-dates="dates"
+          :selected-date="value"
           @click="onInput"
           @move="onMoveCalendar"
           @mouse-enter="onMouseEnter"
@@ -44,10 +41,10 @@ import {
   changeDateRange
 } from "@/components/calendar/Calendar";
 import { WidthProperty } from "csstype";
-import DateRangePickerPopup from "@/components/date-picker/DateRangePickerPopup.vue";
+import DatePickerPopup from "@/components/date-picker/DatePickerPopup.vue";
 
 @Component({
-  components: { DateRangePickerPopup }
+  components: { DatePickerPopup }
 })
 export default class DatePickerInput extends Vue {
   @Prop({ type: Date, default: null })
@@ -64,12 +61,6 @@ export default class DatePickerInput extends Vue {
 
   @Prop({ type: Object, default: null })
   disabledDates!: DateRange;
-
-  @Prop({ type: Object, default: null })
-  selectedDates!: DateRange;
-
-  @Prop({ type: Boolean, default: false })
-  disabledAnimation!: boolean;
 
   @Emit("input")
   onInput(date: Date) {
@@ -103,22 +94,8 @@ export default class DatePickerInput extends Vue {
     return this.value !== null ? dateFormat(this.value) : "";
   }
 
-  get dates(): DateRange | null {
-    if (this.selectedDates !== null) {
-      return this.selectedDates;
-    }
-
-    return this.value === null
-      ? null
-      : changeDateRange([this.value, this.value]);
-  }
-
   onBuild() {
-    let date: Date = this.value !== null ? this.value : new Date();
-
-    if (this.dates !== null) {
-      date = this.dates.max;
-    }
+    const date: Date = this.value !== null ? this.value : new Date();
 
     this.datePicker = new DatePicker(date);
   }
@@ -185,10 +162,7 @@ export default class DatePickerInput extends Vue {
   opacity: 1;
   transition: opacity 0.3s ease, margin-top 0.3s ease;
 }
-.datePickerPopup-enter-active.date-picker-input__popup--disabled-animation,
-.datePickerPopup-leave-active.date-picker-input__popup--disabled-animation {
-  transition: opacity 0s ease, margin-top 0s ease;
-}
+
 .datePickerPopup-enter,
 .datePickerPopup-leave-to {
   margin-top: -40px;

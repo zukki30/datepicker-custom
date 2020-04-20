@@ -56,7 +56,6 @@ storiesOf("date-picker/DatePickerInput", module)
        :placeholder="placeholder"
        :disabled="disabled"
        :disabled-dates="disabledDates"
-       :disabled-animation="disabledAnimation"
        @input="onInput"
        @mouse-enter="onMouseEnter"
        @open="onOpen"
@@ -95,38 +94,6 @@ storiesOf("date-picker/DatePickerInput", module)
     {
       info: {
         summary: "Set value"
-      }
-    }
-  )
-  .add(
-    "set selectedDates",
-    () => ({
-      components: { DatePickerInput },
-      data() {
-        return {
-          value: new Date(selectedDates.min),
-          disabledDates,
-          selectedDates
-        };
-      },
-      props: props(),
-      methods: actions,
-      template: `
-      <DatePickerInput
-       :value="value"
-       :width="width"
-       :placeholder="placeholder"
-       :disabled="disabled"
-       :disabled-dates="disabledDates"
-       :selected-dates="selectedDates"
-       @input="onInput"
-       @mouse-enter="onMouseEnter"
-       @open="onOpen"
-       @close="onClose" />`
-    }),
-    {
-      info: {
-        summary: "Set selectedDates"
       }
     }
   );
