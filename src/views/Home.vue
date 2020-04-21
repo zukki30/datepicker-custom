@@ -35,6 +35,7 @@
         :disabled-dates="disabledDates"
         @input="onBInput"
         @delete="onBDelete"
+        @outside-click="onOutSideClick"
       />
     </div>
 
@@ -124,6 +125,7 @@ export default class Home extends Vue {
 
   datepicker3ADates: DateRange | null = null;
   datepicker3BDates: DateRange | null = null;
+  savedValues: DateRange | null = null;
 
   datepicker4ADates: DateRange | null = null;
   datapicker4APopup: string = "center";
@@ -143,10 +145,15 @@ export default class Home extends Vue {
 
   onBInput(dates: DateRange) {
     this.datepicker3BDates = dates;
+    this.savedValues = dates;
   }
 
   onBDelete() {
     this.datepicker3BDates = null;
+  }
+
+  onOutSideClick() {
+    this.datepicker3BDates = this.savedValues;
   }
 
   onDateRangeConfirmPickerInput(dates: DateRange | null) {
