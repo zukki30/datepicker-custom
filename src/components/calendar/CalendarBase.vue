@@ -52,7 +52,7 @@ export default class CalendarBase extends Vue {
   }
 
   get table(): Table {
-    const date = new Date(this.calendar.year, this.calendar.month, 1);
+    const date = new Date(this.calendar.year, this.calendar.month, 0);
 
     return Calendar.buildCalendarTable(date);
   }
