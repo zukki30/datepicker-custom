@@ -155,6 +155,8 @@ export default class DatePickerRangeChangeInput extends Vue {
     }
   }
 
+  datePicker: DatePicker | null = null;
+
   startInputValue: Date | null = null;
   onStartCalendarMouseEnterDate: Date | null = null;
   startInputFocus: boolean = false;
@@ -163,9 +165,10 @@ export default class DatePickerRangeChangeInput extends Vue {
   onEndCalendarMouseEnterDate: Date | null = null;
   endInputFocus: boolean = false;
 
-  datePicker: DatePicker | null = null;
   showDatePickerPopup: boolean = false;
   periodDirectSelectValue: string = "";
+  saveCalendar: Calendar | null = null;
+
   deleteButtonIconColor: string = "#CAD1D0";
 
   get dates(): DateRange | null {
@@ -239,9 +242,12 @@ export default class DatePickerRangeChangeInput extends Vue {
   }
 
   onBuild() {
-    const date: Date = this.dates !== null ? this.dates.max : new Date();
-
-    this.datePicker = new DatePicker(date);
+    if (this.saveCalendar !== null) {
+      this.datePicker = DatePicker.rebuild(this.saveCalendar);
+    } else {
+      const date: Date = this.dates !== null ? this.dates.max : new Date();
+      this.datePicker = DatePicker.rebuild(Calendar.build(date));
+    }
   }
 
   onStartClick() {
@@ -286,6 +292,7 @@ export default class DatePickerRangeChangeInput extends Vue {
 
   onMoveCalendar(calendar: Calendar) {
     this.datePicker = DatePicker.rebuild(calendar);
+    this.saveCalendar = calendar;
   }
 
   onMouseEnter(date: Date) {
