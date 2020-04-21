@@ -1,5 +1,5 @@
 import { storiesOf } from "@storybook/vue";
-import { date, boolean } from "@storybook/addon-knobs";
+import { date } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import { DateRange } from "@/components/calendar/Calendar";
 import { DatePicker } from "@/components/date-picker/DatePicker";
@@ -28,15 +28,11 @@ storiesOf("date-picker/DateRangePickerPopup", module).add(
     props: {
       date: {
         default: () => myDateKnob("DatePicker", new Date())
-      },
-      disabledMonthClick: {
-        default: boolean("disabledMonthClick", false)
       }
     },
     methods: {
       onClick: action("click"),
-      onMoveCalendar: action("click-switch"),
-      onMonthClick: action("month-click")
+      onMoveCalendar: action("click-switch")
     },
     computed: {
       datePicker() {
@@ -50,10 +46,8 @@ storiesOf("date-picker/DateRangePickerPopup", module).add(
        :date-picker="datePicker"
        :selected-dates="selectedDates"
        :disabled-dates="disabledDates"
-       :disabled-month-click="disabledMonthClick"
        @click="onClick"
-       @move="onMoveCalendar"
-       @month-click="onMonthClick" />`
+       @move="onMoveCalendar" />`
   }),
   {
     info: {

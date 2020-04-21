@@ -67,7 +67,6 @@ export default class DatePickerPopup extends Vue {
 
   @Emit("mouse-enter")
   onMouseEnter(event: MouseEvent): void {}
-
   @Emit("move")
   onMoveCalendar(calender: Calendar) {}
 
@@ -124,16 +123,16 @@ export default class DatePickerPopup extends Vue {
     &::before {
       position: absolute;
       top: 7px;
-      width: 7px;
-      height: 7px;
-      border-top: 1px solid $colorBase700;
+      width: 6px;
+      height: 6px;
+      border-top: 1px solid $colorElmentUIGray600;
       content: "";
       transition: border-color 0.3s ease;
     }
 
     &:hover {
       &::before {
-        border-color: $colorBase500;
+        border-color: $colorElmentUIBlue900;
       }
     }
   }
@@ -141,7 +140,7 @@ export default class DatePickerPopup extends Vue {
   &__previous {
     &::before {
       left: 8px;
-      border-left: 1px solid $colorBase700;
+      border-left: 1px solid $colorElmentUIGray600;
       transform: translate(-50%, -50%) rotate(-45deg);
     }
   }
@@ -149,7 +148,7 @@ export default class DatePickerPopup extends Vue {
   &__next {
     &::before {
       right: 8px;
-      border-right: 1px solid $colorBase700;
+      border-right: 1px solid $colorElmentUIGray600;
       transform: translate(50%, -50%) rotate(45deg);
     }
   }
@@ -167,9 +166,9 @@ export default class DatePickerPopup extends Vue {
     &::after {
       position: absolute;
       top: 7px;
-      width: 7px;
-      height: 7px;
-      border-top: 1px solid $colorBase700;
+      width: 6px;
+      height: 6px;
+      border-top: 1px solid $colorElmentUIGray600;
       content: "";
       transition: border-color 0.3s ease;
     }
@@ -177,17 +176,17 @@ export default class DatePickerPopup extends Vue {
     &:hover {
       &::before,
       &::after {
-        border-color: $colorBase500;
+        border-color: $colorElmentUIBlue900;
       }
     }
   }
 
   &__one-year-ago {
-    margin-right: 8px;
+    margin-right: 15px;
 
     &::before,
     &::after {
-      border-left: 1px solid $colorBase700;
+      border-left: 1px solid $colorElmentUIGray600;
       transform: translate(-50%, -50%) rotate(-45deg);
     }
 
@@ -200,11 +199,11 @@ export default class DatePickerPopup extends Vue {
   }
 
   &__one-year-later {
-    margin-left: 8px;
+    margin-left: 15px;
 
     &::before,
     &::after {
-      border-right: 1px solid $colorBase700;
+      border-right: 1px solid $colorElmentUIGray600;
       transform: translate(50%, -50%) rotate(45deg);
     }
 

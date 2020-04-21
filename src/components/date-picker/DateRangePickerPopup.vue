@@ -36,10 +36,8 @@
         :calendar="calendar"
         :selected-dates="selectedDates"
         :disabled-dates="disabledDates"
-        :disabled-month-click="disabledMonthClick"
         @click="onClick"
         @mouse-enter="onMouseEnter"
-        @month-click="onMonthClick"
       />
     </div>
   </div>
@@ -64,9 +62,6 @@ export default class DateRangePickerPopup extends Vue {
   @Prop({ type: Object, default: null })
   disabledDates!: DateRange;
 
-  @Prop({ type: Boolean, default: false })
-  disabledMonthClick!: boolean;
-
   @Emit("click")
   onClick(date: Date) {}
 
@@ -75,9 +70,6 @@ export default class DateRangePickerPopup extends Vue {
 
   @Emit("move")
   onMoveCalendar(calender: Calendar) {}
-
-  @Emit("month-click")
-  onMonthClick(calendar: Calendar) {}
 
   get calendars(): Calendar[] {
     return this.datePicker.calendars;
