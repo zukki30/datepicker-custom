@@ -39,7 +39,16 @@
       <div
         class="date-picker-range-change-input__delete-button"
         @click="onDelete"
-      />
+        @mouseover="onMouseOver"
+        @mouseleave="onMouseLeave"
+      >
+        <Icon
+          class="date-picker-range-change-input__delete-button-icon"
+          icon="icon-close"
+          :color="deleteButtonIconColor"
+          :size="10"
+        />
+      </div>
     </div>
 
     <Transition name="datePickerPopup">
@@ -149,6 +158,7 @@ export default class DatePickerRangeChangeInput extends Vue {
   datePicker: DatePicker | null = null;
   showDatePickerPopup: boolean = false;
   periodDirectSelectValue: string = "";
+  deleteButtonIconColor: string = "#CAD1D0";
 
   get dates(): DateRange | null {
     return this.onChangeDateRange(
@@ -342,6 +352,14 @@ export default class DatePickerRangeChangeInput extends Vue {
     this.onEndCalendarMouseEnterDate = null;
     this.periodDirectSelectValue = "";
   }
+
+  onMouseOver() {
+    this.deleteButtonIconColor = "#a3acbf";
+  }
+
+  onMouseLeave() {
+    this.deleteButtonIconColor = "#cad1e0";
+  }
 }
 </script>
 
@@ -377,37 +395,18 @@ export default class DatePickerRangeChangeInput extends Vue {
 
   &__delete-button {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 5px;
     margin-left: 5px;
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background-color: $colorBase500;
     cursor: pointer;
 
-    &:hover {
-      background-color: $colorBase600;
-    }
-
-    &::before,
-    &::after {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-top: -4px;
-      margin-left: -1px;
-      width: 1px;
-      height: 8px;
-      background-color: $colorWhite;
-      content: "";
-    }
-
-    &::before {
-      transform: rotate(45deg);
-    }
-
-    &::after {
-      transform: rotate(-45deg);
+    &-icon {
+      transform: scale(1);
     }
   }
 
