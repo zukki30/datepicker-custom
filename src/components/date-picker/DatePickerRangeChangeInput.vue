@@ -145,6 +145,8 @@ export default class DatePickerRangeChangeInput extends Vue {
     this.showDatePickerPopup = false;
     this.startInputFocus = false;
     this.endInputFocus = false;
+    this.onStartCalendarMouseEnterDate = null;
+    this.onEndCalendarMouseEnterDate = null;
   }
 
   @Emit("outside-click")
@@ -356,8 +358,6 @@ export default class DatePickerRangeChangeInput extends Vue {
   onInputDelete() {
     this.startInputValue = null;
     this.endInputValue = null;
-    this.onStartCalendarMouseEnterDate = null;
-    this.onEndCalendarMouseEnterDate = null;
     this.periodDirectSelectValue = "";
   }
 
