@@ -10,7 +10,6 @@
             v-for="week in weeks"
             :key="week.id"
             class="calendar-base__cell  calendar-base__head-cell"
-            :class="addWeekClass(week.id)"
           >
             {{ week.text }}
           </th>
@@ -53,17 +52,11 @@ export default class CalendarBase extends Vue {
   }
 
   get table(): Table {
-    return this.calendar.table;
-  }
-
-  addWeekClass(week: string) {
-    if (week === "Sun") {
-      return "calendar-base__cell--sun";
-    }
-
-    if (week === "Sat") {
-      return "calendar-base__cell--sat";
-    }
+    return Calendar.buildCalendarTable(
+      this.calendar.year,
+      this.calendar.monthIndex,
+      this.calendar.month
+    );
   }
 }
 </script>

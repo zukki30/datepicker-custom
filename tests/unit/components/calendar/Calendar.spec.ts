@@ -25,15 +25,6 @@ describe("Calendar", () => {
         expect(week.text).toEqual(text);
       }
     });
-
-    it("returns table data for table method", () => {
-      const table = calendar.table;
-      expect(table.length).toEqual(6);
-
-      table.forEach(row => {
-        expect(row.length).toEqual(calendar.weekTexts.length);
-      });
-    });
   });
 
   describe("build", () => {

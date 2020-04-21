@@ -49,40 +49,6 @@ export class Calendar {
     });
   }
 
-  get table(): Table {
-    // 月の初め日を取得
-    const startDate = new Date(this.year, this.monthIndex, 1);
-    // 初めの日の曜日を取得
-    const startDayOfTheWeek = startDate.getDay();
-    // 月の最後の日を取得
-    const endDate = new Date(this.year, this.month, 0);
-    // 月の末日
-    const endDay = endDate.getDate();
-    // 1日より前の日付を埋める日を取得
-    const previousMonthDates = getEmptyCellsWithPreviousMonth(
-      this.year,
-      this.monthIndex,
-      startDayOfTheWeek
-    );
-    const dates: Date[] = previousMonthDates;
-
-    for (let i = 0; i < endDay; i++) {
-      const date = new Date(this.year, this.monthIndex, i + 1);
-      dates.push(date);
-    }
-
-    // 末日より後の空セルを埋める日を取得
-    const nextMonthDates = getEmptyCellsWithNextMonth(
-      this.year,
-      this.monthIndex,
-      MAX_TABLE_CELL - dates.length
-    );
-
-    const result: Date[] = dates.concat(nextMonthDates);
-
-    return splitDatas(result, weeks.length);
-  }
-
   public static build(date: Date): Calendar {
     return new Calendar(
       date.getFullYear(),
@@ -129,6 +95,39 @@ export class Calendar {
     const month = monthIndex + 1;
 
     return new Calendar(year, monthIndex, month);
+  }
+
+  public static buildCalendarTable(
+    year: number,
+    monthIndex: number,
+    month: number
+  ): Table {
+    const startDate = new Date(year, monthIndex, 1);
+    const startDayOfTheWeek = startDate.getDay();
+    const endDate = new Date(year, month, 0);
+    const endDay = endDate.getDate();
+    const previousMonthDates = getEmptyCellsWithPreviousMonth(
+      year,
+      monthIndex,
+      startDayOfTheWeek
+    );
+    const dates: Date[] = previousMonthDates;
+
+    for (let i = 0; i < endDay; i++) {
+      const date = new Date(year, monthIndex, i + 1);
+      dates.push(date);
+    }
+
+    // 末日より後の空セルを埋める日を取得
+    const nextMonthDates = getEmptyCellsWithNextMonth(
+      year,
+      monthIndex,
+      MAX_TABLE_CELL - dates.length
+    );
+
+    const result: Date[] = dates.concat(nextMonthDates);
+
+    return splitDatas(result, weeks.length);
   }
 }
 
