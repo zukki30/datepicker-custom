@@ -42,15 +42,20 @@ export default class DatePickerInput extends Vue {
 .input {
   padding: 0 8px;
   width: 100%;
-  height: $formPartsHeight;
-  border: 1px solid $colorBase600;
+  height: $formPartsHeight - 6;
+  border: 1px solid $colorClear;
   border-radius: $sizeRadius;
   background-color: $colorWhite;
-  box-shadow: 0 0 3px rgba($colorBlue900, 0);
   color: $colorText;
+  text-align: center;
   font-size: $basicFontSize;
-  line-height: $formPartsHeight;
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  line-height: $formPartsHeight - 6;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $colorBlue600;
+    cursor: pointer;
+  }
 
   &::placeholder {
     color: $colorBase700;
@@ -63,8 +68,7 @@ export default class DatePickerInput extends Vue {
   }
 
   &--focus {
-    border-color: $colorBlue800;
-    box-shadow: 0 0 3px rgba($colorBlue900, 0.7);
+    background-color: $colorBlue600;
   }
 }
 </style>
