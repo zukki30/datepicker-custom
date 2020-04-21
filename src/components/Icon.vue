@@ -1,6 +1,5 @@
 <template>
   <i :class="icon" :data-cy="icon" :style="style" />
-  <!-- <div>{{ icon }} {{ style }}</div> -->
 </template>
 
 <script lang="ts">
