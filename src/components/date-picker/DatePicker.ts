@@ -7,7 +7,8 @@ export enum DateRangeInput {
 
 export enum PopupAlign {
   Left = "left",
-  Center = "center"
+  Center = "center",
+  Right = "right"
 }
 
 export interface DirectSelect {

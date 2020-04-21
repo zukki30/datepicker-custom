@@ -39,12 +39,12 @@
       />
     </div>
 
-    <Transition name="datePickerPopup" @enter="onChangePosition">
+    <Transition name="datePickerPopup">
       <div
         v-if="showDatePickerPopup"
         ref="datePickerPopup"
         class="date-picker-range-change-input__popup"
-        :style="{ 'margin-left': popupX + 'px' }"
+        :class="['date-picker-range-change-input__popup--' + align]"
       >
         <div class="date-picker-range-change-input__header">
           <PeriodDirectSelect
@@ -74,7 +74,8 @@ import { Component, Vue, Prop, Emit } from "vue-property-decorator";
 import {
   DatePicker,
   DirectSelect,
-  dateFormat
+  dateFormat,
+  PopupAlign
 } from "@/components/date-picker/DatePicker";
 import {
   Calendar,
@@ -102,6 +103,9 @@ export default class DatePickerRangeChangeInput extends Vue {
   @Prop({ type: Object, default: null })
   selectedDates!: DateRange;
 
+  @Prop({ type: String, default: PopupAlign.Left })
+  align!: string;
+
   @Emit("input")
   onInput(dates: DateRange | null) {}
 
@@ -128,7 +132,6 @@ export default class DatePickerRangeChangeInput extends Vue {
     this.showDatePickerPopup = false;
     this.startInputFocus = false;
     this.endInputFocus = false;
-    this.popupX = 0;
   }
 
   startInputValue: Date | null = null;
@@ -140,7 +143,6 @@ export default class DatePickerRangeChangeInput extends Vue {
   endInputFocus: boolean = false;
 
   datePicker: DatePicker | null = null;
-  popupX: number = 0;
   showDatePickerPopup: boolean = false;
   periodDirectSelectValue: string = "";
 
@@ -257,15 +259,6 @@ export default class DatePickerRangeChangeInput extends Vue {
       this.onStartClick();
     } else {
       this.onClose();
-    }
-  }
-
-  onChangePosition(el: HTMLElement) {
-    // Using to `Left` value because work in IE11 browser.
-    const x = el.getBoundingClientRect().left;
-
-    if (0 > x) {
-      this.popupX = -x;
     }
   }
 
@@ -407,12 +400,23 @@ export default class DatePickerRangeChangeInput extends Vue {
   &__popup {
     position: absolute;
     top: 40px;
-    left: 50%;
     min-width: 700px;
     width: 100%;
     background-color: $colorWhite;
     box-shadow: 0 1px 4px rgba(#000, 0.1);
-    transform: translateX(-50%);
+
+    &--left {
+      left: 0;
+    }
+
+    &--center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &--right {
+      right: 0;
+    }
   }
 
   &__header {

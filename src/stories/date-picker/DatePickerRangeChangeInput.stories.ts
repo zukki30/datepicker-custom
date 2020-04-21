@@ -1,7 +1,8 @@
 import { storiesOf } from "@storybook/vue";
-import { date, boolean, text } from "@storybook/addon-knobs";
+import { boolean, text, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import { DateRange } from "@/components/calendar/Calendar";
+import { PopupAlign } from "@/components/date-picker/DatePicker";
 import DatePickerRangeChangeInput from "@/components/date-picker/DatePickerRangeChangeInput.vue";
 
 const selectedDates: DateRange = {
@@ -30,6 +31,9 @@ storiesOf("date-picker/DatePickerRangeChangeInput", module)
         },
         width: {
           default: text("Width", "350px")
+        },
+        align: {
+          default: select("align", PopupAlign, PopupAlign.Left)
         }
       },
       methods: {
@@ -41,6 +45,7 @@ storiesOf("date-picker/DatePickerRangeChangeInput", module)
        :width="width"
        :disabled="disabled"
        :disabled-dates="disabledDates"
+       :align="align"
        @input="onInput"
        @reset="onReset" />`
     }),
@@ -66,6 +71,9 @@ storiesOf("date-picker/DatePickerRangeChangeInput", module)
         },
         width: {
           default: text("Width", "350px")
+        },
+        align: {
+          default: select("align", PopupAlign, PopupAlign.Left)
         }
       },
       methods: {
@@ -78,6 +86,7 @@ storiesOf("date-picker/DatePickerRangeChangeInput", module)
        :disabled="disabled"
        :disabled-dates="disabledDates"
        :selected-dates="selectedDates"
+       :align="align"
        @input="onInput"
        @reset="onReset" />`
     }),
