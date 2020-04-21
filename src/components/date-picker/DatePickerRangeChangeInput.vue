@@ -4,7 +4,16 @@
     class="date-picker-range-change-input"
     :style="{ width }"
   >
-    <div class="date-picker-range-change-input__container">
+    <div
+      class="date-picker-range-change-input__container"
+      :class="{
+        'date-picker-range-change-input__container--foucs':
+          startInputFocus || endInputFocus
+      }"
+    >
+      <div class="date-picker-range-change-input__icon">
+        <Icon icon="icon-calendar" color="#818599" :size="14" />
+      </div>
       <div class="date-picker-range-change-input__field">
         <Input
           ref="startInput"
@@ -12,9 +21,6 @@
           :value="selectedStartInputValue"
           :disabled="disabled"
           :focus="startInputFocus"
-          :class="{
-            'date-picker-range-change-input__input-foucs': startInputFocus
-          }"
           @click="onStartClick"
         />
       </div>
@@ -26,9 +32,6 @@
           :value="selectedEndInputValue"
           :disabled="disabled"
           :focus="endInputFocus"
-          :class="{
-            'date-picker-range-change-input__input-foucs': endInputFocus
-          }"
           @click="onEndClick"
         />
       </div>
@@ -85,10 +88,11 @@ import {
 import { WidthProperty } from "csstype";
 import DateRangePickerPopup from "@/components/date-picker/DateRangePickerPopup.vue";
 import Input from "@/components/date-picker/Input.vue";
+import Icon from "@/components/Icon.vue";
 import PeriodDirectSelect from "@/components/date-picker/PeriodDirectSelect.vue";
 
 @Component({
-  components: { DateRangePickerPopup, Input, PeriodDirectSelect }
+  components: { DateRangePickerPopup, Input, Icon, PeriodDirectSelect }
 })
 export default class DatePickerRangeChangeInput extends Vue {
   @Prop({ type: Boolean, default: false })
@@ -348,14 +352,23 @@ export default class DatePickerRangeChangeInput extends Vue {
   &__container {
     display: flex;
     align-items: center;
+    padding: 2px;
+    height: $formPartsHeight;
+    border: 1px solid $colorBase600;
+    border-radius: $sizeRadius;
+
+    &--foucs {
+      border-color: $colorBlue800;
+    }
+  }
+
+  &__icon {
+    width: 25px;
+    text-align: center;
   }
 
   &__field {
     flex: 1;
-  }
-
-  &__input-foucs {
-    background-color: $colorBlue500;
   }
 
   &__hyphen {
@@ -364,7 +377,8 @@ export default class DatePickerRangeChangeInput extends Vue {
 
   &__delete-button {
     position: relative;
-    margin-left: 8px;
+    margin-right: 5px;
+    margin-left: 5px;
     width: 18px;
     height: 18px;
     border-radius: 50%;
