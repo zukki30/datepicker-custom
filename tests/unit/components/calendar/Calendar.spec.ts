@@ -2,6 +2,7 @@ import { i18n, AvailableLanguages } from "@/i18n";
 import {
   Calendar,
   MAX_MONTH,
+  weeks,
   changeDateRange
 } from "@/components/calendar/Calendar";
 
@@ -39,12 +40,12 @@ describe("Calendar", () => {
     });
   });
 
-  describe("previousCalendarBuild", () => {
+  describe("buildPreviousCalendar", () => {
     it("return previous month model from date", () => {
       const date = new Date("2020-03-15");
       const previous = 1;
       const monthIndex = date.getMonth() - previous;
-      const calendar = Calendar.previousCalendarBuild(date, previous);
+      const calendar = Calendar.buildPreviousCalendar(date, previous);
 
       expect(calendar.year).toEqual(date.getFullYear());
       expect(calendar.monthIndex).toEqual(monthIndex);
@@ -55,7 +56,7 @@ describe("Calendar", () => {
       const date = new Date("2020-01-01");
       const previous = 1;
       const monthIndex = date.getMonth() - previous;
-      const calendar = Calendar.previousCalendarBuild(date, previous);
+      const calendar = Calendar.buildPreviousCalendar(date, previous);
 
       expect(calendar.year).toEqual(date.getFullYear() - 1);
       expect(calendar.monthIndex).toEqual(MAX_MONTH + monthIndex);
@@ -63,12 +64,12 @@ describe("Calendar", () => {
     });
   });
 
-  describe("nextCalendarBuild", () => {
+  describe("buildNextCalendar", () => {
     it("return next month model from date", () => {
       const date = new Date("2020-03-15");
       const next = 1;
       const monthIndex = date.getMonth() + next;
-      const calendar = Calendar.nextCalendarBuild(date, next);
+      const calendar = Calendar.buildNextCalendar(date, next);
 
       expect(calendar.year).toEqual(date.getFullYear());
       expect(calendar.monthIndex).toEqual(monthIndex);
@@ -78,11 +79,61 @@ describe("Calendar", () => {
     it("return next month model from date when next year", () => {
       const date = new Date("2020-12-12");
       const next = 1;
-      const calendar = Calendar.nextCalendarBuild(date, next);
+      const calendar = Calendar.buildNextCalendar(date, next);
 
       expect(calendar.year).toEqual(date.getFullYear() + 1);
       expect(calendar.monthIndex).toEqual(0);
       expect(calendar.month).toEqual(1);
+    });
+  });
+
+  describe("buildOneYearAgoCalendar", () => {
+    it("return one year ago model from date", () => {
+      const date = new Date("2020-03-15");
+      const monthIndex = date.getMonth();
+      const calendar = Calendar.buildOneYearAgoCalendar(date);
+
+      expect(calendar.year).toEqual(date.getFullYear() - 1);
+      expect(calendar.monthIndex).toEqual(monthIndex);
+      expect(calendar.month).toEqual(monthIndex + 1);
+    });
+  });
+
+  describe("buildOneYearLaterCalendar", () => {
+    it("return one year later model from date", () => {
+      const date = new Date("2020-03-15");
+      const monthIndex = date.getMonth();
+      const calendar = Calendar.buildOneYearLaterCalendar(date);
+
+      expect(calendar.year).toEqual(date.getFullYear() + 1);
+      expect(calendar.monthIndex).toEqual(monthIndex);
+      expect(calendar.month).toEqual(monthIndex + 1);
+    });
+  });
+
+  describe("buildCalendarTable", () => {
+    it("return one year later model from date", () => {
+      const date = new Date("2020-03-15");
+      const monthIndex = date.getMonth();
+      const calendar = Calendar.buildOneYearLaterCalendar(date);
+
+      expect(calendar.year).toEqual(date.getFullYear() + 1);
+      expect(calendar.monthIndex).toEqual(monthIndex);
+      expect(calendar.month).toEqual(monthIndex + 1);
+    });
+
+    it("returns table data for table method", () => {
+      const date = new Date("2020-03-15");
+      const table = Calendar.buildCalendarTable(date);
+      expect(table.length).toEqual(6);
+
+      table.forEach(row => {
+        expect(row.length).toEqual(weeks.length);
+
+        row.forEach(cell => {
+          expect(cell instanceof Date).toEqual(true);
+        });
+      });
     });
   });
 

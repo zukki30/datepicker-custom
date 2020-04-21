@@ -9,6 +9,7 @@ export const weeks: string[] = [
   "Fri",
   "Sat"
 ];
+
 export const MAX_MONTH = 12;
 
 const MAX_TABLE_ROW = 6;
@@ -57,7 +58,7 @@ export class Calendar {
     );
   }
 
-  public static previousCalendarBuild(date: Date, previous: number): Calendar {
+  public static buildPreviousCalendar(date: Date, previous: number): Calendar {
     const year = date.getFullYear();
     const monthIndex = date.getMonth() - previous;
     const month = monthIndex + 1;
@@ -69,7 +70,7 @@ export class Calendar {
     return new Calendar(year, monthIndex, month);
   }
 
-  public static nextCalendarBuild(date: Date, next: number): Calendar {
+  public static buildNextCalendar(date: Date, next: number): Calendar {
     const year = date.getFullYear();
     const monthIndex = date.getMonth() + next;
     const month = monthIndex + 1;
@@ -81,7 +82,7 @@ export class Calendar {
     return new Calendar(year, monthIndex, month);
   }
 
-  public static oneYearAgoCalendarBuild(date: Date): Calendar {
+  public static buildOneYearAgoCalendar(date: Date): Calendar {
     const year = date.getFullYear() - 1;
     const monthIndex = date.getMonth();
     const month = monthIndex + 1;
@@ -89,7 +90,7 @@ export class Calendar {
     return new Calendar(year, monthIndex, month);
   }
 
-  public static oneYearLaterCalendarBuild(date: Date): Calendar {
+  public static buildOneYearLaterCalendar(date: Date): Calendar {
     const year = date.getFullYear() + 1;
     const monthIndex = date.getMonth();
     const month = monthIndex + 1;
@@ -97,11 +98,11 @@ export class Calendar {
     return new Calendar(year, monthIndex, month);
   }
 
-  public static buildCalendarTable(
-    year: number,
-    monthIndex: number,
-    month: number
-  ): Table {
+  public static buildCalendarTable(date: Date): Table {
+    const year = date.getFullYear();
+    const monthIndex = date.getMonth();
+    const month = monthIndex + 1;
+
     const startDate = new Date(year, monthIndex, 1);
     const startDayOfTheWeek = startDate.getDay();
     const endDate = new Date(year, month, 0);

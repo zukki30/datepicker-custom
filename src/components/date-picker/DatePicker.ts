@@ -30,26 +30,26 @@ export class DatePicker {
 
     for (let i = 0; i < this.monthsAgo; i++) {
       const index = this.monthsAgo - 1 - i;
-      calendars.push(Calendar.previousCalendarBuild(this.date, index));
+      calendars.push(Calendar.buildPreviousCalendar(this.date, index));
     }
 
     return calendars;
   }
 
   get previousCalendar(): Calendar {
-    return Calendar.previousCalendarBuild(this.date, this.monthsAgo);
+    return Calendar.buildPreviousCalendar(this.date, this.monthsAgo);
   }
 
   get nextCalendar(): Calendar {
-    return Calendar.nextCalendarBuild(this.date, 1);
+    return Calendar.buildNextCalendar(this.date, 1);
   }
 
   get oneYearAgoCalendar(): Calendar {
-    return Calendar.oneYearAgoCalendarBuild(this.date);
+    return Calendar.buildOneYearAgoCalendar(this.date);
   }
 
   get oneYearLaterCalendar(): Calendar {
-    return Calendar.oneYearLaterCalendarBuild(this.date);
+    return Calendar.buildOneYearLaterCalendar(this.date);
   }
 
   public static rebuild(calendar: Calendar): DatePicker {

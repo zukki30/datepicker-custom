@@ -14,7 +14,7 @@ describe("DatePicker", () => {
 
       for (let i = 0; i < calendars.length; i++) {
         const index = monthsAgo - i - 1;
-        const calendar = Calendar.previousCalendarBuild(date, index);
+        const calendar = Calendar.buildPreviousCalendar(date, index);
 
         expect(calendars[i].year).toEqual(calendar.year);
         expect(calendars[i].monthIndex).toEqual(calendar.monthIndex);
@@ -24,7 +24,7 @@ describe("DatePicker", () => {
 
     it("returns Calendar from date before monthsAgo", () => {
       const previousCalendar = datePicker.previousCalendar;
-      const calendar = Calendar.previousCalendarBuild(date, monthsAgo);
+      const calendar = Calendar.buildPreviousCalendar(date, monthsAgo);
 
       expect(previousCalendar.year).toEqual(calendar.year);
       expect(previousCalendar.monthIndex).toEqual(calendar.monthIndex);
@@ -34,7 +34,7 @@ describe("DatePicker", () => {
     it("returns the next Calendar from date", () => {
       const nextCalendar = datePicker.nextCalendar;
 
-      const calendar = Calendar.nextCalendarBuild(date, 1);
+      const calendar = Calendar.buildNextCalendar(date, 1);
 
       expect(nextCalendar.year).toEqual(calendar.year);
       expect(nextCalendar.monthIndex).toEqual(calendar.monthIndex);
