@@ -14,7 +14,7 @@
           <th
             v-for="week in weeks"
             :key="week.id"
-            class="calendar-base__cell"
+            class="calendar-base__cell  calendar-base__head-cell"
             :class="addWeekClass(week.id)"
           >
             {{ week.text }}
@@ -86,9 +86,8 @@ export default class CalendarBase extends Vue {
     align-items: center;
     justify-content: center;
     height: $cellHeight;
-    border-bottom: 1px solid $colorBase400;
+    border-bottom: 1px solid $colorElmentUIGray200;
     text-align: center;
-    font-weight: bold;
   }
 
   &__text {
@@ -104,7 +103,7 @@ export default class CalendarBase extends Vue {
       cursor: pointer;
 
       &:hover {
-        color: $colorBlue900;
+        color: $colorElmentUIBlue900;
       }
     }
   }
@@ -116,17 +115,10 @@ export default class CalendarBase extends Vue {
 
   &__cell {
     height: $cellHeight;
+    color: $colorElmentUIGray600;
     vertical-align: middle;
     text-align: center;
     font-size: 12px;
-
-    &--sun {
-      color: #eb4034;
-    }
-
-    &--sat {
-      color: #3468eb;
-    }
   }
 
   &__body-cell {

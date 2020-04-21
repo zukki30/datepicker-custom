@@ -105,14 +105,13 @@ export default class CalendarDateTable extends Vue {
     height: $cellHeight;
 
     &:not(.calendar-date-table__inner--desable):hover {
-      color: $colorBlue800;
+      color: $colorElmentUIBlue900;
       cursor: pointer;
     }
 
     &--desable {
-      background-color: $colorBase300;
-      color: $colorBase600;
-      cursor: text;
+      background-color: $colorElmentUIGray100;
+      color: $colorElmentUIGray300;
       pointer-events: none;
     }
   }
@@ -129,17 +128,18 @@ export default class CalendarDateTable extends Vue {
     border-radius: 50%;
 
     &--today {
-      border-color: $colorBlue800;
-      color: $colorBlue900;
+      color: $colorElmentUIBlue900;
+      font-weight: bold;
     }
 
     &--selected {
-      background-color: $colorBlue800;
+      background-color: $colorElmentUIBlue900;
       color: $colorWhite;
+      cursor: pointer;
     }
 
     &--another-month {
-      color: $colorBase600;
+      color: $colorElmentUIGray300;
     }
   }
 }

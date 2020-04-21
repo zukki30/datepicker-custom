@@ -183,9 +183,8 @@ export default class CalendarDateRangeTable extends Vue {
     height: $cellHeight;
 
     &--desable {
-      background-color: $colorBase300;
-      color: $colorBase600;
-      cursor: text;
+      background-color: $colorElmentUIGray100;
+      color: $colorElmentUIGray300;
       pointer-events: none;
     }
 
@@ -195,7 +194,7 @@ export default class CalendarDateRangeTable extends Vue {
       z-index: 0;
       margin-top: -12px;
       height: 24px;
-      background-color: $colorBlue600;
+      background-color: $colorElmentUIBlue100;
       content: "";
     }
 
@@ -229,30 +228,29 @@ export default class CalendarDateRangeTable extends Vue {
     justify-content: center;
     width: 22px;
     height: 22px;
-    border: 2px solid $colorClear;
     border-radius: 50%;
     transition: background-color 0.3s ease;
 
     &:hover {
       &:not(.calendar-date-range-table__date--selected) {
-        background-color: $colorBlue750;
+        color: $colorElmentUIBlue900;
         cursor: pointer;
       }
     }
 
     &--today {
-      border-color: $colorBlue800;
-      color: $colorBlue900;
+      color: $colorElmentUIBlue900;
+      font-weight: bold;
     }
 
     &--selected {
-      background-color: $colorBlue900;
+      background-color: $colorElmentUIBlue900;
       color: $colorWhite;
       cursor: pointer;
     }
 
     &--another-month {
-      color: $colorBase600;
+      color: $colorElmentUIGray300;
     }
   }
 }
