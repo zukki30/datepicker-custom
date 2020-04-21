@@ -2,7 +2,7 @@ import { storiesOf } from "@storybook/vue";
 import { date, boolean, text } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import { DateRange } from "@/components/calendar/Calendar";
-import DatePickerRangeInput from "@/components/date-picker/DatePickerRangeInput.vue";
+import DatePickerRangeInput from "@/components/old/date-picker/DatePickerRangeInput.vue";
 
 const selectedDates: DateRange = {
   min: new Date("2020-02-15"),
@@ -14,7 +14,7 @@ const disabledDates: DateRange = {
   max: new Date("2020-03-20")
 };
 
-storiesOf("date-picker/DatePickerRangeInput", module)
+storiesOf("old/date-picker/DatePickerRangeInput", module)
   .add(
     "default",
     () => ({

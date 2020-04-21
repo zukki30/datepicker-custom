@@ -8,23 +8,23 @@
         :shortcuts="shortcuts"
         :disabled-date="disabledDate"
       />
-    </div>
 
-    <h2>DatePicker - 2</h2>
-    <p>始点を終点をワンアクションで選択</p>
-    <div class="datepicker2">
-      <PeriodSpecification />
-    </div>
+      <h2>DatePicker - 2</h2>
+      <p>始点を終点をワンアクションで選択</p>
+      <div class="datepicker2">
+        <PeriodSpecification />
+      </div>
 
-    <h2>DatePicker - 3 - A</h2>
-    <p>個別選択、始点・終点の片方だけの変更が可能で入れ替え選択は不可</p>
-    <div class="datepicker3A">
-      <DatePickerRangeInput
-        :selected-dates="datepicker3ADates"
-        :disabled-dates="disabledDates"
-        @input="onAInput"
-        @delete="onADelete"
-      />
+      <h2>DatePicker - 3 - A</h2>
+      <p>個別選択、始点・終点の片方だけの変更が可能で入れ替え選択は不可</p>
+      <div class="datepicker3A">
+        <DatePickerRangeInput
+          :selected-dates="datepicker3ADates"
+          :disabled-dates="disabledDates"
+          @input="onAInput"
+          @delete="onADelete"
+        />
+      </div>
     </div>
 
     <h2>DatePicker - 3 - B</h2>
@@ -96,15 +96,16 @@ import {
 } from "@/util/date-range-picker-util";
 import { DateRange } from "@/components/calendar/Calendar";
 import { DirectSelect } from "@/components/date-picker/DatePicker";
-import DateRangePicker from "@/components/old/DateRangePicker.vue";
-import PeriodSpecification from "@/components/PeriodSpecification.vue";
-import DatePickerRangeInput from "@/components/date-picker/DatePickerRangeInput.vue";
-import DateRangeConfirmPicker from "@/components/old/date-picker/DateRangeConfirmPicker.vue";
-import PeriodDirectSelect from "@/components/date-picker/PeriodDirectSelect.vue";
+
 import DatePickerRangeChangeInput from "@/components/date-picker/DatePickerRangeChangeInput.vue";
+import DatePickerInput from "@/components/date-picker/DatePickerInput.vue";
+
+import DateRangePicker from "@/components/old/DateRangePicker.vue";
+import PeriodSpecification from "@/components/old/PeriodSpecification.vue";
+import DatePickerRangeInput from "@/components/old/date-picker/DatePickerRangeInput.vue";
+import DateRangeConfirmPicker from "@/components/old/date-picker/DateRangeConfirmPicker.vue";
 import AlignChange from "@/components/old/AlignChange.vue";
 import DateRangeConfirmCanselInputPicker from "@/components/old/date-picker/DateRangeConfirmCanselInputPicker.vue";
-import DatePickerInput from "@/components/date-picker/DatePickerInput.vue";
 
 @Component({
   components: {
@@ -112,7 +113,6 @@ import DatePickerInput from "@/components/date-picker/DatePickerInput.vue";
     PeriodSpecification,
     DatePickerRangeInput,
     DateRangeConfirmPicker,
-    PeriodDirectSelect,
     DatePickerRangeChangeInput,
     DateRangeConfirmCanselInputPicker,
     AlignChange,
@@ -243,9 +243,5 @@ export default class Home extends Vue {
 .datepicker4A {
   position: relative;
   z-index: 35;
-}
-
-.periodDirectSelect {
-  margin-top: 10px;
 }
 </style>

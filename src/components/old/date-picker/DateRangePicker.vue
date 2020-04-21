@@ -40,7 +40,7 @@ import {
 import { WidthProperty } from "csstype";
 import { DirectSelect } from "@/components/date-picker/DatePicker";
 import DateRangePickerPopup from "@/components/date-picker/DateRangePickerPopup.vue";
-import DateRangePickerContainer from "@/components/date-picker/DateRangePickerContainer.vue";
+import DateRangePickerContainer from "@/components/old/date-picker/DateRangePickerContainer.vue";
 import PeriodDirectSelect from "@/components/date-picker/PeriodDirectSelect.vue";
 
 @Component({

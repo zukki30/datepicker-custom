@@ -14,7 +14,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import { DateRange } from "@/components/calendar/Calendar";
 import { DirectSelect } from "@/components/date-picker/DatePicker";
-import DateRangePicker from "@/components/date-picker/DateRangePicker.vue";
+import DateRangePicker from "@/components/old/date-picker/DateRangePicker.vue";
 
 @Component({
   components: { DateRangePicker }
