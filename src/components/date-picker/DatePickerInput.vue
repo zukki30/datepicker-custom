@@ -11,13 +11,13 @@
       @click="onOpen"
     />
 
-    <Transition name="datePickerPopup" @enter="onChangePosition">
+    <Transition name="datePickerPopup">
       <div
         v-if="showDatePickerPopup"
         ref="datePickerPopup"
         v-click-outside="onClose"
         class="date-picker-input__popup"
-        :style="{ 'margin-left': popupX + 'px' }"
+        :class="['date-picker-input__popup--' + align]"
       >
         <DatePickerPopup
           :date-picker="datePicker"
@@ -34,7 +34,11 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Model, Emit } from "vue-property-decorator";
-import { DatePicker, dateFormat } from "@/components/date-picker/DatePicker";
+import {
+  DatePicker,
+  dateFormat,
+  PopupAlign
+} from "@/components/date-picker/DatePicker";
 import {
   Calendar,
   DateRange,
@@ -62,6 +66,9 @@ export default class DatePickerInput extends Vue {
   @Prop({ type: Object, default: null })
   disabledDates!: DateRange;
 
+  @Prop({ type: String, default: PopupAlign.Left })
+  align!: string;
+
   @Emit("input")
   onInput(date: Date) {
     this.onClose();
@@ -81,14 +88,12 @@ export default class DatePickerInput extends Vue {
   onClose() {
     this.showDatePickerPopup = false;
     this.focus = false;
-    this.popupX = 0;
   }
 
   currentDate: Date | null = null;
   focus: boolean = false;
   showDatePickerPopup: boolean = false;
   datePicker: DatePicker | null = null;
-  popupX: number = 0;
 
   get formatValue(): string {
     return this.value !== null ? dateFormat(this.value) : "";
@@ -96,17 +101,7 @@ export default class DatePickerInput extends Vue {
 
   onBuild() {
     const date: Date = this.value !== null ? this.value : new Date();
-
     this.datePicker = new DatePicker(date);
-  }
-
-  onChangePosition(el: HTMLElement) {
-    // Using to `Left` value because work in IE11 browser.
-    const x = el.getBoundingClientRect().left;
-
-    if (0 > x) {
-      this.popupX = -x;
-    }
   }
 
   onMoveCalendar(calendar: Calendar) {
@@ -147,12 +142,23 @@ export default class DatePickerInput extends Vue {
   &__popup {
     position: absolute;
     top: 40px;
-    left: 50%;
     padding: 10px;
     min-width: 700px;
     width: 100%;
     box-shadow: 0 1px 4px rgba(#000, 0.1);
-    transform: translateX(-50%);
+
+    &--left {
+      left: 0;
+    }
+
+    &--center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &--right {
+      right: 0;
+    }
   }
 }
 

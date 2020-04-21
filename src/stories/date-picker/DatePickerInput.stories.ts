@@ -1,13 +1,9 @@
 import { storiesOf } from "@storybook/vue";
-import { boolean, text } from "@storybook/addon-knobs";
+import { boolean, text, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import { DateRange } from "@/components/calendar/Calendar";
+import { PopupAlign } from "@/components/date-picker/DatePicker";
 import DatePickerInput from "@/components/date-picker/DatePickerInput.vue";
-
-const selectedDates: DateRange = {
-  min: new Date("2020-02-15"),
-  max: new Date("2020-03-03")
-};
 
 const disabledDates: DateRange = {
   min: new Date("2020-01-15"),
@@ -25,8 +21,8 @@ function props() {
     placeholder: {
       default: text("Placeholder", "対象の期間")
     },
-    disabledAnimation: {
-      default: boolean("disabledAnimation", false)
+    align: {
+      default: select("align", PopupAlign, PopupAlign.Left)
     }
   };
 }
@@ -56,6 +52,7 @@ storiesOf("date-picker/DatePickerInput", module)
        :placeholder="placeholder"
        :disabled="disabled"
        :disabled-dates="disabledDates"
+       :align="align"
        @input="onInput"
        @mouse-enter="onMouseEnter"
        @open="onOpen"
@@ -86,6 +83,7 @@ storiesOf("date-picker/DatePickerInput", module)
        :placeholder="placeholder"
        :disabled="disabled"
        :disabled-dates="disabledDates"
+       :align="align"
        @input="onInput"
        @mouse-enter="onMouseEnter"
        @open="onOpen"
