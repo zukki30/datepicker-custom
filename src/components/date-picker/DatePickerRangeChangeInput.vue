@@ -244,12 +244,12 @@ export default class DatePickerRangeChangeInput extends Vue {
   }
 
   onBuild() {
-    if (this.saveCalendar !== null) {
-      this.datePicker = DatePicker.rebuild(this.saveCalendar);
-    } else {
-      const date: Date = this.dates !== null ? this.dates.max : new Date();
-      this.datePicker = DatePicker.rebuild(Calendar.build(date));
+    if (this.saveCalendar === null) {
+      const date: Date = new Date();
+      this.saveCalendar = Calendar.build(date);
     }
+
+    this.datePicker = DatePicker.rebuild(this.saveCalendar);
   }
 
   onStartClick() {
