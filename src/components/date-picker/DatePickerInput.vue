@@ -1,15 +1,16 @@
 <template>
   <div class="date-picker-input" :style="{ width }">
-    <input
-      type="text"
-      class="date-picker-input__field"
-      readonly
-      :placeholder="placeholder"
-      :value="formatValue"
-      :class="{ 'date-picker-input__field--focus': focus }"
-      :disabled="disabled"
-      @click="onOpen"
-    />
+    <div class="date-picker-input__field" @click="onOpen">
+      <input
+        type="text"
+        class="date-picker-input__input"
+        readonly
+        :placeholder="placeholder"
+        :value="formatValue"
+        :class="{ 'date-picker-input__field--focus': focus }"
+        :disabled="disabled"
+      />
+    </div>
 
     <Transition name="datePickerPopup">
       <div
@@ -115,6 +116,10 @@ export default class DatePickerInput extends Vue {
   position: relative;
 
   &__field {
+    width: 100%;
+  }
+
+  &__input {
     padding: 0 10px;
     width: 100%;
     height: $formPartsHeight;
@@ -124,6 +129,7 @@ export default class DatePickerInput extends Vue {
     font-size: $basicFontSize;
     line-height: $formPartsHeight;
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    pointer-events: none;
     &::placeholder {
       color: $colorBase700;
     }

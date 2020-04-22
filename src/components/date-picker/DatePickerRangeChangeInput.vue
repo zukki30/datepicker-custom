@@ -14,25 +14,23 @@
       <div class="date-picker-range-change-input__icon">
         <Icon icon="icon-calendar" color="#818599" :size="14" />
       </div>
-      <div class="date-picker-range-change-input__field">
+      <div class="date-picker-range-change-input__field" @click="onStartClick">
         <Input
           ref="startInput"
           placeholder="対象期間の開始"
           :value="selectedStartInputValue"
           :disabled="disabled"
           :focus="startInputFocus"
-          @click="onStartClick"
         />
       </div>
       <div class="date-picker-range-change-input__hyphen">-</div>
-      <div class="date-picker-range-change-input__field">
+      <div class="date-picker-range-change-input__field" @click="onEndClick">
         <Input
           ref="endInput"
           placeholder="対象期間の終了"
           :value="selectedEndInputValue"
           :disabled="disabled"
           :focus="endInputFocus"
-          @click="onEndClick"
         />
       </div>
 
