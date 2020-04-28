@@ -186,17 +186,14 @@ export default class DatePickerRangeChangeInput extends Vue {
   // dateから3ヶ月前と後を取得
   getBeforeAndAfterEnabledPeriod(date: Date): DateRange {
     //3ヶ月前
-    const min = new Date(
-      date.getFullYear(),
-      date.getMonth() + 1,
-      date.getDate()
-    );
+    const min = new Date(date.getFullYear(), date.getMonth(), date.getDate());
     min.setMonth(min.getMonth() - 3);
-    min.setDate(min.getDate() - 1);
+    min.setDate(min.getDate() + 1);
 
     //3ヶ月前
     const max = new Date(date.getFullYear(), date.getMonth(), date.getDate());
     max.setMonth(max.getMonth() + 3);
+    max.setDate(max.getDate() - 1);
 
     return {
       min: this.disabledDates.min > min ? this.disabledDates.min : min,
