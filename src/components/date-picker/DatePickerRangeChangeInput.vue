@@ -66,7 +66,7 @@
         <div class="date-picker-range-change-input__body">
           <DateRangePickerPopup
             :date-picker="datePicker"
-            :disabled-dates="disabledDates"
+            :disabled-dates="changedEnabledPeriod"
             :selected-dates="dates"
             :disabled-month-click="true"
             @click="onSelectDate"
@@ -170,6 +170,39 @@ export default class DatePickerRangeChangeInput extends Vue {
   saveCalendar: Calendar | null = null;
 
   deleteButtonIconColor: string = "#CAD1D0";
+
+  get changedEnabledPeriod(): DateRange | null {
+    if (this.endInputFocus && this.startInputValue !== null) {
+      return this.getBeforeAndAfterEnabledPeriod(this.startInputValue);
+    }
+
+    if (this.startInputFocus && this.endInputValue !== null) {
+      return this.getBeforeAndAfterEnabledPeriod(this.endInputValue);
+    }
+
+    return this.disabledDates;
+  }
+
+  // dateから3ヶ月前と後を取得
+  getBeforeAndAfterEnabledPeriod(date: Date): DateRange {
+    //3ヶ月前
+    const min = new Date(
+      date.getFullYear(),
+      date.getMonth() + 1,
+      date.getDate()
+    );
+    min.setMonth(min.getMonth() - 3);
+    min.setDate(min.getDate() - 1);
+
+    //3ヶ月前
+    const max = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+    max.setMonth(max.getMonth() + 3);
+
+    return {
+      min: this.disabledDates.min > min ? this.disabledDates.min : min,
+      max: this.disabledDates.max < max ? this.disabledDates.max : max
+    };
+  }
 
   get dates(): DateRange | null {
     return this.onChangeDateRange(

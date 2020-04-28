@@ -11,7 +11,7 @@ const selectedDates: DateRange = {
 };
 
 const disabledDates: DateRange = {
-  min: new Date("2020-01-15"),
+  min: new Date("2019-01-15"),
   max: new Date("2020-03-20")
 };
 
