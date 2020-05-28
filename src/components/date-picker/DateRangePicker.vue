@@ -448,7 +448,6 @@ export default class DateRangePickerInput extends Vue {
   }
 
   formatValue(value: Date): string {
-    console.log(formatDate(DateFormat.yyyy年M月d日, value));
     return formatDate(DateFormat.yyyy年M月d日, value);
   }
 
