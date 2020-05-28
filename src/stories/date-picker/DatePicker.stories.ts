@@ -15,6 +15,9 @@ function props() {
     align: {
       default: select("align", PopupAlign, PopupAlign.Left)
     },
+    isFixedPopupTopPosition: {
+      default: boolean("isFixedPopupTopPosition", true)
+    },
     enabledPeriod: {
       default: () =>
         object("enabledPeriod", {
@@ -48,6 +51,7 @@ storiesOf("date-picker | DatePicker", module)
        :disabled="disabled"
        :enabled-period="enabledPeriod"
        :align="align"
+       :is-fixed-popup-top-position="isFixedPopupTopPosition"
        @input="onInput" />`
     }),
     {

@@ -18,6 +18,9 @@ function props() {
     showPeriodChoices: {
       default: boolean("showPeriodChoices", true)
     },
+    isFixedPopupTopPosition: {
+      default: boolean("isFixedPopupTopPosition", true)
+    },
     enabledPeriod: {
       default: () =>
         object("enabledPeriod", {
@@ -53,6 +56,7 @@ storiesOf("date-picker | DateRangePicker", module)
        :enabled-period="enabledPeriod"
        :align="align"
        :show-period-choices="showPeriodChoices"
+       :is-fixed-popup-top-position="isFixedPopupTopPosition"
        @input="onInput"
        @reset="onReset" /></div>`
     }),
