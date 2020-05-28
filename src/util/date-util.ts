@@ -1,11 +1,6 @@
 import { i18n } from "@/i18n";
 import { AvailableLanguages } from "@/i18n";
-
-interface SelectOption {
-  label: string;
-  value: string | number;
-  disabled: boolean;
-}
+import { DateRange } from "@/components/date-picker/DateRange";
 
 // 秒とどの単位の秒を使っているかわかりやすくするため
 export type Msec = number;
@@ -46,12 +41,14 @@ export namespace DateFormat {
   export const yyyysMMsdd: string = "%(yyyy)/%(MM)/%(dd)";
   export const yyyysMMsdd_HHcmm: string = "%(yyyy)/%(MM)/%(dd) %(HH):%(mm)";
   export const yyyysMsd: string = "%(yyyy)/%(M)/%(d)";
+  export const yyyyMMdd_HHmmss: string = "%(yyyy)%(MM)%(dd)_%(HH)%(mm)%(ss)";
 
   // 以下は翻訳のKeyになるのでスペースはカット
   export const M月d日_E_HH時mm分_TZONEDIFF: string =
     "%(E),%(MM)-%(dd)%(HH):%(mm)%(TZONE_STR_IFDIFF)";
   export const M月d日_E_HH時mm分: string = "%(E),%(MM)-%(dd)%(HH):%(mm)";
   export const yyyy年M月d日E: string = "%(E),%(M)-%(d)-%(yyyy)";
+  export const yyyy年M月d日: string = "%(M)-%(d)-%(yyyy)";
   export const yyyy年MMM月: string = "%(MMM)-%(yyyy)";
   export const MMM月: string = "%(MMM)";
   export const yyyy年M月d日E_HH時mm分_TZONEDIFF: string =
@@ -376,6 +373,7 @@ function isTranslationRequired(format: string): boolean {
     format === DateFormat.M月d日_E_HH時mm分_TZONEDIFF ||
     format === DateFormat.M月d日_E_HH時mm分 ||
     format === DateFormat.yyyy年M月d日E ||
+    format === DateFormat.yyyy年M月d日 ||
     format === DateFormat.yyyy年MMM月 ||
     format === DateFormat.MMM月 ||
     format === DateFormat.yyyy年M月d日E_HH時mm分_TZONEDIFF ||
@@ -449,14 +447,14 @@ export function usagePeriod(
     const elapsedYear = Math.floor(elapsedTotalMonth / 12);
     const elapsedMonth = elapsedTotalMonth % 12;
     if (elapsedMonth === 0) {
-      return i18n.tc("util.dateUtil.year", elapsedYear, {
+      return i18n.tc("util.dateUtil.periodYear", elapsedYear, {
         year: elapsedYear
       }) as string;
     } else {
-      const year = i18n.tc("util.dateUtil.year", elapsedYear, {
+      const year = i18n.tc("util.dateUtil.periodYear", elapsedYear, {
         year: elapsedYear
       });
-      const month = i18n.tc("util.dateUtil.month", elapsedMonth, {
+      const month = i18n.tc("util.dateUtil.periodMonth", elapsedMonth, {
         month: elapsedMonth
       });
       return i18n.t("util.dateUtil.YEAR_MONTH", {
@@ -470,12 +468,12 @@ export function usagePeriod(
       // 1ヶ月未満の場合
       const elapsedDay = Math.floor((endSec - startSec) / 60 / 60 / 24);
       // 小数点1位までの数字をセットする
-      const elapsedMonth = Math.floor((elapsedDay / 30) * 10) / 10;
-      return i18n.tc("util.dateUtil.month", elapsedMonth, {
+      const elapsedMonth = Math.floor((elapsedDay / 31) * 10) / 10;
+      return i18n.tc("util.dateUtil.periodMonth", elapsedMonth, {
         month: elapsedMonth
       }) as string;
     } else {
-      return i18n.tc("util.dateUtil.month", elapsedTotalMonth, {
+      return i18n.tc("util.dateUtil.periodMonth", elapsedTotalMonth, {
         month: elapsedTotalMonth
       }) as string;
     }
@@ -516,31 +514,6 @@ export function getHourlyInterval(date: Date, hour: number): Interval {
  */
 export const HOURLY_INTERVALS_DEFAULT_VALUE = -1;
 
-/**
- * 任意の時間帯またはxx時台を選択するためのセレクトボックスのオプション
- */
-export function hourlyIntervalsSelectOpitions(
-  hasAnyTime: boolean = true
-): SelectOption[] {
-  const options = hasAnyTime
-    ? [
-        {
-          label: i18n.t("util.dateUtil.anyTimeZone") as string,
-          value: HOURLY_INTERVALS_DEFAULT_VALUE,
-          disabled: false
-        }
-      ]
-    : [];
-  for (let i = 0; i < 24; i++) {
-    options.push({
-      label: i18n.t("util.dateUtil.oclock", { time: i }) as string,
-      value: i,
-      disabled: false
-    });
-  }
-  return options;
-}
-
 export function msecToSec(msec: Msec): Sec {
   return Math.floor(msec / 1000);
 }
@@ -571,31 +544,6 @@ export function translateMonthAndYearToString(
     month: translatedMonth,
     year: year
   }) as string;
-}
-
-/**
- * 検索条件の初期期間をかえます(30日前から今日まで)
- */
-export function getDefaultSearchPeriodDates(): {
-  startDate: Date;
-  endDate: Date;
-} {
-  const SEARCH_DEFAULT_PERIOD_DAYS = 30;
-
-  // 選定対象期間の終わり = 現在日付
-  const endDate: Date = new Date();
-  /**
-   * 現在時刻のdateを渡してしまうバグがあったので23:59:59をセットするように修正
-   * https://bebit.slack.com/archives/CDUED3657/p1574688265252100?thread_ts=1574676074.239300&cid=CDUED3657
-   */
-  endDate.setHours(23 /*hours*/, 59 /*min*/, 59 /*sec*/, 999 /*ms*/);
-
-  // 選定対象期間の始め ＝ 終了日 - SEARCH_PERIOD_DAYS日
-  const startDate: Date = new Date();
-  startDate.setDate(startDate.getDate() - SEARCH_DEFAULT_PERIOD_DAYS);
-  startDate.setHours(0 /*hours*/, 0 /*min*/, 0 /*sec*/, 0 /*ms*/);
-
-  return { startDate, endDate };
 }
 
 /**
@@ -632,4 +580,54 @@ export function toLocalHour(utcHour: number): number | null {
       HOURS_IN_DAY) %
     HOURS_IN_DAY
   );
+}
+
+/**
+ * returns deepCopied set midnight time DateRange
+ * if input 2020/01/10 10:00 - 2020/01/11 10:00
+ * returns 2020/01/10 0:00:00 - 2020/01/11 23:59:59.999
+ * @param dateRange DateRange
+ * @returns DateRange that time has changed
+ */
+export function getDeepCopiedMidnightDateRange(
+  dateRange: DateRange
+): DateRange {
+  const copiedDateRange = {
+    min: new Date(dateRange.min),
+    max: new Date(dateRange.max)
+  };
+  copiedDateRange.min.setHours(0, 0, 0, 0);
+  copiedDateRange.max.setHours(23, 59, 59, 999);
+  return copiedDateRange;
+}
+
+/**
+ * returns 2 dates have same  year month day or not same
+ * 2020/01/10 10:00 - 2020/01/10 20:00 returns true.
+ * hour is different but year month day is same.
+ * @param date1 Date for comparison
+ * @param date2 Date for comparison
+ * @returns boolean
+ */
+export function isSameDate(date1: Date, date2: Date): boolean {
+  return (
+    date1.getFullYear() === date2.getFullYear() &&
+    date1.getMonth() === date2.getMonth() &&
+    date1.getDate() === date2.getDate()
+  );
+}
+
+/**
+ * return date created by string year-month-day
+ * When parsing a date string without time with new Date, it becomes UTC 00:00:00
+ * So 2020-03-01 will be 2020-03-01 09:00:00 in Japan.
+ * This function set time to resolve this problem.
+ *
+ * @praam dateString like yyyy-mm-dd
+ * @returns Date
+ */
+export function getDateFromYearMonthDayString(dateString: string): Date {
+  const date = new Date(dateString);
+  date.setHours(0, 0, 0, 0);
+  return date;
 }

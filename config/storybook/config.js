@@ -1,5 +1,6 @@
 import { i18n, AvailableLanguages } from "@/i18n";
 import { configure, addDecorator } from "@storybook/vue";
+import { select } from "@storybook/addon-knobs";
 import { withKnobs } from "@storybook/addon-knobs";
 import { withInfo } from "storybook-addon-vue-info";
 import Vue from "vue";
@@ -17,6 +18,7 @@ addDecorator(withInfo);
 addDecorator(withKnobs);
 
 // 言語切替をKnobsに追加
+const languages = Object.keys(AvailableLanguages);
 addDecorator(() => {
   return {
     template: `<story/>`,
@@ -25,6 +27,20 @@ addDecorator(() => {
       // snapshots の翻訳 warring を非表示にする
       this.$i18n.silentTranslationWarn = true;
       this.$root._i18n = this.$i18n;
+    },
+    props: {
+      storybookLocale: {
+        type: String,
+        default: select("Language", languages, "ja")
+      }
+    },
+    watch: {
+      storybookLocale: {
+        handler() {
+          this.$i18n.locale = this.storybookLocale;
+        },
+        immediate: true
+      }
     }
   };
 });

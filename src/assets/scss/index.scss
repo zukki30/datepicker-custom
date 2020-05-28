@@ -29,3 +29,8 @@
 textarea {
   font-family: inherit;
 }
+
+.datePickerInput__popup,
+.dateRangePickerInput__popup {
+  z-index: 100;
+}

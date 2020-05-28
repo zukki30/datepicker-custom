@@ -1,0 +1,22 @@
+{
+  "en": {
+    "reselectEntirePeriod": "Reselect entire period",
+    "startOfTargetPeriod": "Start of target period",
+    "endOfTargetPeriod": "End of target period"
+  },
+  "ja": {
+    "reselectEntirePeriod": "期間全体を選び直す",
+    "startOfTargetPeriod": "対象期間の開始",
+    "endOfTargetPeriod": "対象期間の終了"
+  },
+  "zh-hant": {
+    "reselectEntirePeriod": "刪除所選期間",
+    "startOfTargetPeriod": "目標期間起始",
+    "endOfTargetPeriod": "重新選擇所有期間"
+  },
+  "zh-hans": {
+    "reselectEntirePeriod": "删除所选期间",
+    "startOfTargetPeriod": "目标期间起始",
+    "endOfTargetPeriod": "重新选择所有期间"
+  }
+}

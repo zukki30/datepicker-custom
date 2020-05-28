@@ -1,0 +1,34 @@
+{
+  "en": {
+    "yesterday": "yesterday",
+    "today": "today",
+    "lastWeek": "last week",
+    "thisWeek": "this week",
+    "lastMonth": "last month",
+    "thisMonth": "this month"
+  },
+  "ja": {
+    "yesterday": "昨日",
+    "today": "本日",
+    "lastWeek": "先週",
+    "thisWeek": "今週",
+    "lastMonth": "先月",
+    "thisMonth": "今月"
+  },
+  "zh-hant": {
+    "yesterday": "昨天",
+    "today": "今天",
+    "lastWeek": "上週",
+    "thisWeek": "本週",
+    "lastMonth": "上個月",
+    "thisMonth": "這個月"
+  },
+  "zh-hans": {
+    "yesterday": "昨天",
+    "today": "今天",
+    "lastWeek": "上周",
+    "thisWeek": "本周",
+    "lastMonth": "上个月",
+    "thisMonth": "这个月"
+  }
+}

@@ -5,14 +5,12 @@ import u_dateUtil from "./util/date-util.json";
 
 export enum AvailableLanguages {
   ja = "ja",
+  "zh-hant" = "zh-hant",
+  "zh-hans" = "zh-hans",
   en = "en"
 }
 
 Vue.use(VueI18n);
-
-import Element from "element-ui";
-import enLocale from "element-ui/lib/locale/lang/en";
-import jaLocale from "element-ui/lib/locale/lang/ja";
 
 const locale = getInitalLanguage();
 
@@ -20,25 +18,28 @@ const messages = {
   en: {
     util: {
       dateUtil: { ...u_dateUtil.en }
-    },
-    ...enLocale
+    }
   },
   ja: {
     util: {
       dateUtil: { ...u_dateUtil.ja }
-    },
-    ...jaLocale
+    }
+  },
+  "zh-hant": {
+    util: {
+      dateUtil: { ...u_dateUtil["zh-hant"] }
+    }
+  },
+  "zh-hans": {
+    util: {
+      dateUtil: { ...u_dateUtil["zh-hans"] }
+    }
   }
 };
 
 const i18n = new VueI18n({
   locale,
   messages
-});
-
-Vue.use(Element, {
-  i18n: (key: string, value?: any[] | { [key: string]: any }) =>
-    i18n.t(key, value)
 });
 
 export function getInitalLanguage(): AvailableLanguages {
@@ -53,6 +54,12 @@ export function getBrowserLanguage(): AvailableLanguages {
   const navi = navigator as any;
   const lang: string =
     navi.userLanguage || navi.browserLanguage || navigator.language || "en";
+
+  if (lang === "zh-CN") {
+    return AvailableLanguages["zh-hans"];
+  } else if (lang === "zh-TW") {
+    return AvailableLanguages["zh-hant"];
+  }
 
   const localeString = lang.substring(0, 2).toLowerCase();
   if (localeString === "ja") {
